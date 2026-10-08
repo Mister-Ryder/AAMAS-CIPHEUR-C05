@@ -1,5 +1,0 @@
-# Failed 6 GiB StableSolver local-search follow-up
-
-This registered eight-view follow-up used a 6 GiB address-space cap per process, a native 895-second limit, and an outer 900-second wall cap. The 72 GiB cloud cgroup was the aggregate memory bound; separate wrapper and native processes mean that eight 6 GiB address-space limits do not establish an aggregate 48 GiB cap. Its complete independent audit found 0/8 valid final outcomes: one native bad allocation and seven outer timeouts. Native output files and certificate files, where present, do not supply an independently audited final 900-second score. No objective is published for this frame.
-
-The 6 GiB frame is separate from the original 3 GiB primary comparison and the later 9 GiB contingency. See the path-free [failure index](results/failures.csv), [receipt hash index](results/failed_receipt_index.csv), and [audit summary](results/audit_public.json). The private registration SHA256 is d1c89894cec93e71e1f3d69a0e29a6529d18b7a85dfdf837164b1b35abea1436; the [public registration](registration_public.json) removes machine paths.

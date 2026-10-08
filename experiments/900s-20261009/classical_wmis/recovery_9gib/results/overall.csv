@@ -1,2 +1,0 @@
-arm,audited_valid_positions,expected_positions,mean_contact_seconds,address_space_limit_bytes_per_process,native_time_limit_seconds,outer_wall_limit_seconds
-stablesolver_local_search,8,8,1131091.0165975,9663676416,850,900

@@ -1,5 +1,0 @@
-# Separate 9 GiB StableSolver local-search contingency
-
-This registered eight-view contingency followed the failed 6 GiB frame. It used 9 GiB RLIMIT_AS per process, a native 850-second limit, and an outer 900-second wall cap. The 72 GiB cloud cgroup was the aggregate memory bound; separate wrapper and native processes mean that eight 9 GiB address-space limits do not establish an aggregate 72 GiB cap. Its source commit and binary match the preceding frames; the runner changed only the native time limit. Results are separate from the original 3 GiB comparison and the failed 6 GiB frame. All eight positions passed the independent graph, certificate, and execution audits.
-
-See the [public registration](registration_public.json), [audited results](RESULTS.md), [receipt index](results/receipt_index.csv), [audit summary](results/audit_public.json), and [recorded trajectories](results/figures/manifest_public.json). Private receipts, certificates, logs, graph conversions, and NPZ files are omitted. The frozen private registration SHA256 is f04dfa2ce06b57d931f1bb77ef47eb66b93f4e225167b90e214562245701d9c9.

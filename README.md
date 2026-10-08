@@ -11,7 +11,7 @@ C05 is the finite structural-plan controller from CIPHEUR v0.6.0. It combines a 
 | Branch | Contents |
 |---|---|
 | [`main`](https://github.com/Mister-Ryder/AAMAS-CIPHEUR-C05/tree/main) | C05 LLM entry point, native search engine, eight input graphs, LLM run records, numerical summaries, algorithm documentation and figures |
-| [`non-llm-controls`](https://github.com/Mister-Ryder/AAMAS-CIPHEUR-C05/tree/non-llm-controls) | Everything in main, plus KNN, LinUCB, bandit, rule, static, the registered adaptive baseline mode, and the classical WMIS comparison, with their detailed results |
+| [`non-llm-controls`](https://github.com/Mister-Ryder/AAMAS-CIPHEUR-C05/tree/non-llm-controls) | Everything in main, plus KNN, LinUCB, bandit, rule, static and the registered adaptive baseline mode, with their detailed results |
 
 The main branch retains the shared feature construction and interval-update bookkeeping used by the LLM execution path. Classical plan selection is enabled on `non-llm-controls`.
 
@@ -62,24 +62,6 @@ The [Codex results](experiments/900s-20261009/results/) contain 40 positions, an
 | CHILS-p4-custom (`search_step=10`) | 40 | 1,134,942.785685025 |
 
 The Codex arm made 840 model calls, with 838 valid plan proposals. The [shared audit receipt](experiments/900s-20261009/results/audit_public.json) and [control audit receipt](experiments/900s-20261009/controls/results/audit_public.json) retain hashes of the private audit and original results.
-
-## Classical WMIS comparison (900 seconds)
-
-The [classical comparison package](experiments/900s-20261009/classical_wmis/README.md) uses the same eight graphs and exact integer objective. Each measured position is pinned to one physical CPU with a 900-second outer cap. The [technical results](experiments/900s-20261009/classical_wmis/RESULTS.md) give per-view scores, actual runtimes, resource settings, failures, and [recorded search curves](experiments/900s-20261009/classical_wmis/results/figures/manifest_public.json).
-
-| Method | Valid positions | Equal-view mean contact-seconds |
-|---|---:|---:|
-| Simulated annealing | 40/40 | 1,143,916.7904964 |
-| C05-Codex | 40/40 | 1,138,760.36872255 |
-| C05-KNN | 40/40 | 1,138,451.911341275 |
-| C05-LinUCB | 40/40 | 1,138,417.6763745 |
-| CHILS-p4-custom | 40/40 | 1,134,942.785685025 |
-| StableSolver local search, separate 9 GiB / native 850 s | 8/8 | 1,131,091.0165975 |
-| StableSolver large-neighborhood search | 8/8 | 1,125,961.321395625 |
-| GRASP | 40/40 | 1,068,698.2984871 |
-| StableSolver local search, 3 GiB cap | 0/8 | — |
-
-The supplementary one-pass StableSolver greedy-gwmin arm recorded 991,618.934985 contact-seconds over eight views and stopped after 1.823 seconds on average. The eight primary local-search positions failed under a 3 GiB address-space cap; the separate 6 GiB follow-up also yielded 0/8 audited final scores. Their failed receipts are retained without assigning scores. The 9 GiB result is a separate 8/8 audited follow-up with an 850-second native cap inside the same 900-second outer cap; its resources and per-view values are documented in the classical package.
 
 ## Build and run
 
