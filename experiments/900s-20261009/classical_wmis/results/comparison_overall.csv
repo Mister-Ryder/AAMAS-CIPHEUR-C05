@@ -6,5 +6,5 @@ chils_p4_custom,CHILS-p4-custom,primary_900s,40,40,1134942.785685025,900.0105834
 stablesolver_local_search,StableSolver local search,primary_900s,0,8,,,,1,one distinct physical CPU per position,3221225472,resource_limited
 stablesolver_large_neighborhood_search,StableSolver large neighborhood search,primary_900s,8,8,1125961.321395625,895.8406488136388375,877.057867875,1,one distinct physical CPU per position,3221225472,audited_complete
 grasp,GRASP,primary_900s,40,40,1068698.2984871,898.5729427948594125,897.7143147292750025,1,one distinct physical CPU per position,3221225472,audited_complete
-simulated_annealing,Hybrid SA (greedy repair and incumbent restarts),archived_hybrid_900s,40,40,1143916.7904964,898.56522236550227,897.7563162804999875,1,one distinct physical CPU per position,3221225472,audited_complete
+simulated_annealing,Simulated annealing,primary_900s,40,40,1143916.7904964,898.56522236550227,897.7563162804999875,1,one distinct physical CPU per position,3221225472,audited_complete
 stablesolver_greedy_gwmin,StableSolver greedy-gwmin,supplementary_one_pass,8,8,991618.934985,1.823306411504745525,1.7162197499999999125,1,one distinct physical CPU per position,3221225472,audited_complete
