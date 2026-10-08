@@ -1,0 +1,16 @@
+/inputs/data/
+/inputs/graphs/*.graph
+/inputs/graphs/*.dimacs
+/source/
+/native/
+/certificates/
+/traces/
+/logs/
+/launch_logs/
+/results/*/
+!/results/figures/
+/results/figures/*
+!/results/figures/stablesolver_local_search_9gib_native850_by_view_900s.png
+!/results/figures/stablesolver_local_search_9gib_native850_by_view_900s.pdf
+!/results/figures/manifest_public.json
+/batch_progress.json

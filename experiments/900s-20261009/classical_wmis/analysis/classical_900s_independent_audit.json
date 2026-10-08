@@ -1,0 +1,81 @@
+{
+  "schema": "cipheur_classical_900s_independent_audit_v1",
+  "generated_at_utc": "2026-10-08T19:50:20.833432+00:00",
+  "protocol_sha256": "6e76077e6c7e872f8675258ac05febeaf41be3734fe7b5aa0827f8bbcf45914c",
+  "conversion_manifest_protocol_hash_matches": true,
+  "all_graphs_exactly_equivalent": true,
+  "graphs": [
+    {
+      "graph_id": "CP-SCALE-AU-L002__g0340",
+      "n": 37421,
+      "m": 492851,
+      "npz_sha256": "f45451c354383da570944ddf0fc7898e9cd7056ac0ff54e97a2a2c4b69036697",
+      "metis_sha256": "b9e304855edfdb5fb7e8495a92ae1f2f358142e5cfb628fd6a50a8d0aea57dbb",
+      "dimacs_sha256": "c8b742a3cb5d2b2c2fa20e188a036793824945f3cf054e1fcf612f13ab2608e0",
+      "exactly_equivalent": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g0680",
+      "n": 37421,
+      "m": 630218,
+      "npz_sha256": "00df7ab3f84b2c1c98462e6a24a6844edfbe3af85b434c40e44bf86efcce2a7b",
+      "metis_sha256": "5f22ba9d7d7cff36e51798729d4ad89b593c5e36a7ac51ec9678121129022f5d",
+      "dimacs_sha256": "995f0804ff410a99dd874f895231582da58d09dcab11f9f9d73696aef3f83ad9",
+      "exactly_equivalent": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g1200",
+      "n": 37421,
+      "m": 865904,
+      "npz_sha256": "daaf6d54933abd24eb20b16c253177d674328b8555bf6b795088f76ab2e671b0",
+      "metis_sha256": "569d6192fc75989df45e581b6fe9404450d8a53bfb862ec952c5befbbf718e96",
+      "dimacs_sha256": "a15324e866e47e95f8c8416d3641a391f84447a9a2c830b3edd9159a7899e8ee",
+      "exactly_equivalent": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g1800",
+      "n": 37421,
+      "m": 1136164,
+      "npz_sha256": "929df9f700cdd73c14aa1aed2a4b8ec88eb4dbaddb0252134dc68e9409a0829b",
+      "metis_sha256": "de86543e54fed4c347730800c3f3e9ea4d90ca640b32121400956d3de1f7ed32",
+      "dimacs_sha256": "c7e8de6c6fdeb54f21118cfc4e2a9db35d7fd4504796793a135eb76213e4af14",
+      "exactly_equivalent": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+      "n": 37421,
+      "m": 679112,
+      "npz_sha256": "68fd21ef61b7cfaa228bcc78aa122ab7ed1946dc1e9330e3ca3d0fbf6ff06af3",
+      "metis_sha256": "84bf3a1a010641df1372c6299d8a74bcf4a52b002b3d5595b886b47fd47e029a",
+      "dimacs_sha256": "c60b0b6c328db05347dcc78d12178c8ae2632ee4b8c01108b7c47009d3a727c0",
+      "exactly_equivalent": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+      "n": 37421,
+      "m": 679643,
+      "npz_sha256": "c19525c20997580aae8cc683586362d193926c2b0a5acb702c039bb37584a967",
+      "metis_sha256": "0a4e0c1bf13759311125be9766c84c8b097c68abe0d87e720532c989161b0979",
+      "dimacs_sha256": "c0a413b3ea01bfbca43e364a298c87d3eaecdaa35c400e70f9e622ecbeb2a61d",
+      "exactly_equivalent": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+      "n": 37421,
+      "m": 748188,
+      "npz_sha256": "76b3ce4a426bc2159d59d0c133f7d5e3b01cafc6f3edf2313428f26881023dd4",
+      "metis_sha256": "684e834ac8a79ee2835e1af7db316a91062e2acae7ae3b20f468c39554ed2496",
+      "dimacs_sha256": "c4d9762c3eec266e23b4fe68f5c4e6f47a655cb33364632e971d228a8742d61e",
+      "exactly_equivalent": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+      "n": 37421,
+      "m": 747934,
+      "npz_sha256": "97eed4ff2c5b4a84d1d1b8e9645e81fe0d40ff8e9fc4daac45e73da590f4615c",
+      "metis_sha256": "c1d3dde9d56b734a24b1c67a89488e78a1b05309bab794ac59978e5243d88d48",
+      "dimacs_sha256": "ab5a91fbccf56215712576c935c29f84474ad0f33f4d4c89f78aa06d9f04b2b2",
+      "exactly_equivalent": true
+    }
+  ]
+}

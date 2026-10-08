@@ -1,0 +1,53 @@
+{
+  "schema": "cipheur_classical_wmis_900s_public_audit_v1",
+  "protocol_sha256": "6e76077e6c7e872f8675258ac05febeaf41be3734fe7b5aa0827f8bbcf45914c",
+  "private_audit_sha256": "7bf399b7696f3243da36ed9f530c9a2c2c148121e707830995ab3451ff29c1b0",
+  "private_positions_csv_sha256": "3ab421846ac82b58d2b9f2c8243e0f88538e9a633a514a9034b0bb82ba0e24dc",
+  "private_batch_progress_sha256": "c29e5a4e30bf16b8cb1437fafb3fb8de6633ab19d3828b622209b650385b55dd",
+  "comparison_source_sha256": "9c634cacc4a37ae1a12b9ffd3f04794b6c8403b1d29316a58efd421c0ebc7fd4",
+  "public_export_source_sha256": "d0725635fcc7e1b2ebec7a883208c309bc2e59762d6629175fc7fb09738102d0",
+  "all_graphs_exactly_equivalent": true,
+  "conversion_manifest_protocol_hash_matches": true,
+  "expected_positions": 104,
+  "saved_positions": 104,
+  "audited_valid_positions": 96,
+  "failed_positions": 8,
+  "private_audit_status": "incomplete_or_invalid",
+  "method_summaries": [
+    {
+      "arm": "stablesolver_local_search",
+      "status": "resource_limited",
+      "audited_valid_positions": 0,
+      "expected_positions": 8,
+      "mean_contact_seconds": null
+    },
+    {
+      "arm": "stablesolver_large_neighborhood_search",
+      "status": "audited_complete",
+      "audited_valid_positions": 8,
+      "expected_positions": 8,
+      "mean_contact_seconds": "1125961.321395625"
+    },
+    {
+      "arm": "grasp",
+      "status": "audited_complete",
+      "audited_valid_positions": 40,
+      "expected_positions": 40,
+      "mean_contact_seconds": "1068698.2984871"
+    },
+    {
+      "arm": "simulated_annealing",
+      "status": "audited_complete",
+      "audited_valid_positions": 40,
+      "expected_positions": 40,
+      "mean_contact_seconds": "1143916.7904964"
+    },
+    {
+      "arm": "stablesolver_greedy_gwmin",
+      "status": "audited_complete",
+      "audited_valid_positions": 8,
+      "expected_positions": 8,
+      "mean_contact_seconds": "991618.934985"
+    }
+  ]
+}

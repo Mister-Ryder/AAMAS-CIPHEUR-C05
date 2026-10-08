@@ -1,0 +1,9 @@
+c tiny independent parser and objective smoke fixture
+p edge 4 3
+n 1 10
+n 2 11
+n 3 12
+n 4 5
+e 1 2
+e 2 3
+e 1 4

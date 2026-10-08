@@ -1,0 +1,16 @@
+/inputs/data/
+/inputs/graphs/*.graph
+/inputs/graphs/*.dimacs
+/source/
+/implementations/classical_mwis
+/native/
+/traces/
+/logs/
+/results/*/
+!/results/figures/
+/results/figures/*
+!/results/figures/recorded_by_view_900s.png
+!/results/figures/recorded_by_view_900s.pdf
+!/results/figures/recorded_normalized_8views_900s.png
+!/results/figures/recorded_normalized_8views_900s.pdf
+!/results/figures/manifest_public.json

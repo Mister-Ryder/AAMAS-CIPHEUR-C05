@@ -1,0 +1,12 @@
+/inputs/data/
+/inputs/graphs/*.graph
+/inputs/graphs/*.dimacs
+/source/
+/implementations/
+/native/
+/certificates/
+/traces/
+/logs/
+/launch_logs/
+/results/*/
+/batch_progress.json

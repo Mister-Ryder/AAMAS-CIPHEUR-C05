@@ -1,0 +1,40 @@
+{
+  "schema": "classical_wmis_recorded_trajectories_public_v1",
+  "normalization": "each view's audited C05-Codex 900 s final mean contact seconds",
+  "event_time_policy": "mean step changes only at union of real recorded events; begins when every included run has a first event; no synthetic 900 s curve endpoint",
+  "clock_origin": {
+    "c05": "native solver elapsed time",
+    "classical": "position clock elapsed time",
+    "stablesolver": "position elapsed time with conservative graph-load offset bounded by native process wall minus final native time",
+    "chils": "final-only marker at 900 s; attainment time unknown"
+  },
+  "trajectory_count_by_arm": {
+    "codex": 40,
+    "knn": 40,
+    "linucb": 40,
+    "stablesolver_local_search": 0,
+    "stablesolver_large_neighborhood_search": 8,
+    "grasp": 40,
+    "simulated_annealing": 40,
+    "stablesolver_greedy_gwmin": 8
+  },
+  "event_count_by_arm": {
+    "codex": 22371,
+    "knn": 21374,
+    "linucb": 21524,
+    "stablesolver_local_search": 0,
+    "stablesolver_large_neighborhood_search": 3129,
+    "grasp": 39103,
+    "simulated_annealing": 123576,
+    "stablesolver_greedy_gwmin": 8
+  },
+  "private_primary_audit_sha256": "7bf399b7696f3243da36ed9f530c9a2c2c148121e707830995ab3451ff29c1b0",
+  "private_primary_positions_csv_sha256": "3ab421846ac82b58d2b9f2c8243e0f88538e9a633a514a9034b0bb82ba0e24dc",
+  "plot_source_sha256": "06fc051467c894148fce8fb01198f08f1e4ff78a90d00f79099afc2c4cb9ea58",
+  "figure_sha256": {
+    "recorded_by_view_900s.png": "91832e4a1d95338f1bef49bb655b978890a964a2c9dca7ef0dad88de6b4cfed8",
+    "recorded_by_view_900s.pdf": "ff742b7b4dd70631224273a7c9ca1178d122d3317a940557dea1e909685540e7",
+    "recorded_normalized_8views_900s.png": "d0cd04cbf8d1ab62ab4c57e158ebba2907800702edaf589dfe633440b8f91307",
+    "recorded_normalized_8views_900s.pdf": "994eecc98ba06a9065bd2ede5c2577e6de8f2c6d7958b0bb2cbbcacf00e75d7c"
+  }
+}
