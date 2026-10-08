@@ -1,0 +1,15 @@
+{
+  "schema": "cipheur_c05_900s_public_helper_provenance_v1",
+  "files": {
+    "audit_aggregate_900s.py": {
+      "deployed_sha256": "7aa3a08262f031237f2f1a539ffc22e980ea17c205a21b7eba254a788c11dad5",
+      "public_sha256": "745191672aaf25f9a6d55e8855764c10b63c09ee97775dff324f99f96fb6da95",
+      "adaptation": "Require --data-dir instead of using the original absolute cloud input path. Verification arithmetic and result checks are unchanged."
+    },
+    "record_environment_900s.py": {
+      "deployed_sha256": "1d15f3c3bb0f4d4ea9ac48e6c57df37c09f3ff6751144844b0727d92468d8a18",
+      "public_sha256": "c5533b15d6318b52603ad4a1ad35df1e8d360ee6f220b1c4a6289a126d466b33",
+      "adaptation": "Require --root instead of using the original absolute cloud experiment path."
+    }
+  }
+}

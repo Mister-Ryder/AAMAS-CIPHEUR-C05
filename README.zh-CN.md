@@ -29,7 +29,7 @@
 
 各组件的源码对应、优先级表达式、输入输出和时序见 [ALGORITHM.md](docs/ALGORITHM.md)。
 
-## 结果汇总
+## 360 秒实验结果汇总
 
 CP-SCALE-AU-L002 八视图，每视图五个种子 `67、71、73、79、83`，每种选择器 40 次运行。每次 360 秒、种群 4、一个原生线程；历史批次同时运行 16 个独立任务。
 
@@ -46,6 +46,12 @@ CP-SCALE-AU-L002 八视图，每视图五个种子 `67、71、73、79、83`，�
 | Adaptive | 1,133,859.369542 |
 
 逐视图结果、运行明细、数据哈希和原实验参数见 [RESULTS.md](docs/RESULTS.md)。
+
+## 900 秒注册实验（2026 年 10 月 9 日）
+
+[900 秒实验资料](experiments/900s-20261009/README.md)使用 CP-SCALE-AU-L002 的相同八视图，每视图五个种子。每次求解保持四解种群、一个原生求解线程。C05-Codex 通过独立的 `gpt-6-luna` 中继在冻结的有限计划表中选择计划，选择次数上限扩展为 21。四种方法共 160 条预注册位置，均通过输入图、目标值、可行性和身份的独立核验。
+
+`main` 分支公开 C05-Codex 的 [40 条数值记录](experiments/900s-20261009/results/positions.csv)、[八视图均值](experiments/900s-20261009/results/by_view.csv)及[审计凭据](experiments/900s-20261009/results/audit_public.json)。八视图等权最终均值为 **1,138,760.36872255 接触秒**；40 次求解共 840 次模型调用，其中 838 次产生有效计划提案。KNN、LinUCB 和 CHILS p4 自定义配置的结果位于 [`non-llm-controls` 分支](https://github.com/Mister-Ryder/AAMAS-CIPHEUR-C05/tree/non-llm-controls/experiments/900s-20261009)。
 
 ## 运行
 

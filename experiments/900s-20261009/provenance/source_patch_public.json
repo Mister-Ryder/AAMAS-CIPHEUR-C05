@@ -1,0 +1,13 @@
+{
+  "schema": "cipheur_c05_900s_public_source_patch_v1",
+  "original_registration_sha256": "8bc9f73dc72ddc1aa862091a1d495d3a96a90694bfe5b46b00af259721f55e27",
+  "original_source_patch_record_sha256": "52e72bc762b0b8f9c4403bd6899ce6e8c6bf415a4379ee56e07daad01f87c650",
+  "frozen_c05_source_tree_sha256": "725f338c6d4f5c79e3ff81c38cebf59834013244c31a497163c6731fd6e53485",
+  "isolated_900s_source_tree_sha256": "b80137883feb60ab66aed3c525dc76ec76704f58b5eac704d07f3a58d2b02ab8",
+  "file": "cipheur_v06/contracts.py",
+  "frozen_file_sha256": "5ef17551a54b601deafbd2ff81273df3ffc7611b1cb5aba6db83965e263ee5eb",
+  "isolated_900s_file_sha256": "9a5e63d345e097ac35f3914ff438deb492202579e5313013f80d503300c53e69",
+  "exact_change": "not 0<=self.max_calls<=12 -> not 0<=self.max_calls<=21",
+  "other_copied_source_files": "byte-identical to the frozen C05 candidate",
+  "purpose": "Permit all 21 scheduled finite-plan selections during a 900-second C05 solve."
+}
