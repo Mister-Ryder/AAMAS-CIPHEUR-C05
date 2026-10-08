@@ -1,0 +1,880 @@
+{
+  "schema": "cipheur_c05_all_modes_summary_v1",
+  "summaries": [
+    {
+      "method": "C05-knn",
+      "batch": "v0.6.0 C05 full replication",
+      "n": 40,
+      "graph_count": 8,
+      "seeds": [
+        67,
+        71,
+        73,
+        79,
+        83
+      ],
+      "mean_contact_seconds": 1137632.19893835,
+      "exact_mean_contact_seconds": "22752643978767/20000000",
+      "min_wall_seconds": 360.0084153339267,
+      "max_wall_seconds": 360.05325688421726,
+      "mean_wall_seconds": 360.01511893896384,
+      "mean_cpu_seconds": 359.92834741997507,
+      "per_view": [
+        {
+          "graph_id": "CP-SCALE-AU-L002__g0340",
+          "n": 5,
+          "mean_contact_seconds": 1626553.2852478,
+          "exact_mean_contact_seconds": "8132766426239/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g0680",
+          "n": 5,
+          "mean_contact_seconds": 1249081.8067794,
+          "exact_mean_contact_seconds": "6245409033897/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g1200",
+          "n": 5,
+          "mean_contact_seconds": 883622.9829414,
+          "exact_mean_contact_seconds": "4418114914707/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g1800",
+          "n": 5,
+          "mean_contact_seconds": 683770.7928664,
+          "exact_mean_contact_seconds": "854713491083/1250000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1261500.0024318,
+          "exact_mean_contact_seconds": "6307500012159/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1067094.2215982,
+          "exact_mean_contact_seconds": "5335471107991/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1262806.2558036,
+          "exact_mean_contact_seconds": "3157015639509/2500000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1066628.2438382,
+          "exact_mean_contact_seconds": "5333141219191/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        }
+      ]
+    },
+    {
+      "method": "C05-linucb",
+      "batch": "v0.6.0 C05 full replication",
+      "n": 40,
+      "graph_count": 8,
+      "seeds": [
+        67,
+        71,
+        73,
+        79,
+        83
+      ],
+      "mean_contact_seconds": 1137512.893282975,
+      "exact_mean_contact_seconds": "45500515731319/40000000",
+      "min_wall_seconds": 360.0103826634586,
+      "max_wall_seconds": 360.0495965331793,
+      "mean_wall_seconds": 360.01546968203036,
+      "mean_cpu_seconds": 359.9496302007,
+      "per_view": [
+        {
+          "graph_id": "CP-SCALE-AU-L002__g0340",
+          "n": 5,
+          "mean_contact_seconds": 1625810.9332596,
+          "exact_mean_contact_seconds": "4064527333149/2500000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g0680",
+          "n": 5,
+          "mean_contact_seconds": 1249482.4569162,
+          "exact_mean_contact_seconds": "6247412284581/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g1200",
+          "n": 5,
+          "mean_contact_seconds": 883947.0516434,
+          "exact_mean_contact_seconds": "4419735258217/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g1800",
+          "n": 5,
+          "mean_contact_seconds": 683049.9637094,
+          "exact_mean_contact_seconds": "3415249818547/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1261440.0599066,
+          "exact_mean_contact_seconds": "6307200299533/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1066914.4117348,
+          "exact_mean_contact_seconds": "2667286029337/2500000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1262416.4345208,
+          "exact_mean_contact_seconds": "1578020543151/1250000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1067041.834573,
+          "exact_mean_contact_seconds": "1067041834573/1000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        }
+      ]
+    },
+    {
+      "method": "C05-llm",
+      "batch": "v0.6.0 C05 full replication",
+      "n": 40,
+      "graph_count": 8,
+      "seeds": [
+        67,
+        71,
+        73,
+        79,
+        83
+      ],
+      "mean_contact_seconds": 1137361.73518935,
+      "exact_mean_contact_seconds": "22747234703787/20000000",
+      "min_wall_seconds": 360.0129993893206,
+      "max_wall_seconds": 360.06425575912,
+      "mean_wall_seconds": 360.01809374801815,
+      "mean_cpu_seconds": 359.81537925557507,
+      "per_view": [
+        {
+          "graph_id": "CP-SCALE-AU-L002__g0340",
+          "n": 5,
+          "mean_contact_seconds": 1624840.7134298,
+          "exact_mean_contact_seconds": "8124203567149/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g0680",
+          "n": 5,
+          "mean_contact_seconds": 1249237.658053,
+          "exact_mean_contact_seconds": "1249237658053/1000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g1200",
+          "n": 5,
+          "mean_contact_seconds": 883885.1171644,
+          "exact_mean_contact_seconds": "2209712792911/2500000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g1800",
+          "n": 5,
+          "mean_contact_seconds": 682499.559488,
+          "exact_mean_contact_seconds": "10664055617/15625",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1261758.6264662,
+          "exact_mean_contact_seconds": "6308793132331/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1067791.0090804,
+          "exact_mean_contact_seconds": "2669477522701/2500000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1262183.727874,
+          "exact_mean_contact_seconds": "631091863937/500000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1066697.469959,
+          "exact_mean_contact_seconds": "1066697469959/1000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        }
+      ]
+    },
+    {
+      "method": "C05-bandit",
+      "batch": "v0.6.0 C05 full replication",
+      "n": 40,
+      "graph_count": 8,
+      "seeds": [
+        67,
+        71,
+        73,
+        79,
+        83
+      ],
+      "mean_contact_seconds": 1137219.802194325,
+      "exact_mean_contact_seconds": "45488792087773/40000000",
+      "min_wall_seconds": 360.0096035376191,
+      "max_wall_seconds": 360.0335296615958,
+      "mean_wall_seconds": 360.01351704662665,
+      "mean_cpu_seconds": 359.9389535693,
+      "per_view": [
+        {
+          "graph_id": "CP-SCALE-AU-L002__g0340",
+          "n": 5,
+          "mean_contact_seconds": 1625019.0392284,
+          "exact_mean_contact_seconds": "4062547598071/2500000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g0680",
+          "n": 5,
+          "mean_contact_seconds": 1248878.1848326,
+          "exact_mean_contact_seconds": "6244390924163/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g1200",
+          "n": 5,
+          "mean_contact_seconds": 884066.0938984,
+          "exact_mean_contact_seconds": "1105082617373/1250000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g1800",
+          "n": 5,
+          "mean_contact_seconds": 682587.1298982,
+          "exact_mean_contact_seconds": "3412935649491/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1261042.7435632,
+          "exact_mean_contact_seconds": "788151714727/625000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1067224.0258642,
+          "exact_mean_contact_seconds": "5336120129321/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1261932.651891,
+          "exact_mean_contact_seconds": "1261932651891/1000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1067008.5483786,
+          "exact_mean_contact_seconds": "5335042741893/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        }
+      ]
+    },
+    {
+      "method": "C05-rule",
+      "batch": "v0.6.0 C05 full replication",
+      "n": 40,
+      "graph_count": 8,
+      "seeds": [
+        67,
+        71,
+        73,
+        79,
+        83
+      ],
+      "mean_contact_seconds": 1137174.04455295,
+      "exact_mean_contact_seconds": "22743480891059/20000000",
+      "min_wall_seconds": 360.0086943656206,
+      "max_wall_seconds": 360.0497534163296,
+      "mean_wall_seconds": 360.01740502761675,
+      "mean_cpu_seconds": 359.91768786807495,
+      "per_view": [
+        {
+          "graph_id": "CP-SCALE-AU-L002__g0340",
+          "n": 5,
+          "mean_contact_seconds": 1625255.1943186,
+          "exact_mean_contact_seconds": "8126275971593/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g0680",
+          "n": 5,
+          "mean_contact_seconds": 1249248.1609962,
+          "exact_mean_contact_seconds": "6246240804981/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g1200",
+          "n": 5,
+          "mean_contact_seconds": 883694.2711164,
+          "exact_mean_contact_seconds": "2209235677791/2500000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g1800",
+          "n": 5,
+          "mean_contact_seconds": 682010.6691748,
+          "exact_mean_contact_seconds": "1705026672937/2500000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1261181.0214174,
+          "exact_mean_contact_seconds": "6305905107087/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1067260.5312352,
+          "exact_mean_contact_seconds": "333518916011/312500",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1261786.0168104,
+          "exact_mean_contact_seconds": "1577232521013/1250000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1066956.4913546,
+          "exact_mean_contact_seconds": "5334782456773/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        }
+      ]
+    },
+    {
+      "method": "C05-static",
+      "batch": "v0.6.0 C05 full replication",
+      "n": 40,
+      "graph_count": 8,
+      "seeds": [
+        67,
+        71,
+        73,
+        79,
+        83
+      ],
+      "mean_contact_seconds": 1137128.2172166,
+      "exact_mean_contact_seconds": "5685641086083/5000000",
+      "min_wall_seconds": 360.00978377461433,
+      "max_wall_seconds": 360.03386253491044,
+      "mean_wall_seconds": 360.0145351565443,
+      "mean_cpu_seconds": 359.8849836735,
+      "per_view": [
+        {
+          "graph_id": "CP-SCALE-AU-L002__g0340",
+          "n": 5,
+          "mean_contact_seconds": 1625216.2684826,
+          "exact_mean_contact_seconds": "8126081342413/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g0680",
+          "n": 5,
+          "mean_contact_seconds": 1249172.6428244,
+          "exact_mean_contact_seconds": "3122931607061/2500000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g1200",
+          "n": 5,
+          "mean_contact_seconds": 884057.0204576,
+          "exact_mean_contact_seconds": "276267818893/312500",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g1800",
+          "n": 5,
+          "mean_contact_seconds": 682785.218943,
+          "exact_mean_contact_seconds": "682785218943/1000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1260697.0422664,
+          "exact_mean_contact_seconds": "1575871302833/1250000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1066985.5900752,
+          "exact_mean_contact_seconds": "666865993797/625000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1261481.7557106,
+          "exact_mean_contact_seconds": "6307408778553/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1066630.198973,
+          "exact_mean_contact_seconds": "1066630198973/1000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        }
+      ]
+    },
+    {
+      "method": "C05-adaptive",
+      "batch": "v0.6.0 C05 full replication",
+      "n": 40,
+      "graph_count": 8,
+      "seeds": [
+        67,
+        71,
+        73,
+        79,
+        83
+      ],
+      "mean_contact_seconds": 1133859.369541725,
+      "exact_mean_contact_seconds": "45354374781669/40000000",
+      "min_wall_seconds": 360.0088291987777,
+      "max_wall_seconds": 360.0513114593923,
+      "mean_wall_seconds": 360.01675347546114,
+      "mean_cpu_seconds": 359.998390924625,
+      "per_view": [
+        {
+          "graph_id": "CP-SCALE-AU-L002__g0340",
+          "n": 5,
+          "mean_contact_seconds": 1622872.2481984,
+          "exact_mean_contact_seconds": "253573788781/156250",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g0680",
+          "n": 5,
+          "mean_contact_seconds": 1246378.3626604,
+          "exact_mean_contact_seconds": "3115945906651/2500000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g1200",
+          "n": 5,
+          "mean_contact_seconds": 878413.7996826,
+          "exact_mean_contact_seconds": "4392068998413/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__g1800",
+          "n": 5,
+          "mean_contact_seconds": 679501.990508,
+          "exact_mean_contact_seconds": "169875497627/250000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1258312.3659398,
+          "exact_mean_contact_seconds": "6291561829699/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1064090.9967884,
+          "exact_mean_contact_seconds": "2660227491971/2500000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1257531.1353222,
+          "exact_mean_contact_seconds": "6287655676611/5000000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        },
+        {
+          "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+          "n": 5,
+          "mean_contact_seconds": 1063774.057234,
+          "exact_mean_contact_seconds": "531887028617/500000",
+          "seeds": [
+            67,
+            71,
+            73,
+            79,
+            83
+          ]
+        }
+      ]
+    }
+  ]
+}

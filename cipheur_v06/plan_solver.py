@@ -21,7 +21,7 @@ from .directed_actions import execute_directed
 from .compact_plans import compact_packet, expand_plan_library
 
 MODEL_MODES=('llm','serial','shadow','no_history','no_resource')
-CONTROL_MODES=()  # Classical selectors are released on the controls branch.
+CONTROL_MODES=('rule','bandit','linucb','knn','static','adaptive')
 
 def solve(path,mode='llm',config=None,provider=None,on_event=None,graph_id=None):
     cfg=config or Config();begin=time.perf_counter();cpu_begin=time.process_time();deadline=begin+cfg.seconds

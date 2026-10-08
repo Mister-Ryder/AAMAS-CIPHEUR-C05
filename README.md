@@ -1,5 +1,7 @@
 # AAMAS · CIPHEUR C05
 
+This is the **non-llm-controls** branch. See [selector definitions and commands](docs/CONTROLS.md).
+
 [中文说明](README.zh-CN.md) · [Problem model and notation](docs/MODEL_AND_PSEUDOCODE.md) · [LaTeX pseudocode](docs/c05_model_algorithm.tex) · [PDF](docs/c05_model_algorithm.pdf) · [Algorithm details](docs/ALGORITHM.md) · [Results and protocol](docs/RESULTS.md)
 
 C05 is the finite structural-plan controller from CIPHEUR v0.6.0. It combines a persistent four-solution native maximum-weight independent-set search with an asynchronous LLM that selects an exact plan from the current observation-bound registry. The graph objective is total contact duration, stored as integer ticks.

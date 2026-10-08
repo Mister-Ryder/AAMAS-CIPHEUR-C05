@@ -15,7 +15,7 @@
   "historical_runner_sha256": "4385194559509f37441f7850ec20317d289eae147f9608bb785fefe59955bc28",
   "historical_native_library_sha256": "83f7114e04b2e92a302573bd579541efae62d59114cef080a372f30bf01faf4c",
   "historical_compiler": "g++ (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0",
-  "release_branch": "main",
+  "release_branch": "non-llm-controls",
   "classical_selectors_branch": "non-llm-controls",
   "registered_c05_python_receipt_members_verified": 15,
   "runtime_files": [
@@ -76,14 +76,14 @@
     {
       "path": "cipheur_v06/plan_solver.py",
       "frozen_sha256": "c57f914c405e1f7ec668c95a08fb0ed50e01636b82e1735b12e712130a868e3c",
-      "release_sha256": "422bf5444a7bbce33a2b43a14bfbed6c3e5f606bc301b998d98b5ca3606c1594",
-      "byte_identical": false
+      "release_sha256": "c57f914c405e1f7ec668c95a08fb0ed50e01636b82e1735b12e712130a868e3c",
+      "byte_identical": true
     },
     {
       "path": "cipheur_v06/plans.py",
       "frozen_sha256": "f261ae19c48a013c4a60af40b29657470544c3a3517bf54abe9ebcff38746f5f",
-      "release_sha256": "9bfc71ad12b85497697eabc4b2bd55f22af8a7590f206a614695638fda8c2dcc",
-      "byte_identical": false
+      "release_sha256": "f261ae19c48a013c4a60af40b29657470544c3a3517bf54abe9ebcff38746f5f",
+      "byte_identical": true
     },
     {
       "path": "cipheur_v06/provider.py",
@@ -225,8 +225,6 @@
     }
   ],
   "main_modifications": {
-    "cipheur_v06/plans.py": "Omit classical choose() and its _structural_rank() helper from main. Keep finite plans, feature mapping, state initialization, and whole-interval update arithmetic. Change only the class documentation otherwise.",
-    "cipheur_v06/plan_solver.py": "Change CONTROL_MODES to the empty tuple on main; the solve() function is AST-identical to the frozen solver. The non-llm-controls branch restores the original file.",
     "cipheur_v06/solver.py": "Retain the original LIBRARY constant imported by plan_solver; omit the unrelated older v0.6 temporal-contract solver.",
     "cipheur_v05/provider.py": "Retain unchanged NoRedirect, ScriptedProvider, and SlowLane classes; omit unused v0.5 providers and their imports."
   },
@@ -274,8 +272,18 @@
     "cipheur_c05/cli.py",
     "cipheur_c05/__main__.py",
     "scripts/build_native.py",
-    "scripts/smoke_check.py"
+    "scripts/smoke_check.py",
+    "scripts/smoke_controls.py"
   ],
   "installation": "Editable checkout with native build under build/libcex5.so; Linux GCC/G++ and OpenMP.",
-  "timing_scope": "The solver, plan definitions, decision cadence, model profile, objective and native source are preserved for the LLM path. The public CLI removes the private input path from saved metadata after the timed solve; this packaging release does not assert binary-identical timing or a new performance run."
+  "timing_scope": "The solver, plan definitions, decision cadence, model profile, objective and native source are preserved for the LLM path. The public CLI removes the private input path from saved metadata after the timed solve; this packaging release does not assert binary-identical timing or a new performance run.",
+  "classical_mode_availability": [
+    "llm",
+    "rule",
+    "bandit",
+    "linucb",
+    "knn",
+    "static",
+    "adaptive"
+  ]
 }

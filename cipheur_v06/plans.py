@@ -283,13 +283,27 @@ def _family(descriptor):
     return str(descriptor["steps"][0]["action"])
 
 
+def _structural_rank(descriptor):
+    c, op = _mapping(descriptor.get("context")), _mapping(descriptor.get("operation"))
+    blockers = max(1., _number(c.get("blocker_count"), 1.))
+    template = op.get("template")
+    ant, sat = _number(c.get("same_antenna_blockers")) / blockers, _number(c.get("same_satellite_blockers")) / blockers
+    alignment = ant if template == "antenna" else sat if template == "satellite" else (ant + sat) / 2.
+    ratio = min(2., max(0., _number(c.get("weight_ticks"))) / max(1., _number(c.get("blocker_weight_ticks"))))
+    # Only a predeclared tie heuristic; a ratio is not a profitable-exchange proof.
+    return (not bool(c.get("anchor_selected")), alignment,
+            _number(c.get("slot_gap_ticks")), ratio,
+            1e6 - _number(c.get("slot_jaccard_with_best_ppm"), 1e6))
 
 
 class PlanController:
-    """Frozen whole-interval credit state used by the LLM execution path.
+    """Matched classical selectors over all current single and directed plans.
 
-    The classical choose() implementations are on the controls branch.
-    State initialization and update arithmetic remain the original C05 code.
+    LinUCB shares one ridge model across candidate features; kNN also transfers
+    observations across slot/root choices. Bandit shares each template/followup
+    family. No directed warm observations are invented. The first decision is
+    spread; subsequent argmax evaluates every valid plan, without serially
+    initializing up to 117 independent arms. Rule/static are explicit baselines.
     """
     def __init__(self, kind="linucb", seed=7, alpha=.25, ridge=1.):
         if kind not in ("rule", "bandit", "linucb", "knn", "static"):
@@ -342,3 +356,54 @@ class PlanController:
         self.observations += 1
         return {"reward": reward, "family": family, "credit_scope": "whole_decision_interval_original_incumbent_gain"}
 
+    def choose(self, packet, plans):
+        if not isinstance(plans, dict) or not plans:
+            raise ValueError("A nonempty frozen plan registry is required")
+        fallback = "spread" if "spread" in plans else min(plans)
+        if self.kind == "static" or (not self.observations and self.kind not in ("rule",)):
+            self.last_scores = {pid: {"score": None, "reason": "untrained_shared_model_spread_fallback"} for pid in plans}
+            return fallback
+        t = _mapping(packet.get("telemetry"))
+        if self.kind == "rule":
+            repairs = [p for p in plans.values() if p.get("operation")]
+            if repairs and _number(t.get("stagnation_seconds")) >= 40. and \
+               _number(t.get("diversity_ppm")) < 200000 and _number(t.get("remaining_seconds"), 360.) >= 32.:
+                # Recovery on a collapsed persistent plateau, then diffuse again.
+                spread_repairs = [p for p in repairs if p["steps"][-1]["action"] == "spread"] or repairs
+                ordered = sorted(spread_repairs, key=lambda p: p["plan_id"])
+                return max(ordered, key=_structural_rank)["plan_id"]
+            return fallback
+        theta = self.inverse @ self.b
+        scores = {}
+        for pid in sorted(plans):
+            descriptor = plans[pid]
+            x = plan_features(packet, descriptor)
+            family = _family(descriptor)
+            if self.kind == "bandit":
+                age = max(0., _number(t.get("elapsed_seconds")) - self.family_last_credit_elapsed.get(family, _number(t.get("elapsed_seconds"))))
+                # A two-cadence (80 wall-second) half-life is predeclared. Aging
+                # an estimate is a controller prior, never a new measured gain.
+                recency_weight = math.exp(-math.log(2.) * age / 80.)
+                estimate = self.family_means.get(family, 0.) * recency_weight
+                uncertainty = self.alpha * math.sqrt(math.log(2 + self.observations) / (1 + self.family_counts[family] * recency_weight))
+            elif self.kind == "knn":
+                neighbors = sorted(((float(np.linalg.norm(x - v)), reward) for v, reward in self.samples), key=lambda p: p[0])[:5]
+                weights = [1. / (.2 + distance) for distance, _ in neighbors]
+                estimate = sum(w * reward for w, (_, reward) in zip(weights, neighbors)) / max(1e-12, sum(weights))
+                uncertainty = self.alpha / math.sqrt(1. + sum(weights))
+            else:
+                estimate = float(theta @ x)
+                uncertainty = self.alpha * math.sqrt(max(0., float(x @ self.inverse @ x)))
+            # A small decaying spread preference is a declared policy prior,
+            # never presented as a measured warm-start observation.
+            safety_prior = .1 / (1 + self.observations) if pid == fallback else 0.
+            scores[pid] = {"score": estimate + uncertainty + safety_prior,
+                           "estimate": estimate, "optimism": uncertainty,
+                           "declared_spread_prior": safety_prior, "family": family}
+            if self.kind == "bandit":
+                scores[pid]["family_recency_weight"] = recency_weight
+        self.last_scores = scores
+        maximum = max(v["score"] for v in scores.values())
+        ties = [pid for pid in sorted(scores) if math.isclose(scores[pid]["score"], maximum, abs_tol=1e-12, rel_tol=0.)]
+        # Structural ties share parameters; they are not independent cold arms.
+        return max(ties, key=lambda pid: (_structural_rank(plans[pid]), pid == fallback))

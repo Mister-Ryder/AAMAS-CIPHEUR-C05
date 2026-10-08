@@ -1,0 +1,32 @@
+{
+  "schema": "cipheur_c05_controls_release_v1",
+  "base_protocol": "protocol.json",
+  "original_total_positions": 280,
+  "additional_control_positions": 240,
+  "methods": [
+    "rule",
+    "bandit",
+    "linucb",
+    "knn",
+    "adaptive",
+    "static"
+  ],
+  "paired_unit": "same graph_id and seed; 40 paired positions per LLM-versus-control contrast",
+  "audit": {
+    "audited_positions": 280,
+    "errors": [],
+    "actual_graph_hashes_verified": 8,
+    "ticks_per_second": 1000000,
+    "checks": [
+      "selected vertices unique and in range",
+      "integer sum equals reported objective",
+      "no selected graph-edge conflicts",
+      "actual input file SHA256 equals preregistration"
+    ],
+    "limitations": [
+      "Physical schedule constraints were not independently reconstructed in this extraction; graph-edge feasibility and integer objective were independently checked.",
+      "Seed sets differ from other historical batches."
+    ]
+  },
+  "organization": "The main branch contains 40 LLM records and a seven-mode summary; this branch adds the six control modes and complete paired numeric differences."
+}

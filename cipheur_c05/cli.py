@@ -14,9 +14,10 @@ from cipheur_v06.plan_solver import solve
 
 
 def main():
-    parser = argparse.ArgumentParser(description="C05 LLM selector; classical selectors are on the non-llm-controls branch.")
+    parser = argparse.ArgumentParser(description="C05 shared finite-plan selectors on the non-llm-controls branch.")
     parser.add_argument("graph", type=Path, help="Integer MWIS graph: NPZ, JSON, or weighted METIS")
     parser.add_argument("--out", required=True, type=Path, help="New result JSON; existing files are never overwritten")
+    parser.add_argument("--mode", choices=("llm", "rule", "bandit", "linucb", "knn", "static", "adaptive"), default="llm")
     parser.add_argument("--seed", default=67, type=int)
     parser.add_argument("--seconds", default=360.0, type=float)
     parser.add_argument("--graph-id", help="Portable graph identifier; defaults to the input stem")
@@ -26,10 +27,10 @@ def main():
     if not args.graph.is_file():
         parser.error("The input graph does not exist.")
     config = Config(seconds=args.seconds, seed=args.seed)
-    provider = PlanProvider()
-    result = solve(args.graph, "llm", config, provider, graph_id=args.graph_id or args.graph.stem)
+    provider = PlanProvider() if args.mode == "llm" else None
+    result = solve(args.graph, args.mode, config, provider, graph_id=args.graph_id or args.graph.stem)
     result["graph_path"] = args.graph.name
-    result["public_release_entrypoint"] = "C05 LLM; original solve function with classical modes disabled"
+    result["public_release_entrypoint"] = "C05 original solve function and shared classical selectors"
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with args.out.open("x", encoding="utf-8") as stream:
         json.dump(result, stream, ensure_ascii=False, indent=2)

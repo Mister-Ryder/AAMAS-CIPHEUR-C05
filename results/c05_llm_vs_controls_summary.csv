@@ -1,0 +1,7 @@
+control,n,mean_llm_minus_control_contact_seconds,llm_wins,ties,llm_losses
+rule,40,187.69063640000002,23,0,17
+bandit,40,141.932995025,25,0,15
+linucb,40,-151.158093625,19,0,21
+knn,40,-270.463749,15,0,25
+adaptive,40,3502.365647625,40,0,0
+static,40,233.51797275,23,0,17

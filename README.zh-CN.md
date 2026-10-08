@@ -1,5 +1,7 @@
 # AAMAS · CIPHEUR C05
 
+当前为 **non-llm-controls** 分支，选择器定义与运行命令见 [分支说明](docs/CONTROLS.md)。
+
 [English](README.md) · [问题模型与符号](docs/MODEL_AND_PSEUDOCODE.md) · [LaTeX 伪代码](docs/c05_model_algorithm.tex) · [PDF](docs/c05_model_algorithm.pdf) · [算法细节](docs/ALGORITHM.md) · [结果与实验参数](docs/RESULTS.md)
 
 本仓库整理 CIPHEUR v0.6.0 的 C05：四解种群的持续原生搜索，以及根据搜索证据异步选择有限结构计划的 LLM 控制层。目标为总接触时长，内部使用整数 ticks。
