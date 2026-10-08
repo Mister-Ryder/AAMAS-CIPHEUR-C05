@@ -1,0 +1,32 @@
+{
+  "schema": "cipheur_chils_p4_900s_public_registration_v1",
+  "original_registration_sha256": "e0e34981681e54f33996e013ffcb42a128dc660c37a1c70635a33e553e79c29e",
+  "original_source_manifest_sha256": "6b0cd52d68557eb6d20d07248fe148c78e50c8c2aa2ed71e16a3b05a4fff0ea9",
+  "original_build_receipt_sha256": "21b4ea461930c2b942bc9ce35e8c8550280a97da4ba1e1941b3f30216f8e1f4f",
+  "native_binary_sha256": "134b238004b3f7ca7fc0ee1b424c9a6826139b86656156e8adc4ecc0acd68736",
+  "upstream_chils_commit": "515952724cd3dcc6c4365a340ecf0f1da782119a",
+  "physical_source": "CP-SCALE-AU-L002",
+  "graph_sha256": {
+    "CP-SCALE-AU-L002__g0340": "f45451c354383da570944ddf0fc7898e9cd7056ac0ff54e97a2a2c4b69036697",
+    "CP-SCALE-AU-L002__g0680": "00df7ab3f84b2c1c98462e6a24a6844edfbe3af85b434c40e44bf86efcce2a7b",
+    "CP-SCALE-AU-L002__g1200": "daaf6d54933abd24eb20b16c253177d674328b8555bf6b795088f76ab2e671b0",
+    "CP-SCALE-AU-L002__g1800": "929df9f700cdd73c14aa1aed2a4b8ec88eb4dbaddb0252134dc68e9409a0829b",
+    "CP-SCALE-AU-L002__gW1200_gE0340_s0150": "68fd21ef61b7cfaa228bcc78aa122ab7ed1946dc1e9330e3ca3d0fbf6ff06af3",
+    "CP-SCALE-AU-L002__gW0340_gE1200_s0150": "c19525c20997580aae8cc683586362d193926c2b0a5acb702c039bb37584a967",
+    "CP-SCALE-AU-L002__gW0680_gE1200_s0150": "76b3ce4a426bc2159d59d0c133f7d5e3b01cafc6f3edf2313428f26881023dd4",
+    "CP-SCALE-AU-L002__gW1200_gE0680_s0150": "97eed4ff2c5b4a84d1d1b8e9645e81fe0d40ff8e9fc4daac45e73da590f4615c"
+  },
+  "seeds": [67, 71, 73, 79, 83],
+  "expected_positions": 40,
+  "seconds": 900,
+  "population": 4,
+  "threads": 1,
+  "search_step": 10,
+  "cycles": 9223372036854775807,
+  "ls_iterations": 9223372036854775807,
+  "model_calls": 0,
+  "original_worker_count": 6,
+  "original_cpu_ids": [18, 19, 20, 21, 22, 23],
+  "original_compiler": "gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0",
+  "compiler_flags": ["-std=gnu17", "-O3", "-fopenmp", "-fPIC", "-DNDEBUG", "-shared"]
+}

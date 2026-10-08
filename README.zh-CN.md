@@ -53,7 +53,16 @@ CP-SCALE-AU-L002 八视图，每视图五个种子 `67、71、73、79、83`，�
 
 [900 秒实验资料](experiments/900s-20261009/README.md)使用 CP-SCALE-AU-L002 的相同八视图，每视图五个种子。每次求解保持四解种群、一个原生求解线程。C05-Codex 通过独立的 `gpt-6-luna` 中继在冻结的有限计划表中选择计划，选择次数上限扩展为 21。四种方法共 160 条预注册位置，均通过输入图、目标值、可行性和身份的独立核验。
 
-`main` 分支公开 C05-Codex 的 [40 条数值记录](experiments/900s-20261009/results/positions.csv)、[八视图均值](experiments/900s-20261009/results/by_view.csv)及[审计凭据](experiments/900s-20261009/results/audit_public.json)。八视图等权最终均值为 **1,138,760.36872255 接触秒**；40 次求解共 840 次模型调用，其中 838 次产生有效计划提案。KNN、LinUCB 和 CHILS p4 自定义配置的结果位于 [`non-llm-controls` 分支](https://github.com/Mister-Ryder/AAMAS-CIPHEUR-C05/tree/non-llm-controls/experiments/900s-20261009)。
+[Codex 结果](experiments/900s-20261009/results/)包含 40 条求解位置；本分支另有[对照方法的 120 条数值记录](experiments/900s-20261009/controls/results/positions.csv)、[逐视图均值](experiments/900s-20261009/controls/results/by_view.csv)和[同视图同种子的配对差值](experiments/900s-20261009/controls/results/paired_deltas.csv)。八视图等权最终均值如下，单位为接触秒：
+
+| 方法 | 位置数 | 平均接触秒 |
+|---|---:|---:|
+| C05-Codex（`gpt-6-luna`） | 40 | 1,138,760.36872255 |
+| C05-KNN | 40 | 1,138,451.911341275 |
+| C05-LinUCB | 40 | 1,138,417.6763745 |
+| CHILS-p4-custom（`search_step=10`） | 40 | 1,134,942.785685025 |
+
+Codex 组共 840 次模型调用，其中 838 次产生有效计划提案。[Codex 审计凭据](experiments/900s-20261009/results/audit_public.json)和[对照组审计凭据](experiments/900s-20261009/controls/results/audit_public.json)记录私有审计及原始结果的 SHA256。
 
 ## 运行
 

@@ -1,0 +1,29 @@
+{
+  "schema": "cipheur_chils_p4_public_source_manifest_v1",
+  "frozen_source_receipt_sha256": "674dc14e477e6ef3d146e3599f71481158bd8cb3260d1bd5bf193f15a72e746b",
+  "copied_exact_origin_files": {
+    "cipheur_chils/__init__.py": "8884a9c216da84c514637d2a61ed69f36756a3083c7f695b883bfabbcadc66b1",
+    "cipheur_chils/__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+    "cipheur_chils/actions.py": "2543feb663b0489ae811e10009cfac2cb47dc8f968a72f3fea77581893c52863",
+    "cipheur_chils/authoring.py": "e102f24bd5a81b25f5efce454472776c3cf2b1aeb6cab4b717fd579ba702fa7c",
+    "cipheur_chils/certificates.py": "75a0a40ed13b526b76c400bfabcb1e9e66195dae79576c1ef5c99e07ae00b6b8",
+    "cipheur_chils/cli.py": "dc64c18607b88437a742d8b6599e543df08709115915caa3d8a185f6a073cc59",
+    "cipheur_chils/dsl.py": "3a07c815838f0d8df1f5e82fd38ae73526a31e866dd747996a46bcf577b2ac3f",
+    "cipheur_chils/graph.py": "e508839dbb871ae2162f572414fc7731fef2bf0951641a60c65b7e46ac1fa719",
+    "cipheur_chils/native.py": "39b31cd2aef1b9d69b9b5b600656e94020337fc71bff1899dbc14a358e7d3f76",
+    "cipheur_chils/oracle.py": "cc631c45c9575ecd3d8db378785e027fdc3aedfff9ce7d854bdf8b4f35d4da28",
+    "cipheur_chils/study.py": "d1784c1ccb392ca26c58c9f61a237b9c44a403b6db20c90cdda3fa04d0d114ca",
+    "native/bridge.c": "0b35b1a779c0f0f8a35bd0fdda6e3797de339c6d0d031d7184ab6e0293bcf6c2",
+    "native/bridge.h": "171b177dca2f8700f9b8f949af88ce4ab94ce7fe078ec0b129a60bc6053fe28a",
+    "third_party/CHILS/LICENSE": "9a3ab6868798da45b3f43fb7b56795dbd21d442f10d9d74295f1ab0a30b97997",
+    "third_party/CHILS/include/chils_internal.h": "9f9632a69552c501daec03300fd4c8f2f87190904a12ec167b6929581baf179e",
+    "third_party/CHILS/include/graph.h": "8e9d38b0c80c68a073440da50759f5770caa36e4467cbdd282ab11cca0bdeba8",
+    "third_party/CHILS/include/local_search.h": "64bf1cec407f3e38f331a4c0f17d773f58e3f14988b93923f9514cadd32dbd0b",
+    "third_party/CHILS/src/chils_internal.c": "3957fe991dfbd0913b74f6608ead3b217cdf7bf61eb329af95a669eb176a9937",
+    "third_party/CHILS/src/graph.c": "4b684cf91ece5690ede3fe1fa80237e8081aef3204001e99f0db10ad11e9db26",
+    "third_party/CHILS/src/local_search.c": "72b9ce55083d5c4f4e5b91ba02a95cad01776b3b047c280eb96e4bca4cc3ac6e"
+  },
+  "binary_sha256": "134b238004b3f7ca7fc0ee1b424c9a6826139b86656156e8adc4ecc0acd68736",
+  "build_receipt_sha256": "21b4ea461930c2b942bc9ce35e8c8550280a97da4ba1e1941b3f30216f8e1f4f",
+  "original_source_manifest_sha256": "6b0cd52d68557eb6d20d07248fe148c78e50c8c2aa2ed71e16a3b05a4fff0ea9"
+}

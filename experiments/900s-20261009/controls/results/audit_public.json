@@ -1,0 +1,106 @@
+{
+  "schema": "cipheur_c05_900s_public_controls_audit_v1",
+  "protocol_sha256": "8bc9f73dc72ddc1aa862091a1d495d3a96a90694bfe5b46b00af259721f55e27",
+  "private_audit_sha256": "cd44c6fac6737175a8e557b8606ff418950df8a8bb867b0a7d79e99255c000dc",
+  "private_positions_csv_sha256": "741b806379cb6493c50b499bb849489e354e4e9f5b164a6bc7de9ca7cc286138",
+  "private_by_view_csv_sha256": "84f91cf7f59391f5655105091cc4503bd4b14bddc1951a0e9c381a1ae4148d33",
+  "private_paired_deltas_csv_sha256": "5d85a72f245708ac652089b6fa717d914c7075267a0dca3714eea4c4d8b80f48",
+  "expected_positions": 160,
+  "audited_valid_positions": 160,
+  "complete_valid_frame": true,
+  "branch": "non-llm-controls",
+  "registration_hashes": {
+    "source_patch_record_sha256": "52e72bc762b0b8f9c4403bd6899ce6e8c6bf415a4379ee56e07daad01f87c650",
+    "patched_contracts_sha256": "9a5e63d345e097ac35f3914ff438deb492202579e5313013f80d503300c53e69",
+    "controls_runner_sha256": "b23589c69b80f9790de0b27a1c2845e868e80bbccd328ee82cd2f3315d17fa57",
+    "codex_launch_sha256": "6483b70decb72c598c49e3dc45ce68168c5a3ad0700234f0493db7cbc34e2a07",
+    "chils_registration_sha256": "e0e34981681e54f33996e013ffcb42a128dc660c37a1c70635a33e553e79c29e"
+  },
+  "method_summaries": [
+    {
+      "arm": "knn",
+      "valid_positions": 40,
+      "expected_positions": 40,
+      "mean_ticks_exact": "45538076453651/40",
+      "mean_contact_seconds": "1138451.911341275",
+      "min_contact_seconds": "682467.274598",
+      "max_contact_seconds": "1627519.455066",
+      "mean_wall_seconds": 900.0129111126996,
+      "max_wall_seconds": 900.0282313376665,
+      "mean_cpu_seconds": 897.7789439421251,
+      "total_model_calls": null,
+      "total_valid_model_proposals": null
+    },
+    {
+      "arm": "linucb",
+      "valid_positions": 40,
+      "expected_positions": 40,
+      "mean_ticks_exact": "2276835352749/2",
+      "mean_contact_seconds": "1138417.6763745",
+      "min_contact_seconds": "682392.955036",
+      "max_contact_seconds": "1627037.53383",
+      "mean_wall_seconds": 900.0126860223711,
+      "max_wall_seconds": 900.0269169099629,
+      "mean_cpu_seconds": 897.9331195440251,
+      "total_model_calls": null,
+      "total_valid_model_proposals": null
+    },
+    {
+      "arm": "chils_p4_custom",
+      "valid_positions": 40,
+      "expected_positions": 40,
+      "mean_ticks_exact": "45397711427401/40",
+      "mean_contact_seconds": "1134942.785685025",
+      "min_contact_seconds": "680815.490333",
+      "max_contact_seconds": "1625528.154095",
+      "mean_wall_seconds": 900.0105834189802,
+      "max_wall_seconds": 900.0924603044987,
+      "mean_cpu_seconds": 899.5854011288,
+      "total_model_calls": null,
+      "total_valid_model_proposals": null
+    }
+  ],
+  "codex_paired_summaries": [
+    {
+      "reference": "codex",
+      "comparison": "knn",
+      "paired_positions": 40,
+      "mean_delta_ticks_exact": "12338295251/40",
+      "mean_delta_contact_seconds": "308.457381275",
+      "wins": 24,
+      "ties": 0,
+      "losses": 16
+    },
+    {
+      "reference": "codex",
+      "comparison": "linucb",
+      "paired_positions": 40,
+      "mean_delta_ticks_exact": "6853846961/20",
+      "mean_delta_contact_seconds": "342.69234805",
+      "wins": 24,
+      "ties": 0,
+      "losses": 16
+    },
+    {
+      "reference": "codex",
+      "comparison": "chils_p4_custom",
+      "paired_positions": 40,
+      "mean_delta_ticks_exact": "152703321501/40",
+      "mean_delta_contact_seconds": "3817.583037525",
+      "wins": 40,
+      "ties": 0,
+      "losses": 0
+    }
+  ],
+  "native_hashes_by_arm": {
+    "knn": {
+      "83f7114e04b2e92a302573bd579541efae62d59114cef080a372f30bf01faf4c": 40
+    },
+    "linucb": {
+      "83f7114e04b2e92a302573bd579541efae62d59114cef080a372f30bf01faf4c": 40
+    },
+    "chils_p4_custom": {
+      "134b238004b3f7ca7fc0ee1b424c9a6826139b86656156e8adc4ecc0acd68736": 40
+    }
+  }
+}

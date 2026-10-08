@@ -52,7 +52,16 @@ See [results](docs/RESULTS.md) for per-view values, runtime fields, input hashes
 
 The [900-second experiment package](experiments/900s-20261009/README.md) records the same eight CP-SCALE-AU-L002 views and five seeds per view. Each position uses population four and one native solver thread. C05-Codex uses a detached `gpt-6-luna` relay with the frozen finite-plan registry and an extended 21-selection cap. The full registered matrix has 160 positions across four methods and passed independent graph, objective, feasibility and identity checks.
 
-The `main` branch contains the 40 C05-Codex [numeric position records](experiments/900s-20261009/results/positions.csv), [eight view means](experiments/900s-20261009/results/by_view.csv), and [audit receipt](experiments/900s-20261009/results/audit_public.json). Its equal-view final mean is **1,138,760.36872255 contact-seconds**. The 40 positions made 840 model calls, with 838 valid plan proposals. The KNN, LinUCB and CHILS p4 custom records are in [`non-llm-controls`](https://github.com/Mister-Ryder/AAMAS-CIPHEUR-C05/tree/non-llm-controls/experiments/900s-20261009).
+The [Codex results](experiments/900s-20261009/results/) contain 40 positions, and this branch adds [120 control positions](experiments/900s-20261009/controls/results/positions.csv), [control view means](experiments/900s-20261009/controls/results/by_view.csv), and [same-view/seed deltas](experiments/900s-20261009/controls/results/paired_deltas.csv). Final equal-view means, in contact-seconds, are:
+
+| Method | Positions | Mean contact-seconds |
+|---|---:|---:|
+| C05-Codex (`gpt-6-luna`) | 40 | 1,138,760.36872255 |
+| C05-KNN | 40 | 1,138,451.911341275 |
+| C05-LinUCB | 40 | 1,138,417.6763745 |
+| CHILS-p4-custom (`search_step=10`) | 40 | 1,134,942.785685025 |
+
+The Codex arm made 840 model calls, with 838 valid plan proposals. The [shared audit receipt](experiments/900s-20261009/results/audit_public.json) and [control audit receipt](experiments/900s-20261009/controls/results/audit_public.json) retain hashes of the private audit and original results.
 
 ## Build and run
 
