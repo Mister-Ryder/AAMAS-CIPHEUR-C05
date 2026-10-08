@@ -1,0 +1,26 @@
+{
+  "schema": "cipheur_c05_codex_900s_public_transport_provenance_v1",
+  "model": "gpt-6-luna",
+  "files": {
+    "c05_codex_relay.py": {
+      "deployed_sha256": "190dd9eb1292a196bf7cd447bc61a4f58a959b473fff96b755b630114671f9b9",
+      "public_sha256": "190dd9eb1292a196bf7cd447bc61a4f58a959b473fff96b755b630114671f9b9",
+      "adaptation": "byte-identical"
+    },
+    "run_codex_900.py": {
+      "deployed_sha256": "75925e65cdf38244bbb028a0b7f5a58d6a883714ed6e12f706120f639389ec1a",
+      "public_sha256": "8246680b48a0d6e1321dc8b916dad0a33217d0df164e18d0fef0ce855962f7e6",
+      "adaptation": "Replace machine-specific experiment, input and relay-secret paths with environment variables; allow six permitted CPU IDs to be supplied explicitly. Registered algorithm parameters and result fields are unchanged."
+    },
+    "launch_codex_900.sh": {
+      "deployed_sha256": "9f7a53e0852c8cf8f938f52a9b9035daaedb573e64a12f86a9117ccd265497be",
+      "public_sha256": "2a56ad933f576ad6edcd75a77f1112054d34a86c19e5a3aefc06eb050b8e971e",
+      "adaptation": "Take the experiment root, runner path and Python executable from environment variables."
+    },
+    "codex_reverse_tunnel.py": {
+      "deployed_sha256": "c72286bcd81753067f53953c0f18f35534725ac341883e799b5323cf1f516e61",
+      "public_sha256": "d12cf65bb4e784933ecf635e98987a2c97a00d5a56091790dd77a4f0df4019ca",
+      "adaptation": "Replace the local private SSH helper with explicit host/user/authentication arguments and verified host-key loading. Loopback forwarding behavior is preserved."
+    }
+  }
+}

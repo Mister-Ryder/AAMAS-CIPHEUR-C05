@@ -30,7 +30,7 @@ The main branch retains the shared feature construction and interval-update book
 
 The detailed [algorithm specification](docs/ALGORITHM.md) maps these components to their implementation, response schema, priority templates, timing and execution rules.
 
-## Recorded experiment
+## Recorded 360-second experiment
 
 CP-SCALE-AU-L002; eight constraint views; seeds `67, 71, 73, 79, 83`; 360 seconds per run; population 4; one native thread per run. The historical batch used 16 independent workers. Each selector has 40 runs.
 
@@ -47,6 +47,12 @@ The reported mean is the arithmetic mean of five seeds within each view, followe
 | Adaptive | 1,133,859.369542 | non-llm-controls |
 
 See [results](docs/RESULTS.md) for per-view values, runtime fields, input hashes, source receipts and the aggregation procedure.
+
+## Registered 900-second experiment (9 October 2026)
+
+The [900-second experiment package](experiments/900s-20261009/README.md) records the same eight CP-SCALE-AU-L002 views and five seeds per view. Each position uses population four and one native solver thread. C05-Codex uses a detached `gpt-6-luna` relay with the frozen finite-plan registry and an extended 21-selection cap. The full registered matrix has 160 positions across four methods and passed independent graph, objective, feasibility and identity checks.
+
+The `main` branch contains the 40 C05-Codex [numeric position records](experiments/900s-20261009/results/positions.csv), [eight view means](experiments/900s-20261009/results/by_view.csv), and [audit receipt](experiments/900s-20261009/results/audit_public.json). Its equal-view final mean is **1,138,760.36872255 contact-seconds**. The 40 positions made 840 model calls, with 838 valid plan proposals. The KNN, LinUCB and CHILS p4 custom records are in [`non-llm-controls`](https://github.com/Mister-Ryder/AAMAS-CIPHEUR-C05/tree/non-llm-controls/experiments/900s-20261009).
 
 ## Build and run
 

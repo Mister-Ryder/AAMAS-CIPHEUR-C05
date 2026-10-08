@@ -1,5 +1,13 @@
 # C05 results, protocol, and data fields
 
+## Registered 900-second extension
+
+The [900-second experiment package](../experiments/900s-20261009/README.md) covers the same eight CP-SCALE-AU-L002 constraint views and seeds 67, 71, 73, 79, 83. The registered four-method matrix has 160 positions, with a 900-second end-to-end budget, population four and one native thread per position. Its independent audit accepted 160/160 positions after checking graph hashes, result identity, selected-set feasibility and exact integer objective reconstruction.
+
+The `main` branch publishes C05-Codex only: [40 position metrics](../experiments/900s-20261009/results/positions.csv), [eight view means](../experiments/900s-20261009/results/by_view.csv), and the [audit receipt](../experiments/900s-20261009/results/audit_public.json). The equal-view mean is **1,138,760.36872255 contact-seconds**. The 40 positions contain 840 calls to `gpt-6-luna` and 838 valid plan proposals. Public metrics retain SHA256 links to the private audit and model-I/O archive; raw model exchanges are stored outside Git. The three control methods are released on [`non-llm-controls`](https://github.com/Mister-Ryder/AAMAS-CIPHEUR-C05/tree/non-llm-controls/experiments/900s-20261009).
+
+## Archived 360-second experiment
+
 This release includes the archived C05 LLM replication on **CP-SCALE-AU-L002**: eight views times five seeds, **40/40 completed positions**, with a final equal-weight mean of **1,137,361.735 contact-seconds**. The objective is maximized total contact duration.
 
 ## Evaluation protocol

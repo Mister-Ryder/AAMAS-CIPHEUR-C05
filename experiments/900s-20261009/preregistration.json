@@ -1,0 +1,52 @@
+{
+  "schema": "cipheur_c05_900s_preregistration_v1",
+  "study": "C05 900-second Codex and matched-control evaluation on CP-SCALE-AU-L002",
+  "phase": "seed_replication_900s_20261009",
+  "physical_source": "CP-SCALE-AU-L002",
+  "graph_sha256": {
+    "CP-SCALE-AU-L002__g0340": "f45451c354383da570944ddf0fc7898e9cd7056ac0ff54e97a2a2c4b69036697",
+    "CP-SCALE-AU-L002__g0680": "00df7ab3f84b2c1c98462e6a24a6844edfbe3af85b434c40e44bf86efcce2a7b",
+    "CP-SCALE-AU-L002__g1200": "daaf6d54933abd24eb20b16c253177d674328b8555bf6b795088f76ab2e671b0",
+    "CP-SCALE-AU-L002__g1800": "929df9f700cdd73c14aa1aed2a4b8ec88eb4dbaddb0252134dc68e9409a0829b",
+    "CP-SCALE-AU-L002__gW1200_gE0340_s0150": "68fd21ef61b7cfaa228bcc78aa122ab7ed1946dc1e9330e3ca3d0fbf6ff06af3",
+    "CP-SCALE-AU-L002__gW0340_gE1200_s0150": "c19525c20997580aae8cc683586362d193926c2b0a5acb702c039bb37584a967",
+    "CP-SCALE-AU-L002__gW0680_gE1200_s0150": "76b3ce4a426bc2159d59d0c133f7d5e3b01cafc6f3edf2313428f26881023dd4",
+    "CP-SCALE-AU-L002__gW1200_gE0680_s0150": "97eed4ff2c5b4a84d1d1b8e9645e81fe0d40ff8e9fc4daac45e73da590f4615c"
+  },
+  "seeds": [67, 71, 73, 79, 83],
+  "arms": ["codex", "knn", "linucb", "chils_p4_custom"],
+  "expected_positions_per_arm": 40,
+  "expected_positions_total": 160,
+  "paired_unit": "same graph_id and seed for all arms",
+  "budget": {
+    "wall_seconds_per_position": 900,
+    "population": 4,
+    "native_threads_per_position": 1,
+    "planned_parallel_workers": {"codex": 6, "c05_controls": 12, "chils_p4_custom": 6}
+  },
+  "c05_selection_protocol": {
+    "first_decision_seconds": 20,
+    "decision_interval_seconds": 40,
+    "planned_dwell_seconds": 24,
+    "request_timeout_seconds": 45,
+    "response_ttl_seconds": 60,
+    "max_model_calls_per_position": 21,
+    "plan_space": "frozen C05 finite whole-plan registry"
+  },
+  "chils_protocol": {
+    "variant": "original CHILS p4, custom matched configuration",
+    "population": 4,
+    "search_step": 10,
+    "thread_count": 1
+  },
+  "primary_outcome": "integer objective value_ticks; convert to contact-seconds by dividing by 1000000",
+  "audit": [
+    "input graph bytes match this registration",
+    "result graph, seed, arm, budget and source hashes match the launched position",
+    "selected contact IDs are unique, in range and pairwise nonadjacent",
+    "sum of selected integer weights equals reported value_ticks",
+    "only status=ok and independently verified feasible positions enter complete-case means"
+  ],
+  "data_lineage": "Eight constraint views of one physical contact source; views are not independent datasets.",
+  "isolation": "All 900-second outputs must live under a new root, separate from the 360-second historical results."
+}
