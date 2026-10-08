@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aamas-cipheur-c05"
+version = "0.6.0.5"
+description = "CIPHEUR C05 finite structural-plan control over a four-trajectory native search"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24"]
+license = {text = "MIT"}
+
+[project.scripts]
+cipheur-c05 = "cipheur_c05.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["cipheur_c05*", "cipheur_v06*", "cipheur_v05*", "cipheur_v04*", "cipheur_cex*", "cipheur_common*"]

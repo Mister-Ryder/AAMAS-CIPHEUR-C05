@@ -1,0 +1,49 @@
+{
+  "schema": "cipheur-c05-figures-v2",
+  "basis": "../c05_model_algorithm.tex; Algorithm 1-3",
+  "diagram_structure": "two independent parallel lanes: external LLM selection and persistent native population search",
+  "exporter": "draw.io Desktop 24.7.17",
+  "validation": "Fresh exports; both vector PDFs rendered through Poppler and visually inspected; editable XML and SVG parsed; PNG pixels loaded",
+  "files": [
+    {
+      "file": "c05-flowchart.drawio",
+      "bytes": 32756,
+      "sha256": "81d7de3191a8ed53e381f2fa078886b4a32d4b856bd219d74ec0188e7c61b355"
+    },
+    {
+      "file": "c05-flowchart.drawio.pdf",
+      "bytes": 123788,
+      "sha256": "9018678551ba7a9c88b2f43fde6032a77e0e37bccb517d4693504980315ee80d"
+    },
+    {
+      "file": "c05-flowchart.drawio.svg",
+      "bytes": 106378,
+      "sha256": "b3642fca3907ffbde7a30e4eec885e62b61a5754525ec2bf1d68374052ce9d39"
+    },
+    {
+      "file": "c05-flowchart.png",
+      "bytes": 587127,
+      "sha256": "67ea03becdcb91cd7a91acde6c99f1f11f8ab8e77d89045088b7fb74a6b4f875"
+    },
+    {
+      "file": "c05-flowchart-zh.drawio",
+      "bytes": 32712,
+      "sha256": "d371dfb1fad61d8dedb27424487e97633cce098587e531b7d938faa27873a564"
+    },
+    {
+      "file": "c05-flowchart-zh.drawio.pdf",
+      "bytes": 145615,
+      "sha256": "5b2599ef4cd65794ccea81a4c4bc92801433c76fa5341e493ebe2bf925476d7b"
+    },
+    {
+      "file": "c05-flowchart-zh.drawio.svg",
+      "bytes": 106415,
+      "sha256": "7d06f676e0bc80d904cde92ea2bfd1ad9ce5292fbb52ea91981d6478d899995a"
+    },
+    {
+      "file": "c05-flowchart-zh.png",
+      "bytes": 606506,
+      "sha256": "1d045bdb624d23f39c20cdaa7b627f790bdeefa913240f217d420a19a752e9bc"
+    }
+  ]
+}

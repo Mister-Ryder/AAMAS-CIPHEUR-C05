@@ -1,0 +1,293 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=19mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,tabularx,array}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlength{\tabcolsep}{5pt}
+\SetKwInOut{Input}{Input}
+\SetKwInOut{Output}{Output}
+\SetKw{Return}{return}
+\SetKw{Continue}{continue}
+\SetKw{Break}{break}
+\SetAlFnt{\small}
+\SetAlgoNlRelativeSize{-1}
+\SetAlCapFnt{\bfseries}
+\SetAlCapNameFnt{\bfseries}
+\newcommand{\Pop}{\mathcal P}
+\newcommand{\Reg}{\mathcal Q}
+\newcommand{\Hist}{\mathcal H}
+\newcommand{\Trace}{\mathcal Z}
+\newcommand{\LLM}{\mathcal L_{\phi}}
+\newcommand{\Native}{\operatorname{Native}}
+\newcommand{\Best}{\operatorname{best}}
+\newcommand{\Adapt}{\pi_{\mathrm{adapt}}}
+\newcommand{\Blank}{\varnothing}
+\newcommand{\Ind}{\mathbf 1}
+
+\begin{document}
+\begin{center}
+{\Large\bfseries CIPHEUR C05: Problem Model and Algorithms}\\[3pt]
+{\small Fixed-contact scheduling; finite structural plans; asynchronous selection}
+\end{center}
+
+\textbf{Problem model.}
+An instance is $\mathcal I=(\mathcal S,\mathcal A,V,\delta^A,\delta^S)$,
+where $\mathcal S$ and $\mathcal A$ are satellites and antennas. Each contact
+$v=(s_v,a_v,b_v,e_v)\in V$ is a complete predefined visibility window, with
+fixed satellite, antenna, start time, and end time. The decision is to select
+or omit the entire contact; its start and duration are not decision variables.
+Its positive weight is $w_v=e_v-b_v$, represented in integer time ticks.
+The resource separation requirements are $\delta^A_a$ and $\delta^S_s$.
+
+Order two distinct contacts as $i\prec j$ by $(b_i,i)<(b_j,j)$ and define
+$\Delta_{ij}=b_j-e_i$. The conflict graph is $G=(V,E)$, where
+\begin{align*}
+E_A&=\{\{i,j\}:i\prec j,\ a_i=a_j,\ \Delta_{ij}<\delta^A_{a_i}\},\\
+E_S&=\{\{i,j\}:i\prec j,\ s_i=s_j,\ \Delta_{ij}<\delta^S_{s_i}\},
+\qquad E=E_A\cup E_S.
+\end{align*}
+Equality to one resource's required gap is compatible for that resource;
+the other shared resource can still introduce a conflict. The supplied
+instance has no separate station or pass-identity conflict rule.
+The scheduling problem is
+\begin{equation}
+\max_{x\in\{0,1\}^{|V|}}\sum_{v\in V}w_vx_v
+\quad\text{subject to}\quad x_i+x_j\leq1\quad(\{i,j\}\in E).
+\label{eq:model}
+\end{equation}
+Equivalently, select an independent set $X\subseteq V$ and maximize
+$F(X)=\sum_{v\in X}w_v$. Graph edges and original weights remain the
+authority for every feasibility check and objective evaluation.
+
+\textbf{Unified notation.}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}p{.25\linewidth}X@{}}
+\toprule
+Symbol & Meaning \\
+\midrule
+$G=(V,E)$; $X$; $F(X)$ & Conflict graph; feasible schedule; original integer objective.\\
+$\Pop=(X_0,\ldots,X_{m-1})$ & Persistent population of feasible search trajectories.\\
+$X^*$; $j_{\Best}(\Pop)$ & Historical incumbent; current best population slot (lowest index breaks ties).\\
+$\Trace$; $\Hist$; $\Hist_k$ & Native progress trace; closed interval ledger; its bounded visible history at opportunity $k$.\\
+$o_k$; $\Reg_k$ & Observation and finite plan registry bound to decision opportunity $k$.\\
+$\pi$; $\pi_k$; $\Adapt$ & Active plan; selected plan for opportunity $k$; initial/fallback adaptive plan.\\
+$\LLM$ & Asynchronous LLM selector over the exact plans in $\Reg_k$.\\
+$\sigma=(h,\eta,t_h)$ & Current step index, entry flag, and start time of its current dwell interval.\\
+$J(o_k)$; $R(o_k)$ & Eligible target slots; observed contact anchors.\\
+$\mathcal C$; $\mathcal A_{\rm rec}$ & Resource templates; recovery actions $\{\mathrm{spread},\mathrm{merge}\}$.\\
+$T$; $\varepsilon$; $d_h$ & Soft total wall-time budget; native epoch cap; planned dwell of step $h$.\\
+$\ell$; $\Delta F_\ell$; $\Delta P_\ell$ & An installed interval; incumbent gain; population objective-sum change.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+Slot zero and the current best slot are protected from directed reseeding.
+The population size, dwell durations, decision cadence, and admissible
+decision horizon are fixed protocol parameters; their experimental values
+are specified separately from the algorithms.
+
+\clearpage
+\begin{algorithm}[H]
+\caption{CIPHEUR C05: asynchronous finite-plan control}
+\label{alg:main}
+\Input{Scheduling instance $\mathcal I$; population size $m$; LLM selector
+$\LLM$; total budget $T$; epoch cap $\varepsilon$; fixed decision protocol.}
+\Output{A feasible historical incumbent $X^*$.}
+Construct or load $G$ from $\mathcal I$\;
+$X^{(0)}\gets$ feasible degree-weight seed on $G$\;
+$\Pop\gets\operatorname{NativeInitialize}(G,X^{(0)},m)$;
+$X^*\gets\arg\max_{X\in\Pop\cup\{X^{(0)}\}}F(X)$\;
+$\Trace\gets\Blank$; $\Hist\gets\Blank$; $k\gets0$\;
+$o\gets\operatorname{Observe}(G,\Pop,X^*,\Trace,\Hist)$\;
+$\pi\gets\Adapt$; $\sigma\gets\operatorname{StartPlan}(\pi)$;
+$\ell\gets\operatorname{OpenInterval}(\pi,o,\Pop,X^*)$\;
+\While{the total budget remains}{
+  \If{an asynchronous decision $(k,\widehat\pi_k)$ has arrived}{
+    \If{$\operatorname{ValidChoice}(\widehat\pi_k,o_k,\Reg_k)$ and time remains}{
+      $\Hist\gets\Hist\mathbin{\|}\operatorname{CloseInterval}(\ell,\Pop,X^*,\sigma)$\;
+      $\pi\gets$ the exact descriptor of $\widehat\pi_k$ in $\Reg_k$\;
+      $\sigma\gets\operatorname{StartPlan}(\pi)$;
+      $\ell\gets\operatorname{OpenInterval}(\pi,o_k,\Pop,X^*)$\;
+    }
+    Mark the decision request resolved\;
+  }
+  \If{a decision opportunity is due, no request is outstanding, and the protocol permits a new request}{
+    $k\gets k+1$\;
+    $\Hist_k\gets\operatorname{VisibleHistory}(\Hist)$\;
+    $o_k\gets\operatorname{Observe}(G,\Pop,X^*,\Trace,\Hist_k,\pi,\sigma,\ell)$\;
+    $\Reg_k\gets\operatorname{BuildRegistry}(o_k)$\tcp*[r]{Algorithm~\ref{alg:registry}}
+    Request $\widehat\pi_k\gets\LLM(o_k,\Reg_k,\Hist_k)$ asynchronously, without waiting\;
+  }
+  \If{the total budget has expired}{\Break}
+  $(\Pop,X^*,\sigma,z,f)\gets
+  \operatorname{AdvancePlan}(G,\Pop,X^*,\pi,\sigma,\varepsilon)$\tcp*[r]{Algorithm~\ref{alg:execute}}
+  Append the returned native progress record $z$, if present, to $\Trace$\;
+  \If{$f$ requests fallback}{
+    $\Hist\gets\Hist\mathbin{\|}\operatorname{CloseInterval}(\ell,\Pop,X^*,\sigma)$\;
+    $o\gets\operatorname{Observe}(G,\Pop,X^*,\Trace,\Hist)$\;
+    $\pi\gets\Adapt$; $\sigma\gets\operatorname{StartPlan}(\pi)$;
+    $\ell\gets\operatorname{OpenInterval}(\pi,o,\Pop,X^*)$\;
+  }
+}
+Disregard any unresolved decision; close the final interval into $\Hist$\;
+Check that $X^*$ is independent in $G$, recompute $F(X^*)$, and check
+$F(X^*)\geq F(X^{(0)})$\;
+\Return{$X^*$}\;
+\end{algorithm}
+
+\textbf{Selection and execution.}
+The asynchronous selector receives detached evidence. The native state is
+owned by the search process, which continues Algorithm~\ref{alg:execute}
+while a decision is outstanding. An accepted choice identifies a plan already
+present in its observation-bound registry. Validation checks the binding,
+registered descriptor identity, permitted fields, and freshness. Invalid
+choices leave the active plan unchanged. A new request is admitted only at
+an eligible decision opportunity with enough remaining budget.
+
+\textbf{Observation.}
+$o_k$ summarizes objective progress, stagnation, population diversity and
+overlap, remaining time, sampled resource witnesses, target-slot blocker
+evidence, recent closed intervals, and the partially observed active interval.
+An observation is frozen for one decision; later installation does not
+replace its slot or contact identifiers with newly preferred ones.
+
+\clearpage
+\begin{algorithm}[H]
+\caption{BuildRegistry: observation-bound finite plans}
+\label{alg:registry}
+\Input{Frozen observation $o_k$; single-operation catalogue
+$\mathcal A_0$; resource templates $\mathcal C$; recovery actions
+$\mathcal A_{\rm rec}$; fixed dwell parameters.}
+\Output{Finite registry $\Reg_k$ bound to $o_k$.}
+$\Reg_k\gets\Blank$\;
+\ForEach{$a\in\mathcal A_0$}{
+  Add the registered single-step plan $[(a,d_a)]$ with its exact identifier to $\Reg_k$\;
+}
+$R(o_k)\gets$ the bounded set of genuine observed contact anchors\;
+$J(o_k)\gets\{j: j\text{ has target-slot evidence in }o_k,\ j\neq0,
+j\neq j_{\Best}(o_k)\}$\;
+\ForEach{$j\in J(o_k)$}{
+  \ForEach{$r\in R(o_k)$ with target-specific blocker evidence for slot $j$}{
+    \ForEach{$c\in\mathcal C$ with the required resource labels available}{
+      \ForEach{$a\in\mathcal A_{\rm rec}$}{
+        $\pi\gets[(\operatorname{DirectedReseed}(j,r,c),d_{\rm seed}),
+                         (a,d_a)]$\;
+        Bind the exact target $j$, anchor $r$, template $c$, steps, and registered identifier to $\pi$\;
+        $\Reg_k\gets\Reg_k\cup\{\pi\}$\;
+      }
+    }
+  }
+}
+Freeze each descriptor and its identity with observation $o_k$\;
+\Return{$\Reg_k$}\;
+\end{algorithm}
+
+The single-operation catalogue is
+\[
+\mathcal A_0=\{\mathrm{exploit},\mathrm{spread},\mathrm{merge},\mathrm{relay},
+\mathrm{antenna},\mathrm{satellite},\mathrm{kick},\mathrm{reseed},\mathrm{adaptive}\}.
+\]
+The resource templates are $\mathcal C=\{\mathrm{antenna},\mathrm{satellite},
+\mathrm{mixed}\}$. A directed plan first enters a specified trajectory with
+a rooted resource-priority reseed, then performs the registered recovery
+action. Full resource and time metadata are checked again at execution.
+
+\textbf{Bounded evidence.}
+For an observed anchor $r$ and target schedule $X_j$, blockers are exactly
+\[
+B_j(r)=N_G(r)\cap X_j,\qquad
+W_j(r)=\sum_{v\in B_j(r)}w_v.
+\]
+Counts and total weights use the complete blocker set; displayed identifiers,
+anchor candidates, and reuse summaries may be bounded samples. The anchor
+selection is a predeclared sampling rule, and $w_r-W_j(r)$ is a context
+quantity, not an observed repair gain. A plan does not modify $G$ or $w$.
+
+\textbf{Whole-interval ledger.}
+Opening an interval stores its binding observation, plan, installation time
+$t_{\ell}^{-}$, incumbent value, and population objective sum. Closing it at
+$t_{\ell}^{+}$ records
+\begin{align*}
+\Delta F_\ell
+ &=F(X^*(t_{\ell}^{+}))-F(X^*(t_{\ell}^{-})),\\
+\Delta P_\ell
+ &=\sum_jF(X_j(t_{\ell}^{+}))-\sum_jF(X_j(t_{\ell}^{-})),\qquad
+\Delta t_\ell=t_{\ell}^{+}-t_{\ell}^{-}.
+\end{align*}
+The ledger also retains the observed steps and whether execution was partial.
+Intervals close upon replacement, fallback installation, or termination;
+the active interval remains right-censored in the next observation. These
+records describe realized search, including the recovery following an entry
+intervention. They are not immediate seed-only rewards. The LLM uses these
+records as decision context; this algorithm contains no LLM parameter update.
+
+\clearpage
+\begin{algorithm}[H]
+\caption{AdvancePlan: bounded native execution and recovery}
+\label{alg:execute}
+\Input{$G$; population $\Pop$; historical incumbent $X^*$; active plan $\pi$;
+step state $\sigma=(h,\eta,t_h)$; epoch cap $\varepsilon$.}
+\Output{Updated $(\Pop,X^*,\sigma)$; optional progress record $z$;
+fallback indicator $f$.}
+$z\gets\Blank$; $f\gets\mathrm{false}$\;
+\If{the planned dwell of step $h$ has elapsed}{
+  \eIf{$\pi$ has a subsequent step}{
+    $h\gets h+1$; $\eta\gets\mathrm{true}$\;
+  }{
+    Keep the final step $h$; $\eta\gets\mathrm{false}$\;
+  }
+  Restart the dwell clock $t_h$\;
+  \Return{$(\Pop,X^*,(h,\eta,t_h),z,f)$}\;
+}
+$b\gets\min\{\varepsilon,\text{remaining total budget},
+                        \text{remaining step dwell}\}$\;
+$a\gets$ the active operation in step $h$\;
+\eIf{$a=\operatorname{DirectedReseed}(j,r,c)$ and its binding or required metadata is invalid}{
+  $\mathrm{status}\gets\mathrm{rejected}$\;
+}{
+  \eIf{$a=\operatorname{DirectedReseed}(j,r,c)$, $\eta=\mathrm{true}$,
+         and $j\in\{0,j_{\Best}(\Pop)\}$}{
+    $\mathrm{status}\gets\mathrm{rejected}$\;
+  }{
+    \If{$a=\operatorname{DirectedReseed}(j,r,c)$ and $\eta=\mathrm{true}$}{
+      Install the registered rooted priority template $c$\;
+      Attempt one bounded reseed of the exact slot $j$ around root $r$\;
+      Check the resulting slot against the original graph and integer objective\;
+    }
+    Apply any single-action entry intervention only when $\eta=\mathrm{true}$\;
+    Execute the registered native search operation using the unconsumed part of $b$\;
+    Retain the native historical incumbent $X^*$ and obtain operation status\;
+  }
+}
+Record the operation's objective, population, diversity, and execution effects in $z$\;
+$\eta\gets\mathrm{false}$\;
+\If{$\mathrm{status}\neq\mathrm{ok}$}{
+  \eIf{$\pi$ has a subsequent step}{
+    $h\gets h+1$; $\eta\gets\mathrm{true}$; restart $t_h$\;
+  }{
+    $f\gets\mathrm{true}$\;
+  }
+}
+\Return{$(\Pop,X^*,(h,\eta,t_h),z,f)$}\;
+\end{algorithm}
+
+\textbf{Execution semantics.}
+The reseed entry and its feasibility check share the epoch budget with native
+search. The directed step's continuation is round-robin search over the
+population; only the entry reseed has a specified target slot. A target that
+has become protected is rejected, with its bound identifiers unchanged.
+After the last planned dwell expires, the last search operation persists,
+without repeating its entry intervention, until replacement or termination.
+Native execution keeps the original weights and conflict edges, feasible
+population states, and the best solution encountered so far.
+
+The budget is a soft end-to-end wall-time limit: preparation, observation,
+native operations, and final verification are included. The algorithms
+abstract transport and persistence details while retaining the order of
+observation, asynchronous selection, plan installation, native advancement,
+and interval closure in the released C05 solver.
+
+\end{document}

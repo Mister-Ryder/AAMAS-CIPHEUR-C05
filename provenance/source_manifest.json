@@ -1,0 +1,281 @@
+{
+  "schema": "cipheur_c05_public_source_manifest_v1",
+  "candidate": "c05",
+  "source_study": "c05_full_replication_20261008",
+  "registered_positions": 280,
+  "graph_views": 8,
+  "seeds": [
+    67,
+    71,
+    73,
+    79,
+    83
+  ],
+  "source_receipt_sha256": "f5dbdfc6fb2d5b1ede46686b0ec749ffba11f7aad66800c6bfb36cfe0c47386a",
+  "historical_runner_sha256": "4385194559509f37441f7850ec20317d289eae147f9608bb785fefe59955bc28",
+  "historical_native_library_sha256": "83f7114e04b2e92a302573bd579541efae62d59114cef080a372f30bf01faf4c",
+  "historical_compiler": "g++ (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0",
+  "release_branch": "main",
+  "classical_selectors_branch": "non-llm-controls",
+  "registered_c05_python_receipt_members_verified": 15,
+  "runtime_files": [
+    {
+      "path": "cipheur_v06/__init__.py",
+      "frozen_sha256": "68443d42cd7de8764b0b1789cdf588fe83c3c88175c3988ff23c1934a712421a",
+      "release_sha256": "68443d42cd7de8764b0b1789cdf588fe83c3c88175c3988ff23c1934a712421a",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_v06/actions.py",
+      "frozen_sha256": "3d7b5bab11aa84ac546a119c8c024a3904613c8b4b7e9e76267f6f8547029720",
+      "release_sha256": "3d7b5bab11aa84ac546a119c8c024a3904613c8b4b7e9e76267f6f8547029720",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_v06/compact_plans.py",
+      "frozen_sha256": "60958c5494eb226d5b74573f7fcfb247b827b350dc0cf7df39f35916499c0fb4",
+      "release_sha256": "60958c5494eb226d5b74573f7fcfb247b827b350dc0cf7df39f35916499c0fb4",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_v06/context.py",
+      "frozen_sha256": "e2a8ae6965dfdad5e0cf2e2b908b2e7eaad96062cb3466a59e76c828c5b58ac2",
+      "release_sha256": "e2a8ae6965dfdad5e0cf2e2b908b2e7eaad96062cb3466a59e76c828c5b58ac2",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_v06/contracts.py",
+      "frozen_sha256": "5ef17551a54b601deafbd2ff81273df3ffc7611b1cb5aba6db83965e263ee5eb",
+      "release_sha256": "5ef17551a54b601deafbd2ff81273df3ffc7611b1cb5aba6db83965e263ee5eb",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_v06/directed_actions.py",
+      "frozen_sha256": "cecda9bf1a85ac5aa1c671b690c09b34c17cc244753aca0cd51e8ffc249ee129",
+      "release_sha256": "cecda9bf1a85ac5aa1c671b690c09b34c17cc244753aca0cd51e8ffc249ee129",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_v06/plan_context.py",
+      "frozen_sha256": "1ded24d01c01c4dabe1d70d829409f805f5cda2c76cfcc699ebc9dad470518ca",
+      "release_sha256": "1ded24d01c01c4dabe1d70d829409f805f5cda2c76cfcc699ebc9dad470518ca",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_v06/plan_contracts.py",
+      "frozen_sha256": "15ff9ccf60adb5ca1bdfe1e0622ed8dac5c833cf4bd65222992c25f0bf217c6f",
+      "release_sha256": "15ff9ccf60adb5ca1bdfe1e0622ed8dac5c833cf4bd65222992c25f0bf217c6f",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_v06/plan_provider.py",
+      "frozen_sha256": "72a2ccc3fdbebe379441d5db0a8a8f197626153e942e7bd5d9bbeff0fbf7a875",
+      "release_sha256": "72a2ccc3fdbebe379441d5db0a8a8f197626153e942e7bd5d9bbeff0fbf7a875",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_v06/plan_solver.py",
+      "frozen_sha256": "c57f914c405e1f7ec668c95a08fb0ed50e01636b82e1735b12e712130a868e3c",
+      "release_sha256": "422bf5444a7bbce33a2b43a14bfbed6c3e5f606bc301b998d98b5ca3606c1594",
+      "byte_identical": false
+    },
+    {
+      "path": "cipheur_v06/plans.py",
+      "frozen_sha256": "f261ae19c48a013c4a60af40b29657470544c3a3517bf54abe9ebcff38746f5f",
+      "release_sha256": "9bfc71ad12b85497697eabc4b2bd55f22af8a7590f206a614695638fda8c2dcc",
+      "byte_identical": false
+    },
+    {
+      "path": "cipheur_v06/provider.py",
+      "frozen_sha256": "5fdaa3c4608b46f15a37456852a1a2ffa20f81e2ade8c47c3c1e6aaac511f278",
+      "release_sha256": "5fdaa3c4608b46f15a37456852a1a2ffa20f81e2ade8c47c3c1e6aaac511f278",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_v06/solver.py",
+      "frozen_sha256": "787d8da8a094a44500cd31962f275c3b5c1116df558aeef8e39554b5ea56fd78",
+      "release_sha256": "59e67a23337c93851b8cae64ecbcd7ec8450dd7bbba5e5b242957ca097a1ff43",
+      "byte_identical": false
+    },
+    {
+      "path": "cipheur_v05/__init__.py",
+      "frozen_sha256": "ce18768414acb6b8e6af5cab0632330f5275a3e4c57a26d45abb7546f447b4c8",
+      "release_sha256": "ce18768414acb6b8e6af5cab0632330f5275a3e4c57a26d45abb7546f447b4c8",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_v05/native.py",
+      "frozen_sha256": "e03f248f8c89a9d7c12b003801fb076a8e08f1ad05580f41cc2154c614114238",
+      "release_sha256": "e03f248f8c89a9d7c12b003801fb076a8e08f1ad05580f41cc2154c614114238",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_v05/provider.py",
+      "frozen_sha256": "19034d73a65232fb9fc2593c46629682e64835064b843896d7c42b6f675b0733",
+      "release_sha256": "f99b976a468683386d4f57f3f045d0c183e7727d0bfd9a575edafc3cf6aa1822",
+      "byte_identical": false
+    },
+    {
+      "path": "cipheur_v05/schema.py",
+      "frozen_sha256": "7b5178481827e675e0303c6e1c25a8b06f0efa3d7edf44e431fa08ff0af51b9d",
+      "release_sha256": "7b5178481827e675e0303c6e1c25a8b06f0efa3d7edf44e431fa08ff0af51b9d",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_v04/__init__.py",
+      "frozen_sha256": "0f157848a4019e0a3853039cf80eb69859dc94b9877c0140af58ba2e27e47566",
+      "release_sha256": "0f157848a4019e0a3853039cf80eb69859dc94b9877c0140af58ba2e27e47566",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_v04/graph.py",
+      "frozen_sha256": "9c4850c981e018268a61ffafa22dd16b95ca38a3b6354cdb6cf1202541ea71a2",
+      "release_sha256": "9c4850c981e018268a61ffafa22dd16b95ca38a3b6354cdb6cf1202541ea71a2",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_v04/program.py",
+      "frozen_sha256": "71b5c849c5393de882c082b5abd45186ce49345c717ec26f12da2b1e77a09c11",
+      "release_sha256": "71b5c849c5393de882c082b5abd45186ce49345c717ec26f12da2b1e77a09c11",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_cex/__init__.py",
+      "frozen_sha256": "ebe3e64176931e5e9d42bceae6c28cfe3feed2ae546207f021f0fe785e8d7d67",
+      "release_sha256": "ebe3e64176931e5e9d42bceae6c28cfe3feed2ae546207f021f0fe785e8d7d67",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_cex/native.py",
+      "frozen_sha256": "fd326b7c388773f7c3e1b64cbe3e324ab0a40549609936fdfd7334f22725e5a0",
+      "release_sha256": "fd326b7c388773f7c3e1b64cbe3e324ab0a40549609936fdfd7334f22725e5a0",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_cex/program.py",
+      "frozen_sha256": "7bdcc78d62f91df89631092c0ff8051bd773cc053a5bd977654c31e26352ff3d",
+      "release_sha256": "7bdcc78d62f91df89631092c0ff8051bd773cc053a5bd977654c31e26352ff3d",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_common/__init__.py",
+      "frozen_sha256": "720c4a2d2d7982f78363687c29e1d633cb272081041787c8cbdb95825e25b725",
+      "release_sha256": "720c4a2d2d7982f78363687c29e1d633cb272081041787c8cbdb95825e25b725",
+      "byte_identical": true
+    },
+    {
+      "path": "cipheur_common/graph.py",
+      "frozen_sha256": "e508839dbb871ae2162f572414fc7731fef2bf0951641a60c65b7e46ac1fa719",
+      "release_sha256": "e508839dbb871ae2162f572414fc7731fef2bf0951641a60c65b7e46ac1fa719",
+      "byte_identical": true
+    },
+    {
+      "path": "native_v05/backend.cpp",
+      "frozen_sha256": "945828403762ccdd40b58a6ff71189f465d4f440ba8b2dd6eba432c083fe3562",
+      "release_sha256": "945828403762ccdd40b58a6ff71189f465d4f440ba8b2dd6eba432c083fe3562",
+      "byte_identical": true
+    },
+    {
+      "path": "native_v04/backend.cpp",
+      "frozen_sha256": "a4167c238363f80d306b9db7d26d3fc2d248cb9c3de3fc229655d8d8e7ebe072",
+      "release_sha256": "a4167c238363f80d306b9db7d26d3fc2d248cb9c3de3fc229655d8d8e7ebe072",
+      "byte_identical": true
+    },
+    {
+      "path": "third_party/CHILS/include/chils_internal.h",
+      "frozen_sha256": "9f9632a69552c501daec03300fd4c8f2f87190904a12ec167b6929581baf179e",
+      "release_sha256": "9f9632a69552c501daec03300fd4c8f2f87190904a12ec167b6929581baf179e",
+      "byte_identical": true
+    },
+    {
+      "path": "third_party/CHILS/include/graph.h",
+      "frozen_sha256": "8e9d38b0c80c68a073440da50759f5770caa36e4467cbdd282ab11cca0bdeba8",
+      "release_sha256": "8e9d38b0c80c68a073440da50759f5770caa36e4467cbdd282ab11cca0bdeba8",
+      "byte_identical": true
+    },
+    {
+      "path": "third_party/CHILS/include/local_search.h",
+      "frozen_sha256": "64bf1cec407f3e38f331a4c0f17d773f58e3f14988b93923f9514cadd32dbd0b",
+      "release_sha256": "64bf1cec407f3e38f331a4c0f17d773f58e3f14988b93923f9514cadd32dbd0b",
+      "byte_identical": true
+    },
+    {
+      "path": "third_party/CHILS/LICENSE",
+      "frozen_sha256": "9a3ab6868798da45b3f43fb7b56795dbd21d442f10d9d74295f1ab0a30b97997",
+      "release_sha256": "9a3ab6868798da45b3f43fb7b56795dbd21d442f10d9d74295f1ab0a30b97997",
+      "byte_identical": true
+    },
+    {
+      "path": "third_party/CHILS/src/chils_internal.c",
+      "frozen_sha256": "3957fe991dfbd0913b74f6608ead3b217cdf7bf61eb329af95a669eb176a9937",
+      "release_sha256": "3957fe991dfbd0913b74f6608ead3b217cdf7bf61eb329af95a669eb176a9937",
+      "byte_identical": true
+    },
+    {
+      "path": "third_party/CHILS/src/graph.c",
+      "frozen_sha256": "4b684cf91ece5690ede3fe1fa80237e8081aef3204001e99f0db10ad11e9db26",
+      "release_sha256": "4b684cf91ece5690ede3fe1fa80237e8081aef3204001e99f0db10ad11e9db26",
+      "byte_identical": true
+    },
+    {
+      "path": "third_party/CHILS/src/local_search.c",
+      "frozen_sha256": "72b9ce55083d5c4f4e5b91ba02a95cad01776b3b047c280eb96e4bca4cc3ac6e",
+      "release_sha256": "72b9ce55083d5c4f4e5b91ba02a95cad01776b3b047c280eb96e4bca4cc3ac6e",
+      "byte_identical": true
+    }
+  ],
+  "main_modifications": {
+    "cipheur_v06/plans.py": "Omit classical choose() and its _structural_rank() helper from main. Keep finite plans, feature mapping, state initialization, and whole-interval update arithmetic. Change only the class documentation otherwise.",
+    "cipheur_v06/plan_solver.py": "Change CONTROL_MODES to the empty tuple on main; the solve() function is AST-identical to the frozen solver. The non-llm-controls branch restores the original file.",
+    "cipheur_v06/solver.py": "Retain the original LIBRARY constant imported by plan_solver; omit the unrelated older v0.6 temporal-contract solver.",
+    "cipheur_v05/provider.py": "Retain unchanged NoRedirect, ScriptedProvider, and SlowLane classes; omit unused v0.5 providers and their imports."
+  },
+  "omitted_unused_python_modules": [
+    "cipheur_v06\\controllers.py",
+    "cipheur_v06\\experience.py",
+    "cipheur_v05\\__main__.py",
+    "cipheur_v05\\cli.py",
+    "cipheur_v05\\context.py",
+    "cipheur_v05\\solver.py",
+    "cipheur_v05\\study.py",
+    "cipheur_v05\\tools.py",
+    "cipheur_v04\\__main__.py",
+    "cipheur_v04\\certificates.py",
+    "cipheur_v04\\cli.py",
+    "cipheur_v04\\data.py",
+    "cipheur_v04\\discovery.py",
+    "cipheur_v04\\learning.py",
+    "cipheur_v04\\native.py",
+    "cipheur_v04\\solver.py",
+    "cipheur_v04\\study.py",
+    "cipheur_cex\\__main__.py",
+    "cipheur_cex\\authoring.py",
+    "cipheur_cex\\certificates.py",
+    "cipheur_cex\\cli.py",
+    "cipheur_cex\\discovery.py",
+    "cipheur_cex\\solver.py",
+    "cipheur_cex\\study.py",
+    "cipheur_common\\dsl.py",
+    "cipheur_common\\oracle.py",
+    "cipheur_common\\quotient.py",
+    "cipheur_common\\research.py"
+  ],
+  "structural_preservation_checks": {
+    "build_plans": true,
+    "plan_features": true,
+    "PlanController.__init__": true,
+    "PlanController.update": true,
+    "solve_function_identical": true,
+    "v05_provider.NoRedirect": true,
+    "v05_provider.ScriptedProvider": true,
+    "v05_provider.SlowLane": true
+  },
+  "new_entrypoints": [
+    "cipheur_c05/cli.py",
+    "cipheur_c05/__main__.py",
+    "scripts/build_native.py",
+    "scripts/smoke_check.py"
+  ],
+  "installation": "Editable checkout with native build under build/libcex5.so; Linux GCC/G++ and OpenMP.",
+  "timing_scope": "The solver, plan definitions, decision cadence, model profile, objective and native source are preserved for the LLM path. The public CLI removes the private input path from saved metadata after the timed solve; this packaging release does not assert binary-identical timing or a new performance run."
+}

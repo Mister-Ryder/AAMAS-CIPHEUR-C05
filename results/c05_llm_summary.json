@@ -1,0 +1,134 @@
+{
+  "method": "C05-LLM (DeepSeek)",
+  "batch": "v0.6.0 C05 full replication",
+  "n": 40,
+  "graph_count": 8,
+  "seeds": [
+    67,
+    71,
+    73,
+    79,
+    83
+  ],
+  "mean_contact_seconds": 1137361.73518935,
+  "exact_mean_contact_seconds": "22747234703787/20000000",
+  "min_wall_seconds": 360.0129993893206,
+  "max_wall_seconds": 360.06425575912,
+  "mean_wall_seconds": 360.01809374801815,
+  "mean_cpu_seconds": 359.81537925557507,
+  "per_view": [
+    {
+      "graph_id": "CP-SCALE-AU-L002__g0340",
+      "n": 5,
+      "mean_contact_seconds": 1624840.7134298,
+      "exact_mean_contact_seconds": "8124203567149/5000000",
+      "seeds": [
+        67,
+        71,
+        73,
+        79,
+        83
+      ]
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g0680",
+      "n": 5,
+      "mean_contact_seconds": 1249237.658053,
+      "exact_mean_contact_seconds": "1249237658053/1000000",
+      "seeds": [
+        67,
+        71,
+        73,
+        79,
+        83
+      ]
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g1200",
+      "n": 5,
+      "mean_contact_seconds": 883885.1171644,
+      "exact_mean_contact_seconds": "2209712792911/2500000",
+      "seeds": [
+        67,
+        71,
+        73,
+        79,
+        83
+      ]
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g1800",
+      "n": 5,
+      "mean_contact_seconds": 682499.559488,
+      "exact_mean_contact_seconds": "10664055617/15625",
+      "seeds": [
+        67,
+        71,
+        73,
+        79,
+        83
+      ]
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+      "n": 5,
+      "mean_contact_seconds": 1261758.6264662,
+      "exact_mean_contact_seconds": "6308793132331/5000000",
+      "seeds": [
+        67,
+        71,
+        73,
+        79,
+        83
+      ]
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+      "n": 5,
+      "mean_contact_seconds": 1067791.0090804,
+      "exact_mean_contact_seconds": "2669477522701/2500000",
+      "seeds": [
+        67,
+        71,
+        73,
+        79,
+        83
+      ]
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+      "n": 5,
+      "mean_contact_seconds": 1262183.727874,
+      "exact_mean_contact_seconds": "631091863937/500000",
+      "seeds": [
+        67,
+        71,
+        73,
+        79,
+        83
+      ]
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+      "n": 5,
+      "mean_contact_seconds": 1066697.469959,
+      "exact_mean_contact_seconds": "1066697469959/1000000",
+      "seeds": [
+        67,
+        71,
+        73,
+        79,
+        83
+      ]
+    }
+  ],
+  "schema": "cipheur_c05_llm_public_summary_v1",
+  "dataset": "CP-SCALE-AU-L002",
+  "metric": "final objective contact-seconds; higher is better",
+  "aggregation": "Arithmetic mean within each view across seeds; equal mean across all eight views.",
+  "ticks_per_contact_second": 1000000,
+  "expected_positions": 40,
+  "valid_positions": 40,
+  "graph_feasibility_and_integer_objective_audited_positions": 40,
+  "model_installed_count": "Not extracted in this release; call cap is not a success count."
+}

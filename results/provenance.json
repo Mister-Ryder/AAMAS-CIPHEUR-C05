@@ -1,0 +1,79 @@
+{
+  "schema": "cipheur_c05_public_result_provenance_v1",
+  "prepared_date": "2026-10-08",
+  "original_extraction": {
+    "filename": "c_series_extracted.json",
+    "sha256": "913903815c46efdd1ffc8bb7c9432f7525afa46cbfddb0752d47fc4eb32dfdc9",
+    "extracted_at_utc": "2026-10-08T10:24:40.989088+00:00"
+  },
+  "original_ranking": {
+    "filename": "historical_eight_view_ranking.json",
+    "sha256": "5d20ad04e95659e1a2b2a534f592f5cf41f300ecfff541446d8bc6b11c515c2b"
+  },
+  "original_preregistration": {
+    "filename": "preregistration.json",
+    "sha256": "6c740d382641058f2e9c7a46ea32bd02d2371c0a51bcdee39c92944b85c6f257"
+  },
+  "original_completion": {
+    "expected": 280,
+    "completed": 280,
+    "all_ok": true,
+    "filename": "c05_seed_replication_completion.json",
+    "sha256": "47f03ee588ec45b47a0e455d6209acc458b17255e41fa68e5f273bffd81130e3"
+  },
+  "prior_independent_extraction_audit": {
+    "audited_positions": 280,
+    "errors": [],
+    "actual_graph_hashes_verified": 8,
+    "ticks_per_second": 1000000,
+    "checks": [
+      "selected vertices unique and in range",
+      "integer sum equals reported objective",
+      "no selected graph-edge conflicts",
+      "actual input file SHA256 equals preregistration"
+    ],
+    "limitations": [
+      "Physical schedule constraints were not independently reconstructed in this extraction; graph-edge feasibility and integer objective were independently checked.",
+      "Seed sets differ from other historical batches."
+    ]
+  },
+  "public_release_checks": {
+    "unique_c05_positions": 280,
+    "llm_positions": 40,
+    "controls_positions": 240,
+    "graphs": 8,
+    "seeds_per_view": 5,
+    "all_status_ok": true,
+    "all_recorded_graph_feasible": true,
+    "per_row_input_hashes_match_preregistration": true,
+    "integer_objective_unit": "1000000 ticks/contact-second"
+  },
+  "baseline_sources": [
+    {
+      "batch": "CIPHEUR v0.3.0",
+      "filename": "normalized_runs.csv",
+      "sha256": "bd70538cf58eeaff56eb389e24b7624f38bf39ca77fdaaf52f81e2605202f053"
+    },
+    {
+      "batch": "CIPHEUR v0.5.0",
+      "filename": "normalized_runs.csv",
+      "sha256": "5402ebfa669db6b696bc9c6c6c44a99689549e63f8e95f92e7bfe2b602b307c3"
+    },
+    {
+      "batch": "v0.6.0 C13 external CHILS p4",
+      "filename": "results.csv",
+      "sha256": "0c0816965a89e6827babe71bcde89210c540d91453f89466d213484958e08cce",
+      "registration_sha256": "81b704ca01f2fdea81fbaea1727171f7ee8dffc27a82090d0de2ef37dae4756f"
+    }
+  ],
+  "source_path_policy": "Private absolute paths, server names, credentials, prompts, and API responses are excluded. Original filenames and hashes provide traceability.",
+  "exported_fields_and_audit_scope": [
+    "The main branch exports 40 LLM result summary records and the seven-mode aggregate table.",
+    "Result summary tables include objectives and provenance; selected vertex arrays are not columns in these tables.",
+    "The prior extraction independently checked graph independent-set feasibility, integer objective sums, and eight actual input hashes for all 280 positions.",
+    "Physical schedule reconstruction is outside the extraction audit scope.",
+    "All eight views share the same physical source.",
+    "Historical p4 batches preserve their original seed sets, timer boundaries, and resource configurations.",
+    "The native binary SHA256 identifies the archived historical build."
+  ]
+}

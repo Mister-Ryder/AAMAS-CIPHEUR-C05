@@ -1,0 +1,79 @@
+#pragma once
+
+#include "graph.h"
+
+typedef struct
+{
+    // Solution
+    long long cost;
+    int size;
+    double time, time_ref;
+    int *independent_set;
+
+    // Queue structures
+    int queue_count;
+    int *queue, *in_queue;
+    int *prev_queue, *in_prev_queue;
+
+    // Graph structures
+    int max_queue;
+    long long *adjacent_weight;
+    int *tabu, *tightness, *temp, *mask;
+
+    // Action log
+    long long log_count, log_alloc;
+    int log_enabled;
+    int *log;
+
+    unsigned int seed;
+} local_search;
+
+local_search *local_search_init(graph *g, unsigned int seed);
+
+void local_search_free(local_search *ls);
+
+void local_search_reset(graph *g, local_search *ls);
+
+void local_search_in_order_solution(graph *g, local_search *ls);
+
+void local_search_add_vertex(graph *g, local_search *ls, int u);
+
+void local_search_remove_vertex(graph *g, local_search *ls, int u);
+
+void local_search_lock_vertex(graph *g, local_search *ls, int u);
+
+void local_search_unlock_vertex(graph *g, local_search *ls, int u);
+
+void local_search_aap(graph *g, local_search *ls, int u, int imp);
+
+void local_search_greedy(graph *g, local_search *ls);
+
+void local_search_perturbe(graph *g, local_search *ls);
+
+void local_search_explore(graph *g, local_search *ls, double tl, long long il, int verbose);
+
+void local_search_unwind(graph *g, local_search *ls, int t);
+
+static inline int my_rand_r(unsigned int *seed)
+{
+    unsigned int next = *seed;
+    int result;
+
+    next *= 1103515245;
+    next += 12345;
+    result = (unsigned int)(next / 65536) % 2048;
+
+    next *= 1103515245;
+    next += 12345;
+    result <<= 10;
+    result ^= (unsigned int)(next / 65536) % 1024;
+
+    next *= 1103515245;
+    next += 12345;
+    result <<= 10;
+    result ^= (unsigned int)(next / 65536) % 1024;
+
+    *seed = next;
+
+    return result;
+}

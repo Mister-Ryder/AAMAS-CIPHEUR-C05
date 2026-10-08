@@ -1,0 +1,49 @@
+{
+  "schema": "cipheur_c05_release_validation_v1",
+  "date": "2026-10-08",
+  "platform": "Ubuntu 22.04 under WSL",
+  "compiler": "g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+  "rebuilt_native_library_sha256": "581836e8283c8b7178cd0f9dd47f293642c3bdb50f6bfcd5c421e84d37c41785",
+  "native_sources": {
+    "native_v05/backend.cpp": "945828403762ccdd40b58a6ff71189f465d4f440ba8b2dd6eba432c083fe3562",
+    "native_v04/backend.cpp": "a4167c238363f80d306b9db7d26d3fc2d248cb9c3de3fc229655d8d8e7ebe072",
+    "third_party/CHILS/src/graph.c": "4b684cf91ece5690ede3fe1fa80237e8081aef3204001e99f0db10ad11e9db26",
+    "third_party/CHILS/src/local_search.c": "72b9ce55083d5c4f4e5b91ba02a95cad01776b3b047c280eb96e4bca4cc3ac6e"
+  },
+  "native_sources_match_historical_build_receipt": true,
+  "build_status": "passed; existing misleading-indentation compiler warnings in frozen C++ sources",
+  "structural_checks": {
+    "build_plans": true,
+    "plan_features": true,
+    "PlanController.__init__": true,
+    "PlanController.update": true,
+    "solve_function_identical": true,
+    "v05_provider.NoRedirect": true,
+    "v05_provider.ScriptedProvider": true,
+    "v05_provider.SlowLane": true
+  },
+  "main_offline_integration": {
+    "status": "passed",
+    "fixture_seconds": 3,
+    "real_model_calls": 0,
+    "installed_fixture_plans": 1,
+    "final_value_ticks": 27,
+    "feasible": true
+  },
+  "controls_offline_integration": {
+    "status": "passed",
+    "modes": [
+      "rule",
+      "bandit",
+      "linucb",
+      "knn",
+      "static",
+      "adaptive"
+    ],
+    "seconds_per_mode": 0.5,
+    "real_model_calls": 0,
+    "all_feasible": true,
+    "decision_opportunities_per_selector": 3
+  },
+  "performance_experiment_rerun": false
+}
