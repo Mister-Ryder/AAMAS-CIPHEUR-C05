@@ -7,6 +7,10 @@ the same [eight source NPZ views](../../../data/CP-SCALE-AU-L002/) as the C05
 are the original zero-based NPZ rows, and each objective uses unmodified
 `weight_ticks` (1,000,000 ticks per contact-second).
 
+The frozen `simulated_annealing` arm is a hybrid heuristic with greedy repair
+and incumbent restarts, not a plain simulated-annealing baseline. Its valid
+results remain archived. See [METHOD_CORRECTION.md](METHOD_CORRECTION.md).
+
 The [frozen protocol](preregistration.json) defines 104 measured positions:
 
 | Arm | Runs | Registered seeds |
@@ -14,15 +18,16 @@ The [frozen protocol](preregistration.json) defines 104 measured positions:
 | StableSolver local search | 8 | One seed-ignored run per view, recorded as seed 0 |
 | StableSolver large-neighborhood search | 8 | One seed-ignored run per view, recorded as seed 0 |
 | GRASP | 40 | 67, 71, 73, 79, 83 on each view |
-| Simulated annealing | 40 | 67, 71, 73, 79, 83 on each view |
+| Hybrid SA (originally labeled simulated annealing) | 40 | 67, 71, 73, 79, 83 on each view |
 | StableSolver greedy-gwmin (supplementary) | 8 | One natural early-stop run per view, recorded as seed 0 |
 
 Every position has a 900-second outer wall cap and one native thread. The two
 time-limited StableSolver searches use a native 895-second cap; greedy-gwmin
 reports its actual early-stop time. The supplementary greedy arm stays separate
-from full-budget search rankings. StableSolver's native `--seed` flag does not
-create independent runs for these methods; reusing a single view score across
-five C05 seeds is arithmetic pairing, not five measurements.
+from full-budget search rankings. StableSolver's native `--seed` flag is unused
+by these two algorithm branches. The 8/8 counts mean one measured run per view;
+reusing a single view score across five C05 seeds is arithmetic pairing, not
+five measurements.
 
 ## What is preserved
 

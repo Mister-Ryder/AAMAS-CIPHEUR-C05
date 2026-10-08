@@ -13,7 +13,7 @@ The input mapping is fixed: DIMACS vertex `i + 1` is NPZ row `i`.
   `(RCL size, alpha) = (4, 0.7), (8, 1.0), (16, 1.3)`. Local search accepts
   positive insert-and-evict moves with greedy refill, then improving
   remove-one-and-refill moves. The best solution across restarts is retained.
-- **Simulated annealing**: Starts from weighted-degree greedy construction.
+- **Hybrid SA (originally labeled simulated annealing)**: Starts from weighted-degree greedy construction.
   A move inserts one nonselected vertex, removes its selected conflicting
   neighbours, and greedily fills newly feasible vertices. The preliminary
   weight gain determines Metropolis acceptance. Temperature decays

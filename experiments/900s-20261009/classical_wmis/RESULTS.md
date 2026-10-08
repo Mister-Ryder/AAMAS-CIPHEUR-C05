@@ -1,5 +1,11 @@
 # Classical WMIS 900-second comparison: technical record
 
+**Method correction:** The frozen arm key `simulated_annealing` denotes a
+hybrid with weighted-degree greedy initialization, greedy repair after accepted
+moves, and incumbent restarts. Its valid score is archived separately from a
+plain simulated-annealing baseline. The existing figure legend `SA` denotes
+this hybrid. See [METHOD_CORRECTION.md](METHOD_CORRECTION.md).
+
 ## Scope and extraction rule
 
 - Physical source: CP-SCALE-AU-L002; eight registered constraint views of one source, with identical NPZ graph hashes across the two registrations.
@@ -20,7 +26,7 @@
 | StableSolver local search | 0/8 | — | — | — | resource_limited |
 | StableSolver large neighborhood search | 8/8 | 1125961.321395625 | 895.841 | 877.058 | audited_complete |
 | GRASP | 40/40 | 1068698.2984871 | 898.573 | 897.714 | audited_complete |
-| Simulated annealing | 40/40 | 1143916.7904964 | 898.565 | 897.756 | audited_complete |
+| Hybrid SA (archived; originally labeled simulated annealing) | 40/40 | 1143916.7904964 | 898.565 | 897.756 | audited_complete |
 
 ## Resource registration
 
@@ -41,9 +47,9 @@
 
 ## Means by view
 
-Each C05, GRASP, and simulated annealing cell averages five measured seeds. Each StableSolver cell is one measured seed=0 run.
+Each C05, GRASP, and hybrid-SA cell averages five measured seeds. Each StableSolver cell is one measured run per view with an unused CLI seed.
 
-| View | C05-Codex | C05-KNN | C05-LinUCB | CHILS-p4-custom | StableSolver local search | StableSolver large neighborhood search | GRASP | Simulated annealing |
+| View | C05-Codex | C05-KNN | C05-LinUCB | CHILS-p4-custom | StableSolver local search | StableSolver large neighborhood search | GRASP | Hybrid SA (archived) |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | g0340 | 1627021.2220094 | 1626391.4540162 | 1626422.7258004 | 1624295.3013054 | — | 1606757.713608 | 1555832.8553174 | 1624229.5987384 |
 | g0680 | 1249807.1559956 | 1249720.546139 | 1249674.5638136 | 1246822.8549266 | — | 1233939.023935 | 1146848.5632728 | 1252900.802435 |

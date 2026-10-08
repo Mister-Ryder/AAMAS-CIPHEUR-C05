@@ -67,9 +67,10 @@ The Codex arm made 840 model calls, with 838 valid plan proposals. The [shared a
 
 The [classical comparison package](experiments/900s-20261009/classical_wmis/README.md) uses the same eight graphs and exact integer objective. Each measured position is pinned to one physical CPU with a 900-second outer cap. The [technical results](experiments/900s-20261009/classical_wmis/RESULTS.md) give per-view scores, actual runtimes, resource settings, failures, and [recorded search curves](experiments/900s-20261009/classical_wmis/results/figures/manifest_public.json).
 
+Correction: the originally labeled simulated-annealing arm used greedy repair after accepted moves and incumbent-based restarts. Its audited score describes a hybrid heuristic, not a plain simulated-annealing baseline. The chart legend `SA` denotes this hybrid arm. See the [method correction](experiments/900s-20261009/classical_wmis/METHOD_CORRECTION.md).
+
 | Method | Valid positions | Equal-view mean contact-seconds |
 |---|---:|---:|
-| Simulated annealing | 40/40 | 1,143,916.7904964 |
 | C05-Codex | 40/40 | 1,138,760.36872255 |
 | C05-KNN | 40/40 | 1,138,451.911341275 |
 | C05-LinUCB | 40/40 | 1,138,417.6763745 |
@@ -78,6 +79,8 @@ The [classical comparison package](experiments/900s-20261009/classical_wmis/READ
 | StableSolver large-neighborhood search | 8/8 | 1,125,961.321395625 |
 | GRASP | 40/40 | 1,068,698.2984871 |
 | StableSolver local search, 3 GiB cap | 0/8 | — |
+
+The original hybrid SA arm produced 40/40 audited feasible solutions with an eight-view mean of 1,143,916.7904964 contact-seconds; it is recorded separately pending a plain-SA rerun.
 
 The supplementary one-pass StableSolver greedy-gwmin arm recorded 991,618.934985 contact-seconds over eight views and stopped after 1.823 seconds on average. The eight primary local-search positions failed under a 3 GiB address-space cap; the separate 6 GiB follow-up also yielded 0/8 audited final scores. Their failed receipts are retained without assigning scores. The 9 GiB result is a separate 8/8 audited follow-up with an 850-second native cap inside the same 900-second outer cap; its resources and per-view values are documented in the classical package.
 
