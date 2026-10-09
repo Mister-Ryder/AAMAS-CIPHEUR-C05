@@ -190,6 +190,53 @@ def save(fig, output: Path, stem: str) -> None:
     plt.close(fig)
 
 
+def cohort_mean_ceiling(data: dict[str, list[dict[str, str]]]) -> float:
+    """Match the audited primary figure's upper padding without private data."""
+    values: dict[str, list[int]] = defaultdict(list)
+    for row in [*data["formal_final"], *data["observed_final"]]:
+        values[row["method"]].append(int(row["value_ticks"]))
+    if not values:
+        raise ValueError("The public release has no final objective values")
+    return max(sum(ticks) / len(ticks) / 1_000_000 for ticks in values.values()) + 9_000
+
+
+def render_overview(data: dict[str, list[dict[str, str]]], output: Path,
+                    *, upper_zoom: bool) -> None:
+    fig = plt.figure(figsize=(17.2, 10.2), dpi=160)
+    ax = fig.add_axes([.06, .12, .49, .80])
+    draw(ax, data, None, None, band=False, individual=False)
+    if upper_zoom:
+        ax.set_ylim(980_000, cohort_mean_ceiling(data))
+    ax.set_xlabel("Recorded elapsed seconds (method-specific clocks)")
+    ax.set_ylabel("Mean contact duration (s), 40 positions/method")
+    fig.suptitle("CP-SCALE-AU-L002 · observed search progress, 0–900 s" +
+                 (" · upper-range detail" if upper_zoom else " · full range"),
+                 x=.06, y=.97, ha="left", fontsize=16, weight="bold")
+    handles, labels = ax.get_legend_handles_labels()
+    fig.legend(handles, labels, loc="upper left", bbox_to_anchor=(.58, .88),
+               frameon=False, ncol=2, fontsize=8.6)
+    fig.text(.59, .47,
+             "One physical source in eight constraint views; five runs/view.\n"
+             "Lines: observed feasible incumbents. Open diamonds: formal\n"
+             "final-only observations. New telemetry cohorts are separate reruns.\n\n"
+             "C05/CHILS: native solver clock; FJ: native child process clock;\n"
+             "GRASP: position wall clock; StableSolver/FastWVC:\n"
+             "conservative outer upper bound. These clocks have different\n"
+             "origins; x alignment is descriptive.",
+             fontsize=9.0, color="#45515A", linespacing=1.5, va="top")
+    note = ("Early FJ incumbents below 980,000 s are outside this detail;\n"
+            "the full-range companion displays them. Frozen FJ/FastWVC\n"
+            "diamonds at 900 s mark budget end, not attainment."
+            if upper_zoom else
+            "This companion keeps the complete recorded objective range.\n"
+            "Frozen FJ/FastWVC diamonds at 900 s mark budget end,\n"
+            "not measured attainment time.")
+    fig.text(.59, .17, note, fontsize=9.0, color="#45515A",
+             linespacing=1.5, va="top")
+    save(fig, output, "01_all_methods_0_900_public_replot" if upper_zoom else
+         "01_all_methods_0_900_full_range_public_replot")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
@@ -203,28 +250,10 @@ def main() -> None:
         raise ValueError("Output parent must exist")
     manifest, data = load(root)
     output.mkdir()
-    fig = plt.figure(figsize=(17.2, 10.2), dpi=160)
-    ax = fig.add_axes([.06, .12, .49, .80])
-    draw(ax, data, None, None, band=False, individual=False)
-    ax.set_xlabel("Recorded elapsed seconds (method-specific clocks)")
-    ax.set_ylabel("Mean contact duration (s), 40 positions/method")
-    fig.suptitle("CP-SCALE-AU-L002 · observed search progress, 0–900 s",
-                 x=.06, y=.97, ha="left", fontsize=16, weight="bold")
-    handles, labels = ax.get_legend_handles_labels()
-    fig.legend(handles, labels, loc="upper left", bbox_to_anchor=(.58, .88),
-               frameon=False, ncol=2, fontsize=8.6)
-    fig.text(.59, .40,
-             "One physical source in eight constraint views; five runs/view.\n"
-             "Lines: observed feasible incumbents. Open diamonds: formal\n"
-             "final-only observations. New telemetry cohorts are separate reruns.\n\n"
-             "C05/CHILS: native solver clock; FJ: native child clock;\n"
-             "GRASP: position wall clock; StableSolver/FastWVC:\n"
-             "conservative outer upper bound. These clocks have different\n"
-             "origins; x alignment is descriptive.",
-             fontsize=9.0, color="#45515A", linespacing=1.5, va="top")
-    save(fig, output, "01_all_methods_0_900_public_replot")
+    render_overview(data, output, upper_zoom=True)
+    render_overview(data, output, upper_zoom=False)
     titles = {"native": "C05 / CHILS · native solver",
-              "native_process": "FJ / FastWVC · native process",
+              "native_process": "FJ process / FastWVC post-load solver",
               "outer": "GRASP / final-only · position wall",
               "upper": "StableSolver / FastWVC · outer upper bound"}
     for clock, title in titles.items():
@@ -239,13 +268,16 @@ def main() -> None:
                    frameon=False, ncol=4, fontsize=8.3)
         fig.suptitle(title + " · 300–900 s", x=.045, y=.99, ha="left",
                      fontsize=14.3, weight="bold")
-        fig.supxlabel("Elapsed seconds on the labeled clock", y=.06)
+        axis_note = ("FJ: child process elapsed; FastWVC: post-graph-load solver elapsed"
+                     if clock == "native_process" else
+                     "Elapsed seconds on the labeled clock")
+        fig.supxlabel(axis_note, y=.06)
         fig.supylabel("Mean contact duration (s)", x=.015)
         fig.text(.5, .025, "Faint lines: five actual runs/view; colored band: empirical 25th–75th percentile (not a confidence interval).",
                  ha="center", fontsize=8.3, color="#45515A")
         fig.tight_layout(rect=(.035, .075, 1, .90))
         save(fig, output, f"02_eight_views_300_900_{clock}_public_replot")
-    print(json.dumps({"output": str(output), "panels": len(titles) + 1}))
+    print(json.dumps({"output": str(output), "panels": len(titles) + 2}))
 
 
 if __name__ == "__main__":
