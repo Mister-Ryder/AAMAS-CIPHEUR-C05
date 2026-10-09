@@ -1,0 +1,149 @@
+{
+  "schema": "c05_non_llm_controls_public_audit_v1",
+  "methods": [
+    {
+      "method": "grasp_plain_v2",
+      "scope": "primary_timed_conversion_900s",
+      "protocol_sha256": "b865b1075da9a448302a57ef771a33b724ac017d04b52105919b29a67ad0489f",
+      "independent_audit_sha256": "e11d592bda64c5ae9d9160902e147109c4c154b8d62bfdd34ca9c0d24ff49ce2",
+      "binary_sha256": "4eafd8bdd8ccca2e370ab7d3a94671483c87d96f100b3bd2f7c85d3602f36c72",
+      "valid_positions": 40,
+      "by_view_contact_seconds": {
+        "CP-SCALE-AU-L002__g0340": "1523506.4952788",
+        "CP-SCALE-AU-L002__g0680": "1138619.791754",
+        "CP-SCALE-AU-L002__g1200": "841856.2290518",
+        "CP-SCALE-AU-L002__g1800": "609895.5458926",
+        "CP-SCALE-AU-L002__gW1200_gE0340_s0150": "1182838.259834",
+        "CP-SCALE-AU-L002__gW0340_gE1200_s0150": "1183806.5456284",
+        "CP-SCALE-AU-L002__gW0680_gE1200_s0150": "988132.421175",
+        "CP-SCALE-AU-L002__gW1200_gE0680_s0150": "988382.290066"
+      },
+      "overall_mean_contact_seconds": "1057129.697335075",
+      "mean_wall_seconds": "898.565027002897115",
+      "launcher_sha256": "0ea5bd03fca554084f7b2705a2421679af97f7ff4f7b46c50a758c3a7d20a526",
+      "launcher_ledger_sha256": "06e3816bebb4f0d1694accce49e36672b6451cb10fb9d4e148b97674e41c98f9"
+    },
+    {
+      "method": "fj40",
+      "scope": "primary_timed_conversion_900s",
+      "protocol_sha256": "a47d305a9073f7f1691c336f137c9d6c081cbe2046dd6cceeae64113534ecb5b",
+      "independent_audit_sha256": "4f01eb5f98b5b26f485a4e1fb29f557e0bdba61a969558f03e50c4293f1d43cb",
+      "binary_sha256": "83fead70ca665458f836d4ad932b229dd28dea98954f55d743baa754a3dbdc39",
+      "valid_positions": 40,
+      "by_view_contact_seconds": {
+        "CP-SCALE-AU-L002__g0340": "1623248.0955336",
+        "CP-SCALE-AU-L002__g0680": "1243719.3147222",
+        "CP-SCALE-AU-L002__g1200": "871678.8746538",
+        "CP-SCALE-AU-L002__g1800": "684860.1166664",
+        "CP-SCALE-AU-L002__gW1200_gE0340_s0150": "1257645.7906608",
+        "CP-SCALE-AU-L002__gW0340_gE1200_s0150": "1255422.4186248",
+        "CP-SCALE-AU-L002__gW0680_gE1200_s0150": "1058395.9618692",
+        "CP-SCALE-AU-L002__gW1200_gE0680_s0150": "1058232.0757698"
+      },
+      "overall_mean_contact_seconds": "1131650.331062575",
+      "mean_wall_seconds": "891.8621781319379825",
+      "build_manifest_sha256": "c900e455fb811124488829325800bc0f784125d7e51982cf48606371895f38ac",
+      "launcher_sha256": "bab9dd4ca0dc62e37f656bf4fde4c81d9013ab296a1fb845ada2b9a891482a38",
+      "launcher_ledger_sha256": "95c77c5e2a1a8efd0516a93b03e55ed57b5ca5ff5b545a666c1b0178b054511d"
+    },
+    {
+      "method": "fastwvc40",
+      "scope": "primary_timed_conversion_900s",
+      "protocol_sha256": "9cede248510c7496966ca692277cc36bffffdd1a346753110d8e0c63d1107410",
+      "independent_audit_sha256": "902a66e95a0a614627efe4db2bab0771b07546b35baf029e29332cf9cb807a8a",
+      "binary_sha256": "9087f93f0a6f3db468dfe39e6f9e127827678995187a0cd538de52277b147a7d",
+      "valid_positions": 40,
+      "by_view_contact_seconds": {
+        "CP-SCALE-AU-L002__g0340": "1601328.9588272",
+        "CP-SCALE-AU-L002__g0680": "1227006.3097508",
+        "CP-SCALE-AU-L002__g1200": "882297.7058318",
+        "CP-SCALE-AU-L002__g1800": "684754.031165",
+        "CP-SCALE-AU-L002__gW1200_gE0340_s0150": "1246057.2724918",
+        "CP-SCALE-AU-L002__gW0340_gE1200_s0150": "1244924.0057426",
+        "CP-SCALE-AU-L002__gW0680_gE1200_s0150": "1054728.6313132",
+        "CP-SCALE-AU-L002__gW1200_gE0680_s0150": "1054807.0166628"
+      },
+      "overall_mean_contact_seconds": "1124487.99147315",
+      "mean_wall_seconds": "891.43131462717429",
+      "build_manifest_sha256": "53b5a07d03551ee8bfb85b086e25d75baa8076d6de1148f4471af9c4d9db5010",
+      "launcher_sha256": "bab9dd4ca0dc62e37f656bf4fde4c81d9013ab296a1fb845ada2b9a891482a38",
+      "launcher_ledger_sha256": "1aebbc7b0cec54373e1dbd60d5a19ed92820e9269f0958371c91730e87490ce5"
+    },
+    {
+      "method": "lns5_v3",
+      "scope": "primary_timed_conversion_900s",
+      "protocol_sha256": "540f2516a477c9cbcc9ca351cbbf707c291989bf0059b1a4f6e50f64fb6cad38",
+      "independent_audit_sha256": "4f4a4f8cbfa29bf8b8a288964492c031c8d77bfb00e01f5773b8f5dec3bf485a",
+      "binary_sha256": "a0515f47072400b8f64f38496e3e97832a65fb69c967f1bd6d5fe298eb4d5f2e",
+      "valid_positions": 40,
+      "by_view_contact_seconds": {
+        "CP-SCALE-AU-L002__g0340": "1606757.713608",
+        "CP-SCALE-AU-L002__g0680": "1233781.6747936",
+        "CP-SCALE-AU-L002__g1200": "876858.1856882",
+        "CP-SCALE-AU-L002__g1800": "680513.9782884",
+        "CP-SCALE-AU-L002__gW1200_gE0340_s0150": "1248351.846663",
+        "CP-SCALE-AU-L002__gW0340_gE1200_s0150": "1248569.185784",
+        "CP-SCALE-AU-L002__gW0680_gE1200_s0150": "1054238.193906",
+        "CP-SCALE-AU-L002__gW1200_gE0680_s0150": "1054781.3933422"
+      },
+      "overall_mean_contact_seconds": "1125481.521509175",
+      "mean_wall_seconds": "891.7933330736123025",
+      "launcher_sha256": "fa9ce4d9962f558674c081fdd3c11db52237997fb893920522b7e96c92b95fab",
+      "launcher_ledger_sha256": "ccf9cf4b96baf4fe0b85ff5cb4f8b16a93e56d20a929bf3f223dc2f9fb37367d"
+    },
+    {
+      "method": "ls4_9gib",
+      "scope": "separate_9gib_native850_900s",
+      "protocol_sha256": "a1382942f0e7ae554d506d4e8b47b528951fafbf24f456ac378b6cc663a8ee72",
+      "independent_audit_sha256": "da2932294102323c5e1b7458679325be54642450242a299f01bdd710482cc8e2",
+      "binary_sha256": "a0515f47072400b8f64f38496e3e97832a65fb69c967f1bd6d5fe298eb4d5f2e",
+      "valid_positions": 40,
+      "by_view_contact_seconds": {
+        "CP-SCALE-AU-L002__g0340": "1611339.2823468",
+        "CP-SCALE-AU-L002__g0680": "1239046.3300094",
+        "CP-SCALE-AU-L002__g1200": "884035.1414616",
+        "CP-SCALE-AU-L002__g1800": "680690.0030532",
+        "CP-SCALE-AU-L002__gW1200_gE0340_s0150": "1256324.3465714",
+        "CP-SCALE-AU-L002__gW0340_gE1200_s0150": "1255740.704204",
+        "CP-SCALE-AU-L002__gW0680_gE1200_s0150": "1061960.1311208",
+        "CP-SCALE-AU-L002__gW1200_gE0680_s0150": "1061308.4477086"
+      },
+      "overall_mean_contact_seconds": "1131305.548309475",
+      "mean_wall_seconds": "865.330054763611405",
+      "launcher_sha256": "4dd36fbcc8943c8395988c65351e718dde159d55b2f303f9486113a10df2594a",
+      "launcher_ledger_sha256": "49df0435126cfcd1dfb37c1cb77a875c7ead08e192419717b9c5ba0b7badb4a9"
+    },
+    {
+      "method": "gwmin40",
+      "scope": "supplementary_one_pass_fresh40",
+      "protocol_sha256": "f7c7c8ba23e7234c79ed337a892ddbe1837d88c209dc1d54dd2df13b8244211a",
+      "independent_audit_sha256": "bf0ca6ded9aaee60c374ce6798166bf26427640d98f93aa4911c4e4f11820cd5",
+      "binary_sha256": "a0515f47072400b8f64f38496e3e97832a65fb69c967f1bd6d5fe298eb4d5f2e",
+      "valid_positions": 40,
+      "by_view_contact_seconds": {
+        "CP-SCALE-AU-L002__g0340": "1428001.569166",
+        "CP-SCALE-AU-L002__g0680": "1065567.634886",
+        "CP-SCALE-AU-L002__g1200": "809272.863416",
+        "CP-SCALE-AU-L002__g1800": "489395.475268",
+        "CP-SCALE-AU-L002__gW1200_gE0340_s0150": "1125626.623769",
+        "CP-SCALE-AU-L002__gW0340_gE1200_s0150": "1130378.71427",
+        "CP-SCALE-AU-L002__gW0680_gE1200_s0150": "940994.22741",
+        "CP-SCALE-AU-L002__gW1200_gE0680_s0150": "943714.371695"
+      },
+      "overall_mean_contact_seconds": "991618.934985",
+      "mean_wall_seconds": "2.5752828123047947625",
+      "launcher_sha256": "e1fa96219c22d339904fe2da95bd7070880900e5b09fdc5e895569bb87d3d9f5",
+      "launcher_ledger_sha256": "1dced09ab5f7145079bcdcca3305bbb1817af06af47e67ebcbf84a3c2ef51ea2"
+    }
+  ],
+  "graph_sha256": {
+    "CP-SCALE-AU-L002__g0340": "f45451c354383da570944ddf0fc7898e9cd7056ac0ff54e97a2a2c4b69036697",
+    "CP-SCALE-AU-L002__g0680": "00df7ab3f84b2c1c98462e6a24a6844edfbe3af85b434c40e44bf86efcce2a7b",
+    "CP-SCALE-AU-L002__g1200": "daaf6d54933abd24eb20b16c253177d674328b8555bf6b795088f76ab2e671b0",
+    "CP-SCALE-AU-L002__g1800": "929df9f700cdd73c14aa1aed2a4b8ec88eb4dbaddb0252134dc68e9409a0829b",
+    "CP-SCALE-AU-L002__gW1200_gE0340_s0150": "68fd21ef61b7cfaa228bcc78aa122ab7ed1946dc1e9330e3ca3d0fbf6ff06af3",
+    "CP-SCALE-AU-L002__gW0340_gE1200_s0150": "c19525c20997580aae8cc683586362d193926c2b0a5acb702c039bb37584a967",
+    "CP-SCALE-AU-L002__gW0680_gE1200_s0150": "76b3ce4a426bc2159d59d0c133f7d5e3b01cafc6f3edf2313428f26881023dd4",
+    "CP-SCALE-AU-L002__gW1200_gE0680_s0150": "97eed4ff2c5b4a84d1d1b8e9645e81fe0d40ff8e9fc4daac45e73da590f4615c"
+  }
+}

@@ -1,0 +1,147 @@
+--- a/other_solvers/FastWVC/mwvc.h
++++ b/other_solvers/FastWVC/mwvc.h
+@@ -10,6 +10,7 @@
+ #include <cmath>
+ #include <cstring>
+ #include <sstream>
++#include <limits>
+ 
+ using namespace std;
+ 
+@@ -38,9 +39,9 @@
+ int e_num;
+ 
+ Edge *edge;
+-int *edge_weight;
+-
+-int *dscore;
++llong *edge_weight;
++
++llong *dscore;
+ llong *time_stamp;
+ 
+ int *v_weight;
+@@ -69,7 +70,7 @@
+ int *tabu_list;
+ 
+ int ave_weight;
+-int delta_total_weight;
++llong delta_total_weight;
+ int threshold;
+ double p_scale;
+ 
+@@ -116,10 +117,10 @@
+     ss >> v_num >> e_num;
+ 
+     edge = new Edge[e_num];
+-    edge_weight = new int[e_num];
++    edge_weight = new llong[e_num];
+     uncov_stack = new int[e_num];
+     index_in_uncov_stack = new int[e_num];
+-    dscore = new int[v_num + 1];
++    dscore = new llong[v_num + 1];
+     time_stamp = new llong[v_num + 1];
+     v_edges = new int *[v_num + 1];
+     v_adj = new int *[v_num + 1];
+@@ -584,7 +585,7 @@
+ 
+     uncov_stack_fill_pointer = 0;
+     c_size = 0;
+-    best_weight = (int)(~0U >> 1);
++    best_weight = std::numeric_limits<llong>::max();
+     now_weight = 0;
+ 
+     for (e = 0; e < e_num; e++)
+@@ -721,7 +722,7 @@
+ void ForgetEdgeWeights()
+ {
+     int v, e;
+-    int new_total_weitght = 0;
++    llong new_total_weitght = 0;
+ 
+     for (v = 1; v < v_num + 1; v++)
+     {
+--- a/other_solvers/FastWVC/mwvc.cpp
++++ b/other_solvers/FastWVC/mwvc.cpp
+@@ -8,14 +8,14 @@
+     if (argc == 1)
+     {
+         cout << "FastWVC - a Minimum Weighted Vertex Cover Problem solver." << endl;
+-        cout << "Usage: ./FastWVC [Graph file] [Seed] [Cutoff time] [CC mode]" << endl;
++        cout << "Usage: ./FastWVC [Graph file] [Seed] [Cutoff time] [CC mode] [Result JSON]" << endl;
+         return 1;
+     }
+ 
+-    if (argc < 5)
++    if (argc != 6)
+     {
+         cerr << "Missing argument(s)." << endl;
+-        cout << "Usage: ./FastWVC [Graph file] [Seed] [Cutoff time] [CC mode]" << endl;
++        cout << "Usage: ./FastWVC [Graph file] [Seed] [Cutoff time] [CC mode] [Result JSON]" << endl;
+         return 1;
+     }
+ 
+@@ -60,14 +60,59 @@
+     ConstructVC();
+     LocalSearch();
+ 
+-    if (CheckSolution() == 1)
++    if (best_weight == std::numeric_limits<llong>::max() || CheckSolution() != 1)
+     {
+-        cout << best_weight << "," << best_comp_time << endl;
++        cerr << "No validated vertex-cover incumbent" << endl;
++        FreeMemory();
++        return 1;
+     }
+-    else
++    llong total_weight = 0, checked_cover_weight = 0;
++    for (int v = 1; v <= v_num; ++v)
+     {
+-        cout << ", the solution is wrong." << endl;
++        total_weight += v_weight[v];
++        if (best_v_in_c[v] == 1)
++            checked_cover_weight += v_weight[v];
++        else if (best_v_in_c[v] != 0)
++        {
++            cerr << "Invalid vertex-cover membership" << endl;
++            FreeMemory();
++            return 1;
++        }
+     }
++    if (checked_cover_weight != best_weight)
++    {
++        cerr << "Vertex-cover weight does not match certificate" << endl;
++        FreeMemory();
++        return 1;
++    }
++    ofstream result(argv[5]);
++    if (!result)
++    {
++        cerr << "Cannot write result JSON" << endl;
++        FreeMemory();
++        return 1;
++    }
++    result << "{\"schema\":\"published_mwvc_native_v1\",\"solver\":\"FastWVC\",\"seed\":" << seed
++           << ",\"cover_weight_ticks\":" << best_weight << ",\"total_weight_ticks\":" << total_weight
++           << ",\"value_ticks\":" << total_weight - best_weight << ",\"selected\":[";
++    bool first = true;
++    for (int v = 1; v <= v_num; ++v)
++        if (best_v_in_c[v] == 0)
++        {
++            if (!first) result << ',';
++            first = false;
++            result << (v - 1);
++        }
++    result << "],\"best_step\":" << best_step << ",\"best_comp_time\":" << best_comp_time
++           << ",\"native_elapsed_seconds\":" << TimeElapsed() << "}\n";
++    result.close();
++    if (!result)
++    {
++        cerr << "Result JSON write failed" << endl;
++        FreeMemory();
++        return 1;
++    }
++    cout << best_weight << "," << best_comp_time << endl;
+ 
+     FreeMemory();
+ 

@@ -64,6 +64,8 @@ CP-SCALE-AU-L002 八视图，每视图五个种子 `67、71、73、79、83`，�
 
 Codex 组共 840 次模型调用，其中 838 次产生有效计划提案。[Codex 审计凭据](experiments/900s-20261009/results/audit_public.json)和[对照组审计凭据](experiments/900s-20261009/controls/results/audit_public.json)记录私有审计及原始结果的 SHA256。
 
+[传统及公开方法实验包](experiments/900s-20261009/classical_baselines/README.md)收录重新运行的固定配置 GRASP、改编的 Feasibility Jump 与 FastWVC，以及 StableSolver 大邻域搜索，各方法均为 40 个求解位置。StableSolver 局部搜索单列其每进程 9 GiB 内存上限；一次性 GWMIN 单列自然结束时的实际耗时。实验包包含逐次结果、八视图均值、算法设置、源码出处、资源记录与审计哈希。SA 结果已暂存于本实验包之外。
+
 ## 运行
 
 使用 Linux 或 WSL，Python 3.10 及以上版本、GCC/G++ 和 OpenMP。在仓库目录中执行：

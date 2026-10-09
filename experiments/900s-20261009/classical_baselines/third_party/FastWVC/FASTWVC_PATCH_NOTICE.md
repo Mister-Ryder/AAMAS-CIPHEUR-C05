@@ -1,0 +1,5 @@
+# FastWVC adaptation notice
+
+This patch applies to `other_solvers/FastWVC` in the pinned [GNN-MWVC collection](https://github.com/KennethLangedal/GNN-MWVC) commit `9c16708ae9c6489fc1ff1ac9d51bcec0743b2577`. The original FastWVC implementation is by Shaowei Cai, Yuanjie Li, Wenyin Hou, and Haoran Wang and is published at [kjcm150/fastwvc](https://github.com/kjcm150/fastwvc) under the GNU General Public License version 3. The patch contains code context derived from FastWVC and is distributed under GPL-3.0. The full license text is in [LICENSE.fastwvc.GPL-3.0](LICENSE.fastwvc.GPL-3.0).
+
+The patch widens exact objective and penalty accumulators to signed 64-bit, corrects the incumbent sentinel, and adds a selected independent-set certificate. It leaves the original initialization, move selection, local-search loop, native stopping logic, and CC mode `0` unchanged. The paper is Cai et al., *Towards faster local search for minimum weight vertex cover on massive graphs*, Information Sciences 471 (2019), 64–79, DOI 10.1016/j.ins.2018.08.052.

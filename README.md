@@ -63,6 +63,8 @@ The [Codex results](experiments/900s-20261009/results/) contain 40 positions, an
 
 The Codex arm made 840 model calls, with 838 valid plan proposals. The [shared audit receipt](experiments/900s-20261009/results/audit_public.json) and [control audit receipt](experiments/900s-20261009/controls/results/audit_public.json) retain hashes of the private audit and original results.
 
+The [classical and published-method package](experiments/900s-20261009/classical_baselines/README.md) records fresh 40-position runs of fixed-configuration GRASP, adapted Feasibility Jump, adapted FastWVC, and official StableSolver large-neighborhood search. Official StableSolver local search is reported with its separate 9 GiB process cap; one-pass GWMIN is reported with its actual natural-stop time. The package includes per-position values, eight-view means, method settings, source references, resource measurements, and audit hashes. SA results are on hold outside this experiment package.
+
 ## Build and run
 
 Use Linux or WSL with Python 3.10+, GCC/G++, and OpenMP. Run from this checkout; the native build is loaded from its `build/` directory.

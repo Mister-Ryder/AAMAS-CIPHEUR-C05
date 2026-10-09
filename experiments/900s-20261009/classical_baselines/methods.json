@@ -1,0 +1,77 @@
+{
+  "schema": "c05_non_llm_controls_public_methods_v1",
+  "methods": [
+    {
+      "id": "grasp_plain_v2",
+      "arm": "grasp_plain",
+      "slot_kind": "random_seed",
+      "scope": "primary_timed_conversion_900s",
+      "algorithm": "One fixed GRASP configuration: construction score weight_ticks/(1+original degree), feasible RCL size 8 and uniform choice; repeat randomized construction plus strictly positive exact-gain insert/evict local search; no configuration cycling, remove-one refill or greedy repair.",
+      "resources": "900 s outer wall includes fresh NPZ-to-DIMACS conversion and NPZ audit; 1 native thread and 1 physical CPU per run; 6 workers; 3 GiB address-space cap per process; shared 72 GiB cgroup; 1.5 s output reserve.",
+      "trace": "Actual strict incumbent improvements.",
+      "protocol_sha256": "b865b1075da9a448302a57ef771a33b724ac017d04b52105919b29a67ad0489f",
+      "source_sha256": "cce64546dae938503bc643d75a7d24b1f5175e5f3f99eba11323cd893f2a14ba",
+      "runner_sha256": "f9126f27163fd2c95bd83417576ac895acbe88bdfd8a214a2d4db5bcfea96dfb"
+    },
+    {
+      "id": "fj40",
+      "arm": "fj",
+      "slot_kind": "random_seed",
+      "scope": "primary_timed_conversion_900s",
+      "algorithm": "Unmodified MIT FeasibilityJump author header through thin 0/1 MIP adapter; minimize negative exact 2^-29 scaled integer weights; author initialization and callback period 500000 effort units; feasible checkpoints at first improvement and at most every 2 s while improving; no external repair.",
+      "resources": "900 s outer wall including fresh NPZ-to-METIS conversion and NPZ audit; native cutoff 890 s; 1 native thread, 1 physical CPU per run; registered maximum 6 workers, formal launcher 5; parent and native child each separately capped at 3 GiB; shared 72 GiB cgroup.",
+      "trace": "Feasible-incumbent checkpoints; native intermediate trace only when exposed.",
+      "protocol_sha256": "a47d305a9073f7f1691c336f137c9d6c081cbe2046dd6cceeae64113534ecb5b",
+      "source_sha256": "87fd81e0c75d3c701fe64768f31a24c6d0a185832c0f7ce7cfe0b116cd192435",
+      "runner_sha256": "4738b399ea382cdc1c726963567ed2581d4e5f1a666488f6d86385aa989652f4"
+    },
+    {
+      "id": "fastwvc40",
+      "arm": "fastwvc",
+      "slot_kind": "random_seed",
+      "scope": "primary_timed_conversion_900s",
+      "algorithm": "FastWVC native mode 0, author search operations and initialization; GPL-3.0 patch widens objective and penalty accumulators to signed 64-bit, fixes incumbent sentinel and emits exact cover-complement certificate; no external heuristics.",
+      "resources": "900 s outer wall including fresh NPZ-to-METIS conversion and NPZ audit; native cutoff 890 s; 1 native thread, 1 physical CPU per run; registered maximum 6 workers, formal launcher 5; parent and native child each separately capped at 3 GiB; shared 72 GiB cgroup.",
+      "trace": "Final certificate; intermediate incumbent trace only if exposed by the native run.",
+      "protocol_sha256": "9cede248510c7496966ca692277cc36bffffdd1a346753110d8e0c63d1107410",
+      "source_sha256": "b4eb20b1d63f7f2da53de1c240791f0319af73e60dd0593eb4d7a2e6d05b2f29",
+      "runner_sha256": "4738b399ea382cdc1c726963567ed2581d4e5f1a666488f6d86385aa989652f4"
+    },
+    {
+      "id": "lns5_v3",
+      "arm": "stablesolver_large_neighborhood_search",
+      "slot_kind": "process_repeat",
+      "scope": "primary_timed_conversion_900s",
+      "algorithm": "Unmodified official StableSolver large-neighborhood-search mode; five independent timed OS process repeats per view; native --seed 0 is ignored by this method.",
+      "resources": "900 s outer wall including fresh NPZ-to-DIMACS conversion and NPZ audit; native limit 890 s; 1 native thread and 1 physical CPU per run; 5 workers on CPUs 6\u201310; wrapper and child each separately capped at 3 GiB; shared 72 GiB cgroup.",
+      "trace": "Native incumbent trace with measured wall-time alignment bounds.",
+      "protocol_sha256": "540f2516a477c9cbcc9ca351cbbf707c291989bf0059b1a4f6e50f64fb6cad38",
+      "source_sha256": "c8efdf57a822b9386d1f480999af4045db64c1e6acbe5728564644196e8027c1",
+      "runner_sha256": "9e8ffa2ff341ae1992ddb4451878e59c9ea6b92abe100d442fe7f0c219aed2c0"
+    },
+    {
+      "id": "ls4_9gib",
+      "arm": "stablesolver_local_search",
+      "slot_kind": "process_repeat",
+      "scope": "separate_9gib_native850_900s",
+      "algorithm": "Unmodified official StableSolver local-search mode; five independent timed OS process repeats per view; native --seed 0 is ignored by this method.",
+      "resources": "900 s outer wall including fresh NPZ-to-DIMACS conversion and NPZ audit; native limit 850 s; 1 native thread and 1 physical CPU per run; 9 GiB address-space cap per process, registered maximum 6 workers and formal launcher 4; shared 72 GiB cgroup.",
+      "trace": "Native incumbent trace with measured wall-time alignment bounds.",
+      "protocol_sha256": "a1382942f0e7ae554d506d4e8b47b528951fafbf24f456ac378b6cc663a8ee72",
+      "source_sha256": "c8efdf57a822b9386d1f480999af4045db64c1e6acbe5728564644196e8027c1",
+      "runner_sha256": "11774d21ff3f6c8551aa014de5c17747564585ffcd46fddc43cfc31e1e3f1d64"
+    },
+    {
+      "id": "gwmin40",
+      "arm": "stablesolver_greedy_gwmin",
+      "slot_kind": "process_repeat",
+      "scope": "supplementary_one_pass_fresh40",
+      "algorithm": "Unmodified official StableSolver greedy-gwmin, one pass to natural stop; five fresh timed OS process repeats per view, native --seed 0 ignored; zero prior receipt reuse.",
+      "resources": "One-pass natural stop under a 900 s outer cap that includes fresh NPZ-to-DIMACS conversion and NPZ audit; actual runtime reported; 1 native thread and 1 physical CPU per run; 3 GiB address-space cap per process; registered maximum 6 workers, formal launcher 1 on CPU 23; shared 72 GiB cgroup.",
+      "trace": "Usually final point only; no interpolation.",
+      "protocol_sha256": "f7c7c8ba23e7234c79ed337a892ddbe1837d88c209dc1d54dd2df13b8244211a",
+      "source_sha256": "c8efdf57a822b9386d1f480999af4045db64c1e6acbe5728564644196e8027c1",
+      "runner_sha256": "11774d21ff3f6c8551aa014de5c17747564585ffcd46fddc43cfc31e1e3f1d64"
+    }
+  ]
+}
