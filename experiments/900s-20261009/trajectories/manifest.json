@@ -1,0 +1,88 @@
+{
+  "files_sha256": {
+    "README.md": "a20fb46839397317198bc8a357912f1ea2cddcccc15e06ec86a16d963f39b202",
+    "figures/01_all_methods_0_900_full_range_v3.pdf": "ce0d535177f13533e4a2543f3b053fa60be34d5dd9a3478386dfb6ae0674164c",
+    "figures/01_all_methods_0_900_full_range_v3.png": "5067b632471fe9f06275c7383ff03e42c6acde325b27aa65751153d0e3b5be92",
+    "figures/01_all_methods_0_900_v3.pdf": "774c8f9d6cb55492cffb03848003e6dcab7207d97bee1b453b82770e46469940",
+    "figures/01_all_methods_0_900_v3.png": "c290bfcdefcf9da3cdcf335c67fc201c45f941435debb4aec4438eeb0695a757",
+    "figures/01_clock_diagnostics_0_900_v3.pdf": "c0fe814d3d9867bc0b37cc8e8963a32bada1185a693c44121ea0959400a6078c",
+    "figures/01_clock_diagnostics_0_900_v3.png": "2b6382151150673e015a8ca16e7ccef96d2aeba6d318f65d3a9febacfa7f34de",
+    "figures/02_eight_views_300_900_native_process_v3.pdf": "91c1da036b24864e9600c961b01e35ecefdc43143b246ce5ae12a8d9821c0875",
+    "figures/02_eight_views_300_900_native_process_v3.png": "1eb2b07fadf65c07d73645462369a565a7f6d44f676a45ed923fff5f1479206d",
+    "figures/02_eight_views_300_900_native_v3.pdf": "77bfce3c8da0cd836da01b21cab3ce2423bd794c42a4399dca4f1d990530b6db",
+    "figures/02_eight_views_300_900_native_v3.png": "187f15ad5a91f4e7ae42a5f96814f4869b538ceca388c5493a159cbd7a4f9721",
+    "figures/02_eight_views_300_900_outer_v3.pdf": "7f87da2dac6f6a729b8b7cea8ae9da960ccd5c732c447c2b5281953133baa7a2",
+    "figures/02_eight_views_300_900_outer_v3.png": "d5efbdbaa917bb1d91b7f6f65df6592c72f0eabfbafa41bafbdce4ee54551088",
+    "figures/02_eight_views_300_900_upper_v3.pdf": "51485f32ee26e917c5c64fc2a42d85284f2ca67ec5ee46eff2a42968fe9c633d",
+    "figures/02_eight_views_300_900_upper_v3.png": "656006ad1c2311512b209b33ff7d3b4a7fac64519e55214dc254781145f5e0db",
+    "figures/03_frozen_vs_observation_900_bars_v3.pdf": "924b5bd551fa8880e35c60638ef6fae7f4264d8b6d6adba958e026c718226e40",
+    "figures/03_frozen_vs_observation_900_bars_v3.png": "1096d886c170c0029d1f5abcdb674ea451f913f5def1b686a7d631e4709a3ba9",
+    "figures/04_observation_900_spread_by_view_v3.pdf": "0999a7c09499686904219f238db444208a5eb3f2cbcc010885128543a00ba209",
+    "figures/04_observation_900_spread_by_view_v3.png": "e779d63b1d1b4d1d38e329443d6fa51a7c98b437ff55306192e6f2abb0ec5d19",
+    "figures/04_view_centered_observation_900_distribution_v3.pdf": "0c9b97bfbecd3b992fcfe9cdad0afafe8899e788a8962fd34b1076431c7d44a0",
+    "figures/04_view_centered_observation_900_distribution_v3.png": "0ce863e109a4d9c86cd382371fe9a3a735216c0699ca1de32a37f4afbf707e18",
+    "figures/05_time_to_900_best_by_view_v3.pdf": "c2d3395ef70458158497382c853ae8c10d5bc6628b0827fc165514aa3d8d540f",
+    "figures/05_time_to_900_best_by_view_v3.png": "1536fe46a0a9063764f2e35ef5f1dcd2477dac3f77ff3a7974095c00ec9edbbc",
+    "formal_900s/audited_final_by_view.csv": "bf5d1d2c5b4367d7329358303b02ae06cea82e6221fe3ad8b5d045f838ef5b66",
+    "formal_900s/audited_final_positions.csv": "2322448465b9befeb4fb09259b3ba57589b128881c96e32932ff70442c0f12cc",
+    "formal_900s/observed_curve_1s.csv": "f4eded9d79389a90b0b325b1aed85de2841a8dfd9c793ca2b9dee2aad00fba47",
+    "formal_900s/observed_improvements.csv": "44b01008696cd1eacd2ff261f69c0344865900792fb8a7a150a53cb1b5fd0d7f",
+    "observation_reruns_900s/observation_curve_1s.csv": "f3ea63bb939a9c7735c7b07dbe05aaea6f30523c90dc95b56b12d9825afd671a",
+    "observation_reruns_900s/observation_events.csv": "1153ea5939ca2dcd34f6b559bc5e5c22bd4e8ac6093351b01c15444820e4b5c7",
+    "observation_reruns_900s/observation_final_positions.csv": "8d8d66e0d96c224a406c0733558004b572c88be16a756083382df1db90981260",
+    "scripts/plot_from_public_csv.py": "a3ba3e8b557fb51857383affb25316965e6ba754002e6a74cf4a0f2a2c5280b5"
+  },
+  "formal_positions": 400,
+  "formal_traced_positions_by_method": {
+    "codex": 40,
+    "grasp": 40,
+    "knn": 40,
+    "linucb": 40,
+    "lns": 40,
+    "ls": 40
+  },
+  "independent_telemetry_audit_sha256": {
+    "chils": "47c572433f52cc0968a414a892b42c8fcac1346cca6f43d5b93a66d97cd9ad10",
+    "fastwvc": "50f4556bb3c0c27bf15b1b1ed1db60250a998c5886e916db40daa9bf1f99a91f",
+    "fj": "40577f3370c0bcbd44daf4ffd7602fbb630b2198267f05ee18b92e9fb1a7fd12"
+  },
+  "numeric_source_sha256": {
+    "formal_900s/audited_final_by_view.csv": "bf5d1d2c5b4367d7329358303b02ae06cea82e6221fe3ad8b5d045f838ef5b66",
+    "formal_900s/audited_final_positions.csv": "2322448465b9befeb4fb09259b3ba57589b128881c96e32932ff70442c0f12cc",
+    "formal_900s/observed_curve_1s.csv": "f4eded9d79389a90b0b325b1aed85de2841a8dfd9c793ca2b9dee2aad00fba47",
+    "formal_900s/observed_improvements.csv": "44b01008696cd1eacd2ff261f69c0344865900792fb8a7a150a53cb1b5fd0d7f",
+    "observation_reruns_900s/observation_curve_1s.csv": "f3ea63bb939a9c7735c7b07dbe05aaea6f30523c90dc95b56b12d9825afd671a",
+    "observation_reruns_900s/observation_events.csv": "1153ea5939ca2dcd34f6b559bc5e5c22bd4e8ac6093351b01c15444820e4b5c7",
+    "observation_reruns_900s/observation_final_positions.csv": "8d8d66e0d96c224a406c0733558004b572c88be16a756083382df1db90981260"
+  },
+  "observation_methods_held_out": [],
+  "observation_methods_included": [
+    "chils_telemetry",
+    "fastwvc_telemetry",
+    "fj_telemetry"
+  ],
+  "observation_positions_by_method": {
+    "chils_telemetry": 40,
+    "fastwvc_telemetry": 40,
+    "fj_telemetry": 40
+  },
+  "physical_source": "CP-SCALE-AU-L002",
+  "schema": "cipheur_900s_public_numeric_trajectories_v1",
+  "source_manifest_sha256": {
+    "final_v3_figures": "7068672d6b534de6d2f610b4484e719375396cd981f4302cd7e7e5c84c41546a",
+    "frozen_formal_events": "c4a472f5f5af2e8a3442c116cdc340d20d01063657ea3e5430dcd4e5a4f9e6ff",
+    "frozen_formal_figures": "9f830d3363c662e34553c31058d725bb7f32bdab13c53411246e2562dbd5f61d",
+    "three_cohort_transfer": "59c30fb3f7a8ed2d76d19c10ce115ee974bd26df10b46514593fac8931738f16"
+  },
+  "time_horizon_seconds": 900,
+  "views": [
+    "CP-SCALE-AU-L002__g0340",
+    "CP-SCALE-AU-L002__g0680",
+    "CP-SCALE-AU-L002__g1200",
+    "CP-SCALE-AU-L002__g1800",
+    "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+    "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+    "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+    "CP-SCALE-AU-L002__gW1200_gE0680_s0150"
+  ]
+}
