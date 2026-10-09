@@ -1,0 +1,126 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AAMAS 2027 Research Paper Track draft based on AAMAS_2027_sample.tex.
+% The reported 900-second observations are audited. A separate prospective
+% offline LLM controller has a documented one-shot generation receipt;
+% the historical KNN and LinUCB rows are source-defined programmatic controls.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[sigconf,anonymous]{aamas}
+\usepackage{booktabs}
+\usepackage{placeins}
+\graphicspath{{figures/}{../results/}{../results/figures/}}
+
+% Official AAMAS 2027 copyright block (from AAMAS_2027_sample.tex).
+\makeatletter
+\gdef\@copyrightpermission{
+  \begin{minipage}{0.2\columnwidth}
+   \href{https://creativecommons.org/licenses/by/4.0/}{\includegraphics[width=0.90\textwidth]{by}}
+  \end{minipage}\hfill
+  \begin{minipage}{0.8\columnwidth}
+   \href{https://creativecommons.org/licenses/by/4.0/}{This work is licensed under a Creative Commons Attribution International 4.0 License.}
+  \end{minipage}
+  \vspace{5pt}
+}
+\makeatother
+
+\setcopyright{ifaamas}
+\acmConference[AAMAS 2027]{Proc.\@ of the 26th International Conference
+on Autonomous Agents and Multiagent Systems (AAMAS 2027)}{3--7 May 2027}{Hanoi, Vietnam}{M.~Baldoni, F.~Fang, W.~Yeoh, N.~Yorke-Smith (eds.)}
+\copyrightyear{2027}
+\acmYear{2027}
+\acmDOI{}
+\acmISBN{}
+\acmSubmissionID{TBD}
+\submissionType{Research Paper Track}
+\title[CIPHEUR: Structural Search Control]{CIPHEUR: LLM-Guided Structural Search Control for Conflict-Graph Optimization}
+
+\begin{abstract}
+Conflict-graph search can stagnate despite effective operators when interventions do not address current conflicts. Moreover, a disruptive intervention may appear unproductive before further search realizes its benefits. We study CIPHEUR, a structural search-control framework whose Structured Intervention Units (SIUs) connect conflict evidence to coordinated intervention and recovery. A common finite-plan interface supports programmatic selectors and online contextual decisions by a large language model (LLM). In the evaluated implementation, the programmatic experience-guided and value-guided selectors update from outcomes observed during a solve; the online LLM selects from the same plan registry while native optimization continues asynchronously. Both paths preserve the original objective and feasibility constraints. On eight constraint views of one satellite-ground scheduling contact source, each evaluated at five seeds and a 900-second budget, the online and two programmatic configurations exceed the CHILS-p4-custom mean objective by 0.336\%, 0.309\%, and 0.306\%, respectively. A separately frozen one-shot LLM-authored offline selector, CIPHEUR-off-GEN, returned legal plan IDs on 84 saved decision packets and averaged 1,136,347.357 contact-seconds across the 40-position frame (40/40 audited). The two programmatic controls are source-defined and are not attributed to that synthesis.
+\end{abstract}
+
+\keywords{large language models, maximum-weight independent set, search control, satellite-ground scheduling}
+\ccsdesc[500]{Mathematics of computing~Combinatorial optimization}
+\ccsdesc[300]{Computing methodologies~Search methodologies}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+Effective combinatorial optimization depends on matching search actions to the opportunities available in the current state. Learning-assisted optimization and selection hyper-heuristics have made such decisions an explicit target of algorithm design~\cite{bengio2021methodological,drake2020selection}. Learning to schedule existing primal heuristics, for example, improves the allocation of search effort within a solver~\cite{chmiela2021schedule}. In conflict-graph optimization, this allocation also has a structural dimension: the value of an operation depends on the activities it displaces and the combinations it makes accessible. Exploiting this relationship calls for control decisions that connect observed conflicts to the subsequent course of search.
+
+We study maximum-weight independent set (MWIS) optimization on resource-labelled conflict graphs. Weighted vertices represent candidate activities, and edges encode pairwise incompatibility. In satellite-ground scheduling, resource and temporal labels describe the conflicts among communication opportunities. Two search trajectories can attain similar objective values while excluding different combinations of activities, making the choice of intervention target consequential. A reconstruction can also reduce a trajectory's immediate value while creating opportunities for later improvement or exchange. These dependencies motivate the joint choice of \emph{how to intervene, where to act, and how search should continue}. The resulting control problem links structural targeting with the delayed effects of intervention.
+
+Large language models (LLMs) offer complementary capabilities for addressing this problem. They can construct executable heuristics from problem descriptions and evaluative feedback~\cite{romeraparedes2024funsearch,liu2024eoh,ye2024reevo}, and make state-dependent heuristic choices during optimization~\cite{zhang2025laos,yang2025heuragenix}. Bringing these capabilities to conflict-graph search requires an actionable connection between contextual judgment and structural change. A useful decision must identify its target, organize the intervention and its continuation, and remain meaningful as the solver progresses. This motivates a common control abstraction through which executable policies and runtime reasoning can direct a continuing search.
+
+We propose \textbf{CIPHEUR}, an LLM-guided structural search-control framework centered on the \textbf{Structured Intervention Unit (SIU)}. An SIU jointly specifies a structural target, an intervention, and the search behavior that follows it. Candidate SIUs are grounded in the conflicts affecting the current trajectories, linking each choice to a concrete search context. Subsequent choices use the solution-quality changes observed across executed intervention-recovery periods. Together, these elements establish a shared observation-decision-feedback loop in which each decision governs a coordinated course of search.
+
+Two selection paths operate over this common SIU space. A programmatic path executes a controller constructed before deployment; its estimates may change as search produces new feedback. In the evaluated implementation, the experience-guided and contextual-value-guided paths are source-defined KNN and LinUCB selectors. An online LLM path chooses SIUs directly from current structural evidence and search history. The shared execution interface preserves the original objective and feasibility constraints, and the asynchronous online path lets native search proceed while the model responds. We separately froze one newly LLM-authored offline selector, CIPHEUR-off-GEN, from a recorded generation request. Its interface validation and matched 40-position result are reported here; it is distinct from the two source-defined controls.
+
+The contributions of this study are threefold. \emph{First}, we formulate structure-grounded search control around SIUs that jointly express intervention, targeting, and recovery. \emph{Second}, we put source-defined programmatic selection and online LLM decisions over a shared executable control space, using feedback from actual search and asynchronous online execution. \emph{Third}, we report a matched 900-second evaluation on eight constraint views of one satellite-ground scheduling contact source, with five seeds per view. The three evaluated selectors have mean objectives 0.306--0.336\% above CHILS-p4-custom~\cite{grossmann2025chils} in this registered frame.
+
+\section{Related Work}
+
+\subsection{Independent-Set Search and Structural Guidance}
+
+MWIS heuristics exploit solution structure to combine intensification with exploration. METAMIS uses efficient local moves and path relinking within a GRASP framework~\cite{dong2022metamis}, while CHILS combines iterated local search with cooperation based on differences among solutions~\cite{grossmann2025chils}. Learning-based graph optimization offers another form of structural guidance: Li et al.~\cite{li2018guided} use graph-convolutional predictions to guide tree search for independent sets. These approaches share the goal of using graph and solution information to expose promising combinations.
+
+CIPHEUR studies this relationship at the level of search interventions. Resource-specific blocking evidence connects candidate activities to the trajectories that exclude them, providing a basis for choosing where to redirect search. A coordinated continuation then explores the opportunities created by the intervention. The emphasis is on converting structural evidence into decisions about the course of a population search, complementing work on local moves, solution exchange, and vertex-level guidance.
+
+\subsection{Adaptive and Temporally Extended Search Control}
+
+Selection hyper-heuristics adapt the use of low-level heuristics to search state and history~\cite{drake2020selection}; dynamic algorithm configuration learns policies for changing algorithm settings during execution~\cite{adriaensen2022dynamic}. Learned heuristic scheduling similarly allocates effort among existing solver components~\cite{chmiela2021schedule}. Adaptive large neighborhood search coordinates competing removal and insertion heuristics through performance feedback~\cite{ropke2006alns}, and learned neighborhood selection chooses variables for solver-based reoptimization~\cite{wu2021lns}. Together, these studies establish policy adaptation, effort allocation, and intervention targeting as complementary dimensions of search control.
+
+Temporal abstraction provides a further dimension by treating an extended course of action as a decision unit, as formalized by the options framework~\cite{sutton1999options}. SIUs combine structural targeting with an explicit intervention-recovery sequence. A conflict anchor guides reconstruction priorities across the candidate activities, and the accompanying continuation specifies how the altered trajectory contributes to further search. Feedback summarizes quality changes over the executed sequence. This coupling makes the structural scope and observed effects of an intervention jointly available to the controller.
+
+\subsection{LLM-Based Algorithm Design and Search Decisions}
+
+LLM-based algorithm design couples program generation with empirical evaluation. FunSearch evolves executable programs using systematic scoring~\cite{romeraparedes2024funsearch}; EoH jointly evolves heuristic ideas and code~\cite{liu2024eoh}; and ReEvo uses reflective feedback to guide this search~\cite{ye2024reevo}. MCTS-AHD broadens exploration of heuristic programs through tree search~\cite{zheng2025mctsahd}, while EoH-S evolves complementary sets of heuristics~\cite{liu2026eohs}. This line of work demonstrates how LLM design knowledge can be retained in reusable algorithmic components.
+
+A related line places model decisions within optimization. LAOS combines search-state information, operator credit, and replayed experience for adaptive operator selection~\cite{zhang2025laos}. LLMOA constructs sequences of low-level operators for continuous optimization~\cite{zhong2025llmoa}. HeurAgenix combines heuristic evolution with state-dependent selection, using Monte Carlo continuation estimates and supporting a fine-tuned lightweight selector~\cite{yang2025heuragenix}. These methods connect language-model capabilities with both algorithm construction and ongoing heuristic choice.
+
+CIPHEUR makes the joint choice of target, intervention, and recovery the common task for programmatic selectors and an online LLM. Its SIU interface links control decisions to the conflicts observed during execution, while feedback reflects the search actually carried out. Asynchronous coordination lets online reasoning influence an evolving search through decisions whose structural meaning remains tied to their originating observations.
+
+\section{Method Overview}
+
+Given a weighted conflict graph $G=(V,E)$, CIPHEUR maintains feasible search trajectories and an incumbent independent set. At a decision point, the controller observes the current search state, recent execution history, and a finite registry of valid SIUs. A selected unit binds an operation to a trajectory and structural target and specifies the subsequent search steps. The native executor checks the selected plan against the current registry, installs it, and records interval outcomes for later decisions. The programmatic selectors and the online LLM differ in how they choose a plan; both use the same registered plan space and original graph objective. Details of plan construction, protected states, and native execution will be incorporated with the mechanism experiments.
+
+\section{Experimental Results}
+
+\subsection{Registered 900-Second Comparison}
+\input{fragments/combined_main_table.tex}
+
+The registered comparison uses eight constraint views of the single physical contact source \texttt{CP-SCALE-AU-L002}. Each view is run with seeds 67, 71, 73, 79, and 83 under a 900-second wall-clock budget. Every position uses a population of four and one native solver thread. The four arms are CIPHEUR-online, CIPHEUR-off-EXP, CIPHEUR-off-VAL, and CHILS-p4-custom; all 160 arm--graph--seed results passed the independent identity, input-hash, objective, and feasibility audit. The source-defined experience-guided and value-guided controls implement KNN and LinUCB selection, respectively. Here \textit{off} means that the selector uses no runtime LLM call; the available records do not attribute these programs to LLM synthesis. The reported mean gives each of the eight views equal weight after averaging its five seeds.
+
+Across the 40 matched graph--seed positions, CIPHEUR-online has a higher
+final objective than CHILS-p4-custom in all 40. It exceeds CIPHEUR-off-EXP
+and CIPHEUR-off-VAL in 24 positions each, and is below each in the
+remaining 16. No pair has an equal final objective.
+
+% Append verified experiment fragments in completion order. Empty source files
+% are intentional hooks and can be replaced without changing this main file.
+\input{fragments/main_comparison.tex}
+\input{fragments/framework_ablation.tex}
+\input{fragments/siu_ablation.tex}
+\IfFileExists{../results/siu_ablation_table.tex}{\input{../results/siu_ablation_table.tex}}{}
+\IfFileExists{../results/siu_paired_deltas.tex}{\input{../results/siu_paired_deltas.tex}}{}
+\input{fragments/trajectory_results.tex}
+\input{fragments/intervention_events.tex}
+\input{fragments/async_execution.tex}
+\IfFileExists{../sync_async/analysis/sync_async_results.tex}{\input{../sync_async/analysis/sync_async_results.tex}}{}
+\input{fragments/offline_generation.tex}
+\IfFileExists{../offline_llm_c05/analysis_l002_full/results_l002_full.tex}{%
+  \input{../offline_llm_c05/analysis_l002_full/results_l002_full.tex}%
+}{%
+  \IfFileExists{../offline_llm_c05/analysis_l002/results_l002.tex}{%
+    \input{../offline_llm_c05/analysis_l002/results_l002.tex}%
+  }{}%
+}
+\IfFileExists{../offline_llm_c05/analysis_l003/results_l003.tex}{\input{../offline_llm_c05/analysis_l003/results_l003.tex}}{}
+\input{fragments/heldout_source.tex}
+
+% Add the official sample's balance package for final pagination if required.
+\FloatBarrier
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{CIPHEUR_references}
+\end{document}

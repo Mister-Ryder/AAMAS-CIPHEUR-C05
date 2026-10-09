@@ -1,0 +1,52 @@
+{
+  "schema": "cipheur_c05_offline_llm_l002_8x5_merge_v1",
+  "position_map_sha256": "eff0d903c762e9809341030ffe016ca6a6d3a683176780bc7bde6d0247cda153",
+  "base_audit_sha256": "2f23d3e78ebb95a80c8f9d82ef812991f67fcd3096d97d118f5e71972f644132",
+  "extension_audit_sha256": "4abbd69613480493bb367884134b94fa7e65f6c0347f4ef1cde5fd3c1b2a6a1e",
+  "base_positions_sha256": "4e75ddf339d68394c071855e3f13094a6e1d951cf1502b7a1f3521329e802b1b",
+  "extension_positions_sha256": "544ed9ee7145ad88a161345b2fcadd3144ca1ebc5a796b5438949f0a48e374e9",
+  "valid_positions": 40,
+  "mean_contact_seconds": "1136347.3573557",
+  "by_view": {
+    "CP-SCALE-AU-L002__g0340": {
+      "positions": 5,
+      "total_value_ticks": 8123745371808,
+      "mean_contact_seconds": "1624749.0743616"
+    },
+    "CP-SCALE-AU-L002__g0680": {
+      "positions": 5,
+      "total_value_ticks": 6243124902163,
+      "mean_contact_seconds": "1248624.9804326"
+    },
+    "CP-SCALE-AU-L002__g1200": {
+      "positions": 5,
+      "total_value_ticks": 4410992273313,
+      "mean_contact_seconds": "882198.4546626"
+    },
+    "CP-SCALE-AU-L002__g1800": {
+      "positions": 5,
+      "total_value_ticks": 3413581411879,
+      "mean_contact_seconds": "682716.2823758"
+    },
+    "CP-SCALE-AU-L002__gW0340_gE1200_s0150": {
+      "positions": 5,
+      "total_value_ticks": 6299826025002,
+      "mean_contact_seconds": "1259965.2050004"
+    },
+    "CP-SCALE-AU-L002__gW0680_gE1200_s0150": {
+      "positions": 5,
+      "total_value_ticks": 5329540851259,
+      "mean_contact_seconds": "1065908.1702518"
+    },
+    "CP-SCALE-AU-L002__gW1200_gE0340_s0150": {
+      "positions": 5,
+      "total_value_ticks": 6302951743979,
+      "mean_contact_seconds": "1260590.3487958"
+    },
+    "CP-SCALE-AU-L002__gW1200_gE0680_s0150": {
+      "positions": 5,
+      "total_value_ticks": 5330131714825,
+      "mean_contact_seconds": "1066026.342965"
+    }
+  }
+}

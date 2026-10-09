@@ -1,0 +1,42 @@
+{
+  "schema": "cipheur_control_second_audit_8x5_v1",
+  "position_map_sha256": "eff0d903c762e9809341030ffe016ca6a6d3a683176780bc7bde6d0247cda153",
+  "registration_sha256": "2eae77f1752b4b1af2024f71fdc963c0dc432296862b48d427ff7d98b8a25dac",
+  "positions_per_arm": 40,
+  "arms": {
+    "siu_off": {
+      "mean_contact_seconds": "1134403.0371794",
+      "by_view_contact_seconds": {
+        "CP-SCALE-AU-L002__g0340": "1623333.0449062",
+        "CP-SCALE-AU-L002__g0680": "1247083.4409042",
+        "CP-SCALE-AU-L002__g1200": "879532.5449706",
+        "CP-SCALE-AU-L002__g1800": "680130.3698636",
+        "CP-SCALE-AU-L002__gW0340_gE1200_s0150": "1258037.6911314",
+        "CP-SCALE-AU-L002__gW0680_gE1200_s0150": "1064391.705638",
+        "CP-SCALE-AU-L002__gW1200_gE0340_s0150": "1258587.5986066",
+        "CP-SCALE-AU-L002__gW1200_gE0680_s0150": "1064127.9014146"
+      },
+      "main_summary_sha256": "fb68b1af0df72b63f394b1c95dd711a2fe9ee952e73008cb90e3f7712f8944db",
+      "main_positions_sha256": "fefa9b97c30342b269638041a0c60ca7e85bdc52bb6c34ee8113f943467fc257",
+      "main_table_checked": true,
+      "main_summary_by_view_checked": false
+    },
+    "fixed_spread": {
+      "mean_contact_seconds": "1137567.142428775",
+      "by_view_contact_seconds": {
+        "CP-SCALE-AU-L002__g0340": "1625508.9544336",
+        "CP-SCALE-AU-L002__g0680": "1249323.321899",
+        "CP-SCALE-AU-L002__g1200": "884170.188832",
+        "CP-SCALE-AU-L002__g1800": "682958.3980728",
+        "CP-SCALE-AU-L002__gW0340_gE1200_s0150": "1261489.9528912",
+        "CP-SCALE-AU-L002__gW0680_gE1200_s0150": "1067764.7483454",
+        "CP-SCALE-AU-L002__gW1200_gE0340_s0150": "1262543.5447518",
+        "CP-SCALE-AU-L002__gW1200_gE0680_s0150": "1066778.0302044"
+      },
+      "main_summary_sha256": "fb68b1af0df72b63f394b1c95dd711a2fe9ee952e73008cb90e3f7712f8944db",
+      "main_positions_sha256": "fefa9b97c30342b269638041a0c60ca7e85bdc52bb6c34ee8113f943467fc257",
+      "main_table_checked": true,
+      "main_summary_by_view_checked": false
+    }
+  }
+}

@@ -1,0 +1,40 @@
+\subsection{Framework-Level SIU Ablation}
+The primary framework ablation compares the complete online configuration
+with two controls on matched graph--seed--host positions. \emph{SIU-Off}
+keeps the initial \texttt{v05\_nonllm\_adaptive} native plan and makes no
+subsequent SIU decisions or plan installations; the native plan retains
+its original diversity-based search rule. \emph{Fixed-Spread}
+retains the SIU execution interface and scheduled decision points, but
+returns the same legal single-operation \texttt{spread} plan each time.
+Both controls use the same 900\,s budget, four native trajectories, and
+original objective and feasibility checks; neither calls a model during
+deployment. Fixed-Spread also changes the mix of executed plans, so it is
+a coarse no-adaptation control rather than a selector-only causal test.
+The original four-view screen is retained as supplementary
+selector and evidence controls. CIPHEUR-off-RAND is a random
+programmatic selector that executes SIUs without deployment model calls
+and therefore does not represent component removal.
+\IfFileExists{../extension_8x5/analysis/core_siu_full_table.tex}{%
+  \input{../extension_8x5/analysis/core_siu_full_summary.tex}%
+  \input{../extension_8x5/analysis/core_siu_full_table.tex}%
+  \input{../extension_8x5/analysis/core_siu_full_deltas.tex}%
+}{%
+  \IfFileExists{../extension_8x5/analysis/core_controls_full_table.tex}{%
+    \input{../extension_8x5/analysis/core_controls_full_summary.tex}%
+    \input{../extension_8x5/analysis/core_controls_full_table.tex}%
+    \input{../extension_8x5/analysis/core_siu_screen_summary.tex}%
+    \input{../extension_8x5/analysis/core_siu_screen_deltas.tex}%
+  }{%
+    \IfFileExists{../extension_8x5/analysis/core_siu_screen_table.tex}{%
+      \input{../extension_8x5/analysis/core_siu_screen_summary.tex}%
+      \input{../extension_8x5/analysis/core_siu_screen_table.tex}%
+      \input{../extension_8x5/analysis/core_siu_screen_deltas.tex}%
+    }{}%
+    \IfFileExists{../extension_8x5/analysis/siu_off_full_partial.tex}{%
+      \input{../extension_8x5/analysis/siu_off_full_partial.tex}%
+    }{}%
+    \IfFileExists{../extension_8x5/analysis/fixed_spread_full_partial.tex}{%
+      \input{../extension_8x5/analysis/fixed_spread_full_partial.tex}%
+    }{}%
+  }%
+}

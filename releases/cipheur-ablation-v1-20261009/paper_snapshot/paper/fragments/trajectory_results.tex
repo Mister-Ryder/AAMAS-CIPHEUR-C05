@@ -1,0 +1,52 @@
+% Generated from the audited C05 900-second private numeric logs.
+% Compile from workspace root, or redefine \CIPHEURLogsDir before input.
+\providecommand{\CIPHEURLogsDir}{figures/}
+\subsection{Recorded Search Trajectories and Execution}
+The final objectives and recorded 20--900\,s AOC values appear together in
+Table~\ref{tab:c05-900s}.
+\begin{figure*}[t]
+\centering
+\includegraphics[width=.86\textwidth]{\CIPHEURLogsDir on_off_anytime_relative.pdf}
+\Description{Mean paired CIPHEUR-online minus CIPHEUR-off-EXP and CIPHEUR-off-VAL incumbent value, normalized by each view's best recorded terminal feasible value, over wall-clock time 20 to 900 seconds.}
+\caption{Recorded anytime differences for CIPHEUR-online versus CIPHEUR-off-EXP and CIPHEUR-off-VAL. Values are paired by view and seed; positive values favor CIPHEUR-online. Each series averages 40 pairs. The step curves use saved epoch-end incumbent observations without interpolation.}
+\label{fig:cipheur-log-anytime}
+\end{figure*}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=.90\textwidth]{\CIPHEURLogsDir attainment_difference.pdf}
+\Description{Two empirical attainment-difference heatmaps, CIPHEUR-online minus CIPHEUR-off-EXP and CIPHEUR-online minus CIPHEUR-off-VAL, on a fixed wall-clock and reference-gap target grid. Each cell uses 40 matched graph--seed positions.}
+\caption{Empirical attainment differences for CIPHEUR-online versus the two recorded programmatic controls. Each cell reports the percentage-point difference in the fraction of 40 graph--seed positions reaching the stated reference-gap target by the stated wall-clock time; red favors CIPHEUR-online. The grid is unsmoothed. The view reference is the best audited terminal feasible value among the four registered arms.}
+\label{fig:cipheur-log-attainment}
+\end{figure*}
+At 900\,s and a 0.05\% reference-gap target, 10/40 online runs attained the target, compared with 6/40 for off-EXP and 6/40 for off-VAL.
+\begin{figure*}[t]
+\centering
+\includegraphics[width=.76\textwidth]{\CIPHEURLogsDir siu_event_aligned.pdf}
+\Description{Event-aligned recorded incumbent change, mean search-trajectory change, and population diversity around installed directed-reseed entries.}
+\caption{Observed directed-SIU execution. Of 406 directed intervals, 401 have an installed native directed-reseed entry. Each point averages events within a run, then averages runs. Positive times are retained only before plan replacement (401 events through 24 s; 400 at 30 s). These observational changes are not causal effects.}
+\label{fig:cipheur-log-siu}
+\end{figure*}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=.86\textwidth]{\CIPHEURLogsDir async_execution_timeline.pdf}
+\Description{Recorded first 140 seconds of the first preregistered graph and seed: request pending and HTTP periods above native search epochs, with plan installations marked by triangles.}
+\caption{Recorded asynchronous execution, CP-SCALE-AU-L002\_\_g0340, seed 67, first 140 wall-clock seconds. Pale upper bars denote request-to-receipt intervals, dark upper bars HTTP intervals, lower bars native work (orange for directed reconstruction), and triangles installed plans.}
+\label{fig:cipheur-log-async}
+\end{figure*}
+\begin{table}[t]
+\centering
+\caption{Online request and native-work timing aggregated over the 40 recorded CIPHEUR-online runs. Intervals overlap and must not be added to solver wall time. Token usage was unavailable in the saved provider receipts.}
+\label{tab:cipheur-log-overhead}
+\begin{tabular}{@{}p{.65\columnwidth}r@{}}
+\toprule
+Measure & Recorded value \\
+\midrule
+Model calls / installed plans & 840 / 838 \\
+Latency median / p90 (s) & 11.06 / 13.87 \\
+Native work during pending (s) & 9837.4 \\
+Pending time with native work (\%) & 99.9 \\
+Native cycles while model pending & 2,720,049 \\
+\bottomrule
+\end{tabular}
+\end{table}
+

@@ -1,0 +1,78 @@
+{
+  "schema": "cipheur_l003_cross_source_candidate_900s_v1",
+  "registered_date": "2026-10-09",
+  "status": "cross-source candidate; not certified untouched heldout",
+  "source_group": "CP-SCALE-L003",
+  "source_evidence": {
+    "candidate_manifest": "experiments/cipheur_siu_20261009/offline_evidence/candidate_heldout_manifest.json",
+    "reference_900s_source_group": "CP-SCALE-L002",
+    "selection_rule": "Before optimizer outcomes: both L003 geometries; g0340 homogeneous and gW1200_gE0340_s0150 heterogeneous in each scene",
+    "global_development_nonuse_proven": false
+  },
+  "graphs": [
+    {
+      "graph_id": "CP-SCALE-AU-L003__g0340",
+      "scene": "AU",
+      "view": "homogeneous",
+      "path": "data/两篇论文数据定制化构建/CIPHEUR_STK_SCALEUP_20261007/perf_dataset_v1/graphs/CP-SCALE-AU-L003/g0340.npz",
+      "sha256": "d0e549969f6c710a4cf65350cebc40790e008bd9b9d6350d1b1a3032bdf78832"
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L003__gW1200_gE0340_s0150",
+      "scene": "AU",
+      "view": "heterogeneous",
+      "path": "data/两篇论文数据定制化构建/CIPHEUR_STK_SCALEUP_20261007/perf_dataset_v1/graphs/CP-SCALE-AU-L003/gW1200_gE0340_s0150.npz",
+      "sha256": "38ee0852c8e07a9f474b85c61d3f61517ad5d7ca0381bb7347f236db55836c79"
+    },
+    {
+      "graph_id": "CP-SCALE-AP-L003__g0340",
+      "scene": "AP",
+      "view": "homogeneous",
+      "path": "data/两篇论文数据定制化构建/CIPHEUR_STK_SCALEUP_20261007/perf_dataset_v1/graphs/CP-SCALE-AP-L003/g0340.npz",
+      "sha256": "34fb1e74beafa350c83db7d072df7470f1e3cb2f5eabd778c1a48460555b8fee"
+    },
+    {
+      "graph_id": "CP-SCALE-AP-L003__gW1200_gE0340_s0150",
+      "scene": "AP",
+      "view": "heterogeneous",
+      "path": "data/两篇论文数据定制化构建/CIPHEUR_STK_SCALEUP_20261007/perf_dataset_v1/graphs/CP-SCALE-AP-L003/gW1200_gE0340_s0150.npz",
+      "sha256": "566baf858fb37bc515422e278145954cadb9359fab72a710ea5ffce62482cc79"
+    }
+  ],
+  "seeds": [67, 71, 73],
+  "arms": [
+    {"id": "cipheur_on", "solve_mode": "llm", "source": "C05 plan_solver", "model": "gpt-6-luna"},
+    {"id": "off_exp_knn", "solve_mode": "knn", "source": "C05 plan_solver", "model": null, "identity_note": "programmatic KNN control; LLM offline authoring unverified"},
+    {"id": "off_val_linucb", "solve_mode": "linucb", "source": "C05 plan_solver", "model": null, "identity_note": "programmatic LinUCB control; LLM offline authoring unverified"},
+    {"id": "chils_p4_custom", "solve_mode": "original", "source": "original CHILS bridge", "model": null}
+  ],
+  "expected_positions": 48,
+  "budget": {
+    "wall_seconds_per_position": 900,
+    "native_threads_per_position": 1,
+    "population": 4,
+    "c05_max_calls": 21,
+    "c05_first_decision_seconds": 20,
+    "c05_decision_interval_seconds": 40,
+    "chils_step": 10,
+    "chils_cycles": 9223372036854775807,
+    "chils_ls_iterations": 9223372036854775807
+  },
+  "source_identity": {
+    "selected_frozen_c05_code_tree_sha256": "dcbe60adf344aae790a2425d76d45ca25980a5c4daff64ec64bdd3df9b05a6f8",
+    "selected_patched_c05_code_tree_sha256": "6af42eec85da07d86879b54ec24a4634386231f0428403e35ca6f5c2256ea752",
+    "frozen_c05_plan_solver_sha256": "c57f914c405e1f7ec668c95a08fb0ed50e01636b82e1735b12e712130a868e3c",
+    "frozen_c05_contracts_sha256": "5ef17551a54b601deafbd2ff81273df3ffc7611b1cb5aba6db83965e263ee5eb",
+    "patched_c05_contracts_sha256": "9a5e63d345e097ac35f3914ff438deb492202579e5313013f80d503300c53e69",
+    "frozen_c05_plan_provider_sha256": "72a2ccc3fdbebe379441d5db0a8a8f197626153e942e7bd5d9bbeff0fbf7a875",
+    "chils_original_binary_sha256": "134b238004b3f7ca7fc0ee1b424c9a6826139b86656156e8adc4ecc0acd68736",
+    "chils_public_registration_sha256": "78f77de8efc2be78436250a0e909d6e5aa66832bb9353459a3aaedab890e1db1"
+  },
+  "reporting": {
+    "objective": "sum of selected integer contact duration ticks; 1000000 ticks per second",
+    "unit_of_source_replication": "one L003 source group with paired AU/AP scenes",
+    "aggregations": "mean of three seeds per graph; equal mean of two views per scene; equal mean of AU/AP scenes for source group",
+    "comparisons": "paired cipheur_on minus each comparator at identical graph and seed",
+    "missingness": "no aggregate LaTeX table or figure until all 48 positions pass independent audit"
+  }
+}

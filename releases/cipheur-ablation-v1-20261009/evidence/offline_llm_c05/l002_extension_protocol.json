@@ -1,0 +1,238 @@
+{
+  "schema": "cipheur_c05_prospective_offline_llm_l002_extension_900s_v1",
+  "frozen_at_utc": "2026-10-09T03:25:41.548989+00:00",
+  "relationship": "28 missing positions, supplemental to unchanged 12-position authored protocol",
+  "arm": "offline_llm",
+  "phase": "prospective_offline_llm_l002_extension_900s_20261009",
+  "physical_source": "CP-SCALE-AU-L002",
+  "graph_sha256": {
+    "CP-SCALE-AU-L002__g0340": "f45451c354383da570944ddf0fc7898e9cd7056ac0ff54e97a2a2c4b69036697",
+    "CP-SCALE-AU-L002__g0680": "00df7ab3f84b2c1c98462e6a24a6844edfbe3af85b434c40e44bf86efcce2a7b",
+    "CP-SCALE-AU-L002__g1200": "daaf6d54933abd24eb20b16c253177d674328b8555bf6b795088f76ab2e671b0",
+    "CP-SCALE-AU-L002__g1800": "929df9f700cdd73c14aa1aed2a4b8ec88eb4dbaddb0252134dc68e9409a0829b",
+    "CP-SCALE-AU-L002__gW1200_gE0340_s0150": "68fd21ef61b7cfaa228bcc78aa122ab7ed1946dc1e9330e3ca3d0fbf6ff06af3",
+    "CP-SCALE-AU-L002__gW0340_gE1200_s0150": "c19525c20997580aae8cc683586362d193926c2b0a5acb702c039bb37584a967",
+    "CP-SCALE-AU-L002__gW0680_gE1200_s0150": "76b3ce4a426bc2159d59d0c133f7d5e3b01cafc6f3edf2313428f26881023dd4",
+    "CP-SCALE-AU-L002__gW1200_gE0680_s0150": "97eed4ff2c5b4a84d1d1b8e9645e81fe0d40ff8e9fc4daac45e73da590f4615c"
+  },
+  "seeds": [
+    67,
+    71,
+    73,
+    79,
+    83
+  ],
+  "expected_positions": 28,
+  "positions_by_partition": {
+    "0": [
+      {
+        "graph_id": "CP-SCALE-AU-L002__g0340",
+        "seed": 83
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__g0680",
+        "seed": 71
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__g0680",
+        "seed": 79
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__g1200",
+        "seed": 71
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__g1200",
+        "seed": 79
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__g1800",
+        "seed": 79
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+        "seed": 79
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+        "seed": 83
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+        "seed": 79
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+        "seed": 67
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+        "seed": 71
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+        "seed": 73
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+        "seed": 79
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+        "seed": 83
+      }
+    ],
+    "1": [
+      {
+        "graph_id": "CP-SCALE-AU-L002__g0340",
+        "seed": 79
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__g0680",
+        "seed": 67
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__g0680",
+        "seed": 73
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__g0680",
+        "seed": 83
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__g1200",
+        "seed": 67
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__g1200",
+        "seed": 73
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__g1200",
+        "seed": 83
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__g1800",
+        "seed": 83
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+        "seed": 67
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+        "seed": 71
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+        "seed": 73
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+        "seed": 83
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+        "seed": 79
+      },
+      {
+        "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+        "seed": 83
+      }
+    ]
+  },
+  "prior_l002_positions": [
+    {
+      "graph_id": "CP-SCALE-AU-L002__g0340",
+      "seed": 67
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g0340",
+      "seed": 71
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g0340",
+      "seed": 73
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g1800",
+      "seed": 67
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g1800",
+      "seed": 71
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g1800",
+      "seed": 73
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+      "seed": 67
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+      "seed": 71
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+      "seed": 73
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+      "seed": 67
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+      "seed": 71
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+      "seed": 73
+    }
+  ],
+  "budget_seconds": 900,
+  "population": 4,
+  "native_threads_per_position": 1,
+  "first_decision_seconds": 20,
+  "decision_interval_seconds": 40,
+  "max_calls": 21,
+  "host_ports_by_partition": {
+    "0": 15713,
+    "1": 38773
+  },
+  "assigned_cpu_ids_by_partition": {
+    "0": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "1": [
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "core_8x5_position_map_sha256": "eff0d903c762e9809341030ffe016ca6a6d3a683176780bc7bde6d0247cda153",
+  "original_8x5_preregistration_sha256": "8bc9f73dc72ddc1aa862091a1d495d3a96a90694bfe5b46b00af259721f55e27",
+  "prior_l002_protocol_sha256": "373e43840fde764af3f6155b88bc5fc6a0a7285e9a647dac47ca93bab6a868cd",
+  "prior_l002_shard_registration_sha256": {
+    "0": "f666d1abc2bedfd1c1089b310dc4530d1da65e580edb7ba8470f23874cfc38e8",
+    "1": "16edbc384c3f233da5066ddb04bcdeb25629a4f0e17cb98a4b99576fce7d4252"
+  },
+  "source_manifest_sha256": "e0d24b3ed3213a0df85bff9e6e38d8d0024512166506d1aa415327f351543cda",
+  "isolated_source_receipt_sha256": "7eb917eda56d25a017ce56f13b61c3f2386eb6b18b941f8a0175bbff8020e9fe",
+  "generation_prompt_sha256": "37cb63f484b155dfaf7548319b8c4ce1601ef0f978074c91c2a16f515115c82f",
+  "generation_receipt_sha256": "af634ed238ba2860252a650032c5b972e21f7b4bcc32e89784aa34e0ca1f05fb",
+  "raw_candidate_sha256": "c667c0a73f9ad4d069ebc099cb6f84b95fc5b8f5a1950ac2492d9d376c32dba9",
+  "candidate_validation_sha256": "8b4712f9a422e2d6c6a69eb31273ee5bbe61592696d4dc234f381dae2a64b752",
+  "policy_sha256": "8a9c0131c1ac55f3c8176017a0d84ac9b9ea5faeb442c13ffad4a1af318279f1",
+  "source_tree_sha256": "3da01d02364de440aa1d3bd2b2df5b78383f32cb78c3383efbcabba890b42f70",
+  "native_sha256": "83f7114e04b2e92a302573bd579541efae62d59114cef080a372f30bf01faf4c",
+  "runner_sha256": "aa0db3684f92b62a73eebff3ad25720c9cd2b474877d02a778a700375b9be04c",
+  "freeze_rule": "Reuse the first frozen authored policy; add only the 28 graph-seed pairs absent from the original 12, using the core host map made without objective outcomes.",
+  "evaluation_rule": "Require 28/28 extension and original 12/12 to pass independent objective/feasibility audit before reporting the 8x5 40-position authored mean; pair each with fresh Full on the identical graph, seed, and host.",
+  "l003_use_in_generation_or_validation": false
+}

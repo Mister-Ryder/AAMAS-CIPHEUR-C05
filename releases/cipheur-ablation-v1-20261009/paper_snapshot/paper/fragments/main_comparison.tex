@@ -1,0 +1,19 @@
+% Additional completed 900-second baselines from the adjacent verified comparison.
+% Independent local audit evidence:
+% experiments/classical_wmis_grasp_900s_6workers_v2_20261009/independent_audit.json
+% experiments/stablesolver_gwmin_900s_6workers_full40_timed_20261009/analysis_local/audit.json
+% experiments/published_cloud_download_20261009/local_independent_audit/fj/audit.json
+% experiments/published_cloud_download_20261009/local_independent_audit/fastwvc/audit.json
+% experiments/cipheur_siu_20261009/classical_crosscheck/lns_second_independent_crosscheck.json
+% experiments/cipheur_siu_20261009/classical_crosscheck/ls_second_independent_crosscheck.json
+\subsection{Additional Completed External Baselines}
+
+Six additional methods in Table~\ref{tab:c05-900s} have independently
+audited feasible results on all eight L002 views.
+Each reported mean is over 40 executions, five per view, under a 900-second
+cap. GWMIN terminated before the cap on every position. The official LS and
+LNS binaries ignore their seed arguments, so their five positions per view
+are fresh process repeats. LNS used a 890-second native limit inside the
+900-second outer cap and measured 891.1--892.5\,s wall time. The LS command
+requested 850\,s native time; its reported native times were 854.2--872.6\,s,
+and measured outer wall times were 856.8--874.4\,s.

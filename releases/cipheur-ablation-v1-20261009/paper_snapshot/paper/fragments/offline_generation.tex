@@ -1,0 +1,39 @@
+% Prospective generation record; the separately audited L002 result is
+% included by ../offline_llm_c05/analysis_l002/results_l002.tex.
+\subsection{Prospective Offline Controller Generation}
+
+We generated one new executable selector, CIPHEUR-off-GEN, for the
+shared SIU registry in a single offline Codex CLI request on October 9,
+2026. The request specified
+\texttt{gpt-6-luna} with low reasoning effort and required a deterministic
+\texttt{select\_plan(packet, plans)} function that returns a current legal plan
+ID. The first raw candidate was retained without objective-guided revision.
+The separately written integration layer checks the returned ID before the
+unchanged CIPHEUR executor installs the corresponding plan. This prospective
+selector is distinct from the earlier source-defined KNN and LinUCB controls.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Frozen generation and interface-validation record for the new offline LLM selector. Hashes are SHA-256 prefixes of the archived artifacts.}
+\label{tab:offline-generation}
+\begin{tabular}{@{}lp{0.58\columnwidth}@{}}
+\toprule
+Record & Value \\
+\midrule
+Generation & One request; \texttt{gpt-6-luna}, low effort \\
+Exact prompt & \texttt{37cb63f4} \\
+Raw response & \texttt{c667c0a7} \\
+Frozen selector source & \texttt{8a9c0131} \\
+Interface validation & 84/84 legal plan IDs on saved L002 seed-83 packets from four views; deterministic repeat and no input mutation \\
+New-source use & No L003 graph or outcome used for generation or validation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The authored selector was first audited on a separately registered
+12-position L002 frame. Its extension to the remaining 28 positions follows
+a second frozen protocol using the same selector source and paired host map.
+The full L002 frame includes the four seed-83 positions used for interface
+validation; validation checked plan-ID legality without revising the first
+candidate against solver outcome scores.

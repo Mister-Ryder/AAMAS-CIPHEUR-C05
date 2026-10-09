@@ -1,0 +1,23 @@
+{
+  "schema": "cipheur_off_gen_l002_full_8x5_audit_v1",
+  "complete_valid_frame": true,
+  "valid_positions": 40,
+  "old_audit_sha256": "2f23d3e78ebb95a80c8f9d82ef812991f67fcd3096d97d118f5e71972f644132",
+  "new_audit_sha256": "4abbd69613480493bb367884134b94fa7e65f6c0347f4ef1cde5fd3c1b2a6a1e",
+  "old_positions_sha256": "4e75ddf339d68394c071855e3f13094a6e1d951cf1502b7a1f3521329e802b1b",
+  "new_positions_sha256": "544ed9ee7145ad88a161345b2fcadd3144ca1ebc5a796b5438949f0a48e374e9",
+  "position_map_sha256": "eff0d903c762e9809341030ffe016ca6a6d3a683176780bc7bde6d0247cda153",
+  "policy_sha256": "8a9c0131c1ac55f3c8176017a0d84ac9b9ea5faeb442c13ffad4a1af318279f1",
+  "mean_contact_seconds_equal_view": 1136347.3573557,
+  "by_view_contact_seconds": {
+    "CP-SCALE-AU-L002__g0340": 1624749.0743616,
+    "CP-SCALE-AU-L002__g0680": 1248624.9804326,
+    "CP-SCALE-AU-L002__g1200": 882198.4546626,
+    "CP-SCALE-AU-L002__g1800": 682716.2823758,
+    "CP-SCALE-AU-L002__gW0340_gE1200_s0150": 1259965.2050004,
+    "CP-SCALE-AU-L002__gW0680_gE1200_s0150": 1065908.1702518,
+    "CP-SCALE-AU-L002__gW1200_gE0340_s0150": 1260590.3487958,
+    "CP-SCALE-AU-L002__gW1200_gE0680_s0150": 1066026.342965
+  },
+  "paired_fresh_full": null
+}

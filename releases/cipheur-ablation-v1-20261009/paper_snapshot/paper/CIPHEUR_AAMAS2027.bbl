@@ -1,0 +1,279 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{18}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Adriaensen et~al\mbox{.}(2022)]%
+        {adriaensen2022dynamic}
+\bibfield{author}{\bibinfo{person}{Steven Adriaensen} {et~al\mbox{.}}}
+  \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Automated Dynamic Algorithm Configuration}.
+\newblock \bibinfo{journal}{\emph{Journal of Artificial Intelligence Research}}
+   \bibinfo{volume}{75} (\bibinfo{year}{2022}), \bibinfo{pages}{1633--1699}.
+\newblock
+\href{https://doi.org/10.1613/jair.1.13922}{doi:\nolinkurl{10.1613/jair.1.13922}}
+
+
+\bibitem[Bengio et~al\mbox{.}(2021)]%
+        {bengio2021methodological}
+\bibfield{author}{\bibinfo{person}{Yoshua Bengio}, \bibinfo{person}{Andrea
+  Lodi}, {and} \bibinfo{person}{Antoine Prouvost}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Machine Learning for Combinatorial Optimization: A
+  Methodological Tour d'Horizon}.
+\newblock \bibinfo{journal}{\emph{European Journal of Operational Research}}
+  \bibinfo{volume}{290}, \bibinfo{number}{2} (\bibinfo{year}{2021}),
+  \bibinfo{pages}{405--421}.
+\newblock
+\href{https://doi.org/10.1016/j.ejor.2020.07.063}{doi:\nolinkurl{10.1016/j.ejor.2020.07.063}}
+
+
+\bibitem[Chmiela et~al\mbox{.}(2021)]%
+        {chmiela2021schedule}
+\bibfield{author}{\bibinfo{person}{Antonia Chmiela}, \bibinfo{person}{Elias~B.
+  Khalil}, \bibinfo{person}{Ambros Gleixner}, \bibinfo{person}{Andrea Lodi},
+  {and} \bibinfo{person}{Sebastian Pokutta}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Learning to Schedule Heuristics in Branch and
+  Bound}. In \bibinfo{booktitle}{\emph{Advances in Neural Information
+  Processing Systems}}, Vol.~\bibinfo{volume}{34}.
+  \bibinfo{pages}{24235--24246}.
+\newblock
+
+
+\bibitem[Dong et~al\mbox{.}(2022)]%
+        {dong2022metamis}
+\bibfield{author}{\bibinfo{person}{Y. Dong}, \bibinfo{person}{Andrew~V.
+  Goldberg}, \bibinfo{person}{Alexander Noe}, \bibinfo{person}{Nikos
+  Parotsidis}, \bibinfo{person}{Mauricio G.~C. Resende}, {and}
+  \bibinfo{person}{Quico Spaen}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{A Local Search Algorithm for Large Maximum Weight
+  Independent Set Problems}. In \bibinfo{booktitle}{\emph{30th Annual European
+  Symposium on Algorithms (ESA 2022)}} \emph{(\bibinfo{series}{Leibniz
+  International Proceedings in Informatics (LIPIcs)},
+  Vol.~\bibinfo{volume}{244})}. \bibinfo{pages}{45:1--45:16}.
+\newblock
+\href{https://doi.org/10.4230/LIPIcs.ESA.2022.45}{doi:\nolinkurl{10.4230/LIPIcs.ESA.2022.45}}
+
+
+\bibitem[Drake et~al\mbox{.}(2020)]%
+        {drake2020selection}
+\bibfield{author}{\bibinfo{person}{John~H. Drake}, \bibinfo{person}{Ahmed
+  Kheiri}, \bibinfo{person}{Ender {\"O}zcan}, {and} \bibinfo{person}{Edmund~K.
+  Burke}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Recent Advances in Selection Hyper-Heuristics}.
+\newblock \bibinfo{journal}{\emph{European Journal of Operational Research}}
+  \bibinfo{volume}{285}, \bibinfo{number}{2} (\bibinfo{year}{2020}),
+  \bibinfo{pages}{405--428}.
+\newblock
+\href{https://doi.org/10.1016/j.ejor.2019.07.073}{doi:\nolinkurl{10.1016/j.ejor.2019.07.073}}
+
+
+\bibitem[Gro{\ss}mann et~al\mbox{.}(2025)]%
+        {grossmann2025chils}
+\bibfield{author}{\bibinfo{person}{Ernestine Gro{\ss}mann},
+  \bibinfo{person}{Kenneth Langedal}, {and} \bibinfo{person}{Christian
+  Schulz}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Concurrent Iterated Local Search for the Maximum
+  Weight Independent Set Problem}. In \bibinfo{booktitle}{\emph{23rd
+  International Symposium on Experimental Algorithms (SEA 2025)}}
+  \emph{(\bibinfo{series}{Leibniz International Proceedings in Informatics
+  (LIPIcs)}, Vol.~\bibinfo{volume}{338})}. \bibinfo{pages}{22:1--22:18}.
+\newblock
+\href{https://doi.org/10.4230/LIPIcs.SEA.2025.22}{doi:\nolinkurl{10.4230/LIPIcs.SEA.2025.22}}
+
+
+\bibitem[Li et~al\mbox{.}(2018)]%
+        {li2018guided}
+\bibfield{author}{\bibinfo{person}{Zhuwen Li}, \bibinfo{person}{Qifeng Chen},
+  {and} \bibinfo{person}{Vladlen Koltun}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Combinatorial Optimization with Graph Convolutional
+  Networks and Guided Tree Search}. In \bibinfo{booktitle}{\emph{Advances in
+  Neural Information Processing Systems}}, Vol.~\bibinfo{volume}{31}.
+\newblock
+
+
+\bibitem[Liu et~al\mbox{.}(2026)]%
+        {liu2026eohs}
+\bibfield{author}{\bibinfo{person}{Fei Liu}, \bibinfo{person}{Y. Liu},
+  \bibinfo{person}{Qingfu Zhang}, \bibinfo{person}{X. Tong}, {and}
+  \bibinfo{person}{M. Yuan}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{{EoH-S}: Evolution of Heuristic Set Using {LLMs}
+  for Automated Heuristic Design}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the AAAI Conference on Artificial Intelligence}}, Vol.~\bibinfo{volume}{40}.
+  \bibinfo{pages}{37090--37098}.
+\newblock
+\href{https://doi.org/10.1609/aaai.v40i43.41038}{doi:\nolinkurl{10.1609/aaai.v40i43.41038}}
+
+
+\bibitem[Liu et~al\mbox{.}(2024)]%
+        {liu2024eoh}
+\bibfield{author}{\bibinfo{person}{Fei Liu}, \bibinfo{person}{Tong Xialiang},
+  \bibinfo{person}{Mingxuan Yuan}, \bibinfo{person}{Xi Lin},
+  \bibinfo{person}{Fu Luo}, \bibinfo{person}{Zhenkun Wang},
+  \bibinfo{person}{Zhichao Lu}, {and} \bibinfo{person}{Qingfu Zhang}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Evolution of Heuristics: Towards Efficient
+  Automatic Algorithm Design Using Large Language Model}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 41st International Conference on
+  Machine Learning}} \emph{(\bibinfo{series}{Proceedings of Machine Learning
+  Research}, Vol.~\bibinfo{volume}{235})}. \bibinfo{pages}{32201--32223}.
+\newblock
+\urldef\tempurl%
+\url{https://proceedings.mlr.press/v235/liu24bs.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Romera-Paredes et~al\mbox{.}(2024)]%
+        {romeraparedes2024funsearch}
+\bibfield{author}{\bibinfo{person}{Bernardino Romera-Paredes} {et~al\mbox{.}}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Mathematical Discoveries from Program Search with
+  Large Language Models}.
+\newblock \bibinfo{journal}{\emph{Nature}}  \bibinfo{volume}{625}
+  (\bibinfo{year}{2024}), \bibinfo{pages}{468--475}.
+\newblock
+\href{https://doi.org/10.1038/s41586-023-06924-6}{doi:\nolinkurl{10.1038/s41586-023-06924-6}}
+
+
+\bibitem[Ropke and Pisinger(2006)]%
+        {ropke2006alns}
+\bibfield{author}{\bibinfo{person}{Stefan Ropke} {and} \bibinfo{person}{David
+  Pisinger}.} \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{An Adaptive Large Neighborhood Search Heuristic for
+  the Pickup and Delivery Problem with Time Windows}.
+\newblock \bibinfo{journal}{\emph{Transportation Science}}
+  \bibinfo{volume}{40}, \bibinfo{number}{4} (\bibinfo{year}{2006}),
+  \bibinfo{pages}{455--472}.
+\newblock
+\href{https://doi.org/10.1287/trsc.1050.0135}{doi:\nolinkurl{10.1287/trsc.1050.0135}}
+
+
+\bibitem[Sutton et~al\mbox{.}(1999)]%
+        {sutton1999options}
+\bibfield{author}{\bibinfo{person}{Richard~S. Sutton}, \bibinfo{person}{Doina
+  Precup}, {and} \bibinfo{person}{Satinder Singh}.}
+  \bibinfo{year}{1999}\natexlab{}.
+\newblock \showarticletitle{Between {MDPs} and Semi-{MDPs}: A Framework for
+  Temporal Abstraction in Reinforcement Learning}.
+\newblock \bibinfo{journal}{\emph{Artificial Intelligence}}
+  \bibinfo{volume}{112}, \bibinfo{number}{1--2} (\bibinfo{year}{1999}),
+  \bibinfo{pages}{181--211}.
+\newblock
+\href{https://doi.org/10.1016/S0004-3702(99)00052-1}{doi:\nolinkurl{10.1016/S0004-3702(99)00052-1}}
+
+
+\bibitem[Wu et~al\mbox{.}(2021)]%
+        {wu2021lns}
+\bibfield{author}{\bibinfo{person}{Yaoxin Wu}, \bibinfo{person}{Wen Song},
+  \bibinfo{person}{Zhiguang Cao}, {and} \bibinfo{person}{Jie Zhang}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Learning Large Neighborhood Search Policy for
+  Integer Programming}. In \bibinfo{booktitle}{\emph{Advances in Neural
+  Information Processing Systems}}, Vol.~\bibinfo{volume}{34}.
+  \bibinfo{pages}{30075--30087}.
+\newblock
+
+
+\bibitem[Yang et~al\mbox{.}(2025)]%
+        {yang2025heuragenix}
+\bibfield{author}{\bibinfo{person}{X. Yang}, \bibinfo{person}{L. Zhang},
+  \bibinfo{person}{H. Qian}, \bibinfo{person}{L. Song}, {and}
+  \bibinfo{person}{J. Bian}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{HeurAgenix}: Leveraging {LLMs} for Solving Complex
+  Combinatorial Optimization Challenges}.
+\newblock
+\showeprint[arxiv]{2506.15196}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2506.15196}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Ye et~al\mbox{.}(2024)]%
+        {ye2024reevo}
+\bibfield{author}{\bibinfo{person}{Haoran Ye} {et~al\mbox{.}}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{{ReEvo}: Large Language Models as Hyper-Heuristics
+  with Reflective Evolution}. In \bibinfo{booktitle}{\emph{Advances in Neural
+  Information Processing Systems}}, Vol.~\bibinfo{volume}{37}.
+  \bibinfo{pages}{43571--43608}.
+\newblock
+
+
+\bibitem[Zhang and Yi(2025)]%
+        {zhang2025laos}
+\bibfield{author}{\bibinfo{person}{Y. Zhang} {and} \bibinfo{person}{G. Yi}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{{LAOS}: Large Language Model-Driven Adaptive
+  Operator Selection for Evolutionary Algorithms}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the Genetic and Evolutionary
+  Computation Conference}}. \bibinfo{pages}{517--526}.
+\newblock
+\href{https://doi.org/10.1145/3712256.3726450}{doi:\nolinkurl{10.1145/3712256.3726450}}
+
+
+\bibitem[Zheng et~al\mbox{.}(2025)]%
+        {zheng2025mctsahd}
+\bibfield{author}{\bibinfo{person}{Zhi Zheng}, \bibinfo{person}{Zhuoliang Xie},
+  \bibinfo{person}{Zhenkun Wang}, {and} \bibinfo{person}{Bryan Hooi}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Monte Carlo Tree Search for Comprehensive
+  Exploration in {LLM}-Based Automatic Heuristic Design}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 42nd International Conference on
+  Machine Learning}} \emph{(\bibinfo{series}{Proceedings of Machine Learning
+  Research}, Vol.~\bibinfo{volume}{267})}. \bibinfo{pages}{78338--78373}.
+\newblock
+\urldef\tempurl%
+\url{https://proceedings.mlr.press/v267/zheng25o.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Zhong et~al\mbox{.}(2025)]%
+        {zhong2025llmoa}
+\bibfield{author}{\bibinfo{person}{R. Zhong}, \bibinfo{person}{A.~G. Hussien},
+  \bibinfo{person}{J. Yu}, {and} \bibinfo{person}{M. Munetomo}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{{LLMOA}: A Novel Large Language Model Assisted
+  Hyper-Heuristic Optimization Algorithm}.
+\newblock \bibinfo{journal}{\emph{Advanced Engineering Informatics}}
+  \bibinfo{volume}{64} (\bibinfo{year}{2025}), \bibinfo{pages}{103042}.
+\newblock
+\href{https://doi.org/10.1016/j.aei.2024.103042}{doi:\nolinkurl{10.1016/j.aei.2024.103042}}
+
+
+\end{thebibliography}

@@ -1,0 +1,45 @@
+{
+  "schema": "cipheur_c05_offline_llm_candidate_validation_v1",
+  "candidate_raw_sha256": "c667c0a73f9ad4d069ebc099cb6f84b95fc5b8f5a1950ac2492d9d376c32dba9",
+  "policy_sha256": "8a9c0131c1ac55f3c8176017a0d84ac9b9ea5faeb442c13ffad4a1af318279f1",
+  "code_source_is_exact_raw_candidate": true,
+  "static_function_names": [
+    "_number",
+    "_mapping",
+    "_steps",
+    "_is_directed",
+    "_action_name",
+    "select_plan"
+  ],
+  "validation_scope": "Contract and legal-plan smoke check only; no objective scores, parameter tuning, or candidate repair.",
+  "historical_source": "CP-SCALE-AU-L002 online decision packets; seed 83 excluded from prospective 12-position frame",
+  "historical_inputs": [
+    {
+      "path": "研究二-正式方法探索版本\\v0.6.0\\experiments\\c05_900s_codex_20261009\\local_mirror_900s\\results\\codex\\CP-SCALE-AU-L002__g0340__llm__seed83.json",
+      "sha256": "53c6be52bada85f8a8aae532067987de4f76fa88c828354b12fa78cfc7b8b52b",
+      "calls": 21
+    },
+    {
+      "path": "研究二-正式方法探索版本\\v0.6.0\\experiments\\c05_900s_codex_20261009\\local_mirror_900s\\results\\codex\\CP-SCALE-AU-L002__g1200__llm__seed83.json",
+      "sha256": "9c37bb1e86a06817b5b394f525541d208075200d05cda728cb57aca465383a8a",
+      "calls": 21
+    },
+    {
+      "path": "研究二-正式方法探索版本\\v0.6.0\\experiments\\c05_900s_codex_20261009\\local_mirror_900s\\results\\codex\\CP-SCALE-AU-L002__g1800__llm__seed83.json",
+      "sha256": "8b5848afc37b54d1e5a542d55f88683b28fd8ec340c305bbb5783dacd1ee9ea2",
+      "calls": 21
+    },
+    {
+      "path": "研究二-正式方法探索版本\\v0.6.0\\experiments\\c05_900s_codex_20261009\\local_mirror_900s\\results\\codex\\CP-SCALE-AU-L002__gW1200_gE0340_s0150__llm__seed83.json",
+      "sha256": "a921e2c4ead90c04eaa40057ef284e5b6f3243f985b367511747273a7c127fa8",
+      "calls": 21
+    }
+  ],
+  "real_packets_checked": 84,
+  "returned_plan_kinds": {
+    "directed": 84
+  },
+  "max_decision_ms": 1.5981000033207238,
+  "synthetic_packets_checked": 3,
+  "status": "passed"
+}

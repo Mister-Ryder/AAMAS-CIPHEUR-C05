@@ -1,0 +1,36 @@
+{
+  "schema": "cipheur_combined_l002_table_v1",
+  "rows": 11,
+  "views": [
+    "CP-SCALE-AU-L002__g0340",
+    "CP-SCALE-AU-L002__g0680",
+    "CP-SCALE-AU-L002__g1200",
+    "CP-SCALE-AU-L002__g1800",
+    "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+    "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+    "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+    "CP-SCALE-AU-L002__gW1200_gE0680_s0150"
+  ],
+  "source_sha256": {
+    "研究二-正式方法探索版本\\v0.6.0\\experiments\\c05_900s_codex_20261009\\local_mirror_900s\\analysis\\c05_900s_independent_audit.json": "cd44c6fac6737175a8e557b8606ff418950df8a8bb867b0a7d79e99255c000dc",
+    "研究二-正式方法探索版本\\v0.6.0\\experiments\\c05_900s_codex_20261009\\local_mirror_900s\\analysis\\c05_900s_positions.csv": "741b806379cb6493c50b499bb849489e354e4e9f5b164a6bc7de9ca7cc286138",
+    "研究二-正式方法探索版本\\v0.6.0\\experiments\\c05_900s_codex_20261009\\local_mirror_900s\\analysis\\c05_900s_by_view.csv": "84f91cf7f59391f5655105091cc4503bd4b14bddc1951a0e9c381a1ae4148d33",
+    "experiments\\cipheur_siu_20261009\\logs_analysis\\aoc_summary.csv": "149c7a489dce800c6a82fa142b919a0bdfa06e914f767f1e118a81707340286d",
+    "experiments\\published_cloud_download_20261009\\local_independent_audit\\fj\\audit.json": "4623e76ed5fd87eaf02829c048afab938442d16bd8bcc5c3c9b0913c113b96b5",
+    "experiments\\cipheur_siu_20261009\\classical_crosscheck\\ls_second_independent_crosscheck.json": "ff00f3ff032ad0918537ac0ca1f72ea5511ba7f9a1df28957cc71e7cc19c49ad",
+    "experiments\\classical_900s_revision_20261009\\final_collection_20261009\\ls.local_ready.json": "d0e59de2d090251a5c7c6a0463a9c5a9d66ae7b45d3f5f1208d0605f9e81e941",
+    "experiments\\stablesolver_ls_9gib_6workers_full40_timed_20261009\\analysis\\audit.json": "da2932294102323c5e1b7458679325be54642450242a299f01bdd710482cc8e2",
+    "experiments\\stablesolver_ls_9gib_6workers_full40_timed_20261009\\analysis\\positions.csv": "ed63d5147cf3b13ab635d723944dba83e120afc92f6c0983ff68a6d8ee504c7e",
+    "experiments\\cipheur_siu_20261009\\classical_crosscheck\\lns_second_independent_crosscheck.json": "dbd4365800fa951ddfbc5517e3d0f304b9b6e329d0aa244cd3e2e89f929c7c53",
+    "experiments\\stablesolver_lns_900s_5workers_v3_20261009\\independent_audit.json": "4f4a4f8cbfa29bf8b8a288964492c031c8d77bfb00e01f5773b8f5dec3bf485a",
+    "experiments\\cipheur_siu_20261009\\classical_crosscheck\\lns_positions.csv": "cdecdd87a46f5901025e756b14926933c9eac5c036f7287689d74a8397758daf",
+    "experiments\\published_cloud_download_20261009\\local_independent_audit\\fastwvc\\audit.json": "19de006e11b1dd84ead6bbcc8a2c97136afc4184e265fee950645dd6480a750e",
+    "experiments\\classical_wmis_grasp_900s_6workers_v2_20261009\\independent_audit.json": "e11d592bda64c5ae9d9160902e147109c4c154b8d62bfdd34ca9c0d24ff49ce2",
+    "experiments\\stablesolver_gwmin_900s_6workers_full40_timed_20261009\\analysis_local\\audit.json": "800f4660dabcade949e478655523b0efab608393664c03b456b9002e92db4844",
+    "experiments\\stablesolver_gwmin_900s_6workers_full40_timed_20261009\\analysis\\positions.csv": "dcc7fda6a6cceeeb255a974db970999878bcf82f89d747c039c29e51846962da",
+    "experiments\\cipheur_siu_20261009\\offline_llm_c05\\analysis_l002_full\\summary.json": "42a54eabd63db6278be5d4d263fa2681b7c0d2fde54db7a48bde9d81bb8c9a65",
+    "experiments\\cipheur_siu_20261009\\offline_llm_c05\\analysis_l002_full\\positions.csv": "e8d9acb665c8697ddc4fd00746b0055a91f84240781873cbf29e6202db4da93a"
+  },
+  "table_sha256": "78132b01563521e159c3d970fb4630533681ebf07b6a40b88d49120c5ddd7243",
+  "csv_sha256": "2ed1b2f913e09c41d4593ef8422aad4d763b7004836be599aeffa2e85f0ce850"
+}

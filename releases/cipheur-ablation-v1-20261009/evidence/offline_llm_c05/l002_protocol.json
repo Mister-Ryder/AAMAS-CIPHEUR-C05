@@ -1,0 +1,45 @@
+{
+  "schema": "cipheur_c05_prospective_offline_llm_900s_v1",
+  "registered_at_utc": "2026-10-09T02:10:13.050084+00:00",
+  "purpose": "Newly LLM-authored offline SIU selector; not retrospective attribution of C05-KNN or C05-LinUCB",
+  "arm": "offline_llm",
+  "physical_source": "CP-SCALE-AU-L002",
+  "graph_sha256": {
+    "CP-SCALE-AU-L002__g0340": "f45451c354383da570944ddf0fc7898e9cd7056ac0ff54e97a2a2c4b69036697",
+    "CP-SCALE-AU-L002__g1800": "929df9f700cdd73c14aa1aed2a4b8ec88eb4dbaddb0252134dc68e9409a0829b",
+    "CP-SCALE-AU-L002__gW0340_gE1200_s0150": "c19525c20997580aae8cc683586362d193926c2b0a5acb702c039bb37584a967",
+    "CP-SCALE-AU-L002__gW1200_gE0340_s0150": "68fd21ef61b7cfaa228bcc78aa122ab7ed1946dc1e9330e3ca3d0fbf6ff06af3"
+  },
+  "seeds": [
+    67,
+    71,
+    73
+  ],
+  "expected_positions": 12,
+  "budget_seconds": 900,
+  "population": 4,
+  "native_threads_per_position": 1,
+  "first_decision_seconds": 20,
+  "decision_interval_seconds": 40,
+  "max_calls": 21,
+  "task_order_seed": 20261009,
+  "host_partition_rule": "Use core run_ablation.py graph-major/seed-minor list, Random(20261009).shuffle, index modulo 2; partition 0 on port 15713 and partition 1 on port 38773.",
+  "assigned_cpu_ids_each_host": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "core_registration_sha256": "770ef3d1a5018b790ae73e679d2f8a6a1bbd0d10f8993b28ee552bccca8766a5",
+  "source_manifest_sha256": "e0d24b3ed3213a0df85bff9e6e38d8d0024512166506d1aa415327f351543cda",
+  "isolated_source_receipt_sha256": "7eb917eda56d25a017ce56f13b61c3f2386eb6b18b941f8a0175bbff8020e9fe",
+  "generation_prompt_sha256": "37cb63f484b155dfaf7548319b8c4ce1601ef0f978074c91c2a16f515115c82f",
+  "generation_receipt_sha256": "af634ed238ba2860252a650032c5b972e21f7b4bcc32e89784aa34e0ca1f05fb",
+  "raw_candidate_sha256": "c667c0a73f9ad4d069ebc099cb6f84b95fc5b8f5a1950ac2492d9d376c32dba9",
+  "candidate_validation_sha256": "8b4712f9a422e2d6c6a69eb31273ee5bbe61592696d4dc234f381dae2a64b752",
+  "policy_sha256": "8a9c0131c1ac55f3c8176017a0d84ac9b9ea5faeb442c13ffad4a1af318279f1",
+  "source_tree_sha256": "3da01d02364de440aa1d3bd2b2df5b78383f32cb78c3383efbcabba890b42f70",
+  "freeze_rule": "The first one-shot model candidate is fixed after syntax, safety, and legal-ID validation. No objective-guided candidate repair, retuning, or replacement.",
+  "evaluation_rule": "Independently verify integer MWIS objective and feasibility for every position; report all 12 and pair only to freshly rerun Full positions on the same host partition.",
+  "l003_use_in_generation_or_validation": false
+}

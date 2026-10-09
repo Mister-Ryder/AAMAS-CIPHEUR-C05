@@ -1,0 +1,84 @@
+{
+  "schema": "cipheur_l003_candidate_independent_audit_v1",
+  "generated_utc": "2026-10-09T04:35:05.793967+00:00",
+  "source_status": "cross-source candidate; not certified untouched heldout",
+  "registration_sha256": "065c04a80152aaf1a44a4637a937e294825e4beaefdd0206f80c944d860b99ce",
+  "expected_positions": 48,
+  "saved_positions": 36,
+  "audited_valid_positions": 36,
+  "complete_valid_frame": false,
+  "host": "autodl-container-2e27408749-17398df8",
+  "missing_positions": [
+    {
+      "arm": "cipheur_on",
+      "graph_id": "CP-SCALE-AP-L003__g0340",
+      "seed": 67
+    },
+    {
+      "arm": "cipheur_on",
+      "graph_id": "CP-SCALE-AP-L003__g0340",
+      "seed": 71
+    },
+    {
+      "arm": "cipheur_on",
+      "graph_id": "CP-SCALE-AP-L003__g0340",
+      "seed": 73
+    },
+    {
+      "arm": "cipheur_on",
+      "graph_id": "CP-SCALE-AP-L003__gW1200_gE0340_s0150",
+      "seed": 67
+    },
+    {
+      "arm": "cipheur_on",
+      "graph_id": "CP-SCALE-AP-L003__gW1200_gE0340_s0150",
+      "seed": 71
+    },
+    {
+      "arm": "cipheur_on",
+      "graph_id": "CP-SCALE-AP-L003__gW1200_gE0340_s0150",
+      "seed": 73
+    },
+    {
+      "arm": "cipheur_on",
+      "graph_id": "CP-SCALE-AU-L003__g0340",
+      "seed": 67
+    },
+    {
+      "arm": "cipheur_on",
+      "graph_id": "CP-SCALE-AU-L003__g0340",
+      "seed": 71
+    },
+    {
+      "arm": "cipheur_on",
+      "graph_id": "CP-SCALE-AU-L003__g0340",
+      "seed": 73
+    },
+    {
+      "arm": "cipheur_on",
+      "graph_id": "CP-SCALE-AU-L003__gW1200_gE0340_s0150",
+      "seed": 67
+    },
+    {
+      "arm": "cipheur_on",
+      "graph_id": "CP-SCALE-AU-L003__gW1200_gE0340_s0150",
+      "seed": 71
+    },
+    {
+      "arm": "cipheur_on",
+      "graph_id": "CP-SCALE-AU-L003__gW1200_gE0340_s0150",
+      "seed": 73
+    }
+  ],
+  "invalid_positions": [],
+  "extra_or_duplicate_positions": [],
+  "parse_errors": [],
+  "launch_errors": [
+    "cipheur_on:missing_launch"
+  ],
+  "counts_by_arm": {
+    "chils_p4_custom": 12,
+    "off_exp_knn": 12,
+    "off_val_linucb": 12
+  }
+}

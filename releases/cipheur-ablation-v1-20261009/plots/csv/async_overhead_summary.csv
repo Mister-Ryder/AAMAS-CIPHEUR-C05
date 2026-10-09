@@ -1,0 +1,17 @@
+metric,value,unit
+positions,40,runs
+model_calls,840,calls
+installed_plans,838,plans
+other_call_dispositions,2,calls
+request_to_receive_median,11.055217631161213,s
+request_to_receive_p90,13.86563700772822,s
+http_wall_median,10.887694522738457,s
+http_wall_p90,13.014394744113089,s
+request_to_receive_total,9845.261339057237,s
+native_work_during_pending_total,9837.359510462731,s
+native_overlap_of_pending,99.91973977812901,%
+http_interval_total,9424.024034500122,s
+native_work_during_http_total,9423.006356745958,s
+native_overlap_of_http,99.98920123982666,%
+native_cycles_while_pending,2720049,cycles
+calls_without_token_usage,840,calls

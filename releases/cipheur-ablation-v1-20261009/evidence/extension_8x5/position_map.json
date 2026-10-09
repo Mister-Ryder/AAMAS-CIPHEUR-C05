@@ -1,0 +1,293 @@
+{
+  "schema": "cipheur_siu_8x5_position_map_v1",
+  "registered_at_utc": "2026-10-09T03:24:26.439447+00:00",
+  "original_8x5_registration_sha256": "8bc9f73dc72ddc1aa862091a1d495d3a96a90694bfe5b46b00af259721f55e27",
+  "screen_4x3_registration_sha256": "770ef3d1a5018b790ae73e679d2f8a6a1bbd0d10f8993b28ee552bccca8766a5",
+  "assignment_rule": "Preserve the two actual screen hosts; sorted missing graph-seed pairs shuffled with Python Random(20261009), then alternating ports 15713 and 38773. Assignment does not read objective outcomes.",
+  "host_ports": {
+    "0": 15713,
+    "1": 38773
+  },
+  "positions": [
+    {
+      "graph_id": "CP-SCALE-AU-L002__g0340",
+      "seed": 67,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g0340",
+      "seed": 71,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g0340",
+      "seed": 73,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g0340",
+      "seed": 79,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g0340",
+      "seed": 83,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g0680",
+      "seed": 67,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g0680",
+      "seed": 71,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g0680",
+      "seed": 73,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g0680",
+      "seed": 79,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g0680",
+      "seed": 83,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g1200",
+      "seed": 67,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g1200",
+      "seed": 71,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g1200",
+      "seed": 73,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g1200",
+      "seed": 79,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g1200",
+      "seed": 83,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g1800",
+      "seed": 67,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g1800",
+      "seed": 71,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g1800",
+      "seed": 73,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g1800",
+      "seed": 79,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__g1800",
+      "seed": 83,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+      "seed": 67,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+      "seed": 71,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+      "seed": 73,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+      "seed": 79,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW0340_gE1200_s0150",
+      "seed": 83,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+      "seed": 67,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+      "seed": 71,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+      "seed": 73,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+      "seed": 79,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW0680_gE1200_s0150",
+      "seed": 83,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+      "seed": 67,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+      "seed": 71,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+      "seed": 73,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": true
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+      "seed": 79,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW1200_gE0340_s0150",
+      "seed": 83,
+      "host_port": 38773,
+      "partition": 1,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+      "seed": 67,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+      "seed": 71,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+      "seed": 73,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+      "seed": 79,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": false
+    },
+    {
+      "graph_id": "CP-SCALE-AU-L002__gW1200_gE0680_s0150",
+      "seed": 83,
+      "host_port": 15713,
+      "partition": 0,
+      "screen_position": false
+    }
+  ]
+}

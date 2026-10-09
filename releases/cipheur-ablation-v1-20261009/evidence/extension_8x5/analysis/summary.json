@@ -1,0 +1,90 @@
+{
+  "schema": "cipheur_siu_8x5_independent_audit_v1",
+  "extension_registration_sha256": "2eae77f1752b4b1af2024f71fdc963c0dc432296862b48d427ff7d98b8a25dac",
+  "screen_registration_sha256": "770ef3d1a5018b790ae73e679d2f8a6a1bbd0d10f8993b28ee552bccca8766a5",
+  "position_map_sha256": "eff0d903c762e9809341030ffe016ca6a6d3a683176780bc7bde6d0247cda153",
+  "graph_count": 8,
+  "seeds_per_graph": 5,
+  "no_struct_payloads_audited": 252,
+  "arms": {
+    "full": {
+      "audited_positions": 12,
+      "screen_12_complete": true,
+      "full_40_complete": false,
+      "screen_mean_contact_seconds": 1209579.7784793333,
+      "full_mean_contact_seconds": null
+    },
+    "random_siu": {
+      "audited_positions": 12,
+      "screen_12_complete": true,
+      "full_40_complete": false,
+      "screen_mean_contact_seconds": 1209041.40150775,
+      "full_mean_contact_seconds": null
+    },
+    "single_op": {
+      "audited_positions": 12,
+      "screen_12_complete": true,
+      "full_40_complete": false,
+      "screen_mean_contact_seconds": 1209486.1236205834,
+      "full_mean_contact_seconds": null
+    },
+    "no_struct": {
+      "audited_positions": 12,
+      "screen_12_complete": true,
+      "full_40_complete": false,
+      "screen_mean_contact_seconds": 1209448.1001455,
+      "full_mean_contact_seconds": null
+    },
+    "siu_off": {
+      "audited_positions": 40,
+      "screen_12_complete": true,
+      "full_40_complete": true,
+      "screen_mean_contact_seconds": 1205338.5663996667,
+      "full_mean_contact_seconds": 1134403.0371794
+    },
+    "fixed_spread": {
+      "audited_positions": 40,
+      "screen_12_complete": true,
+      "full_40_complete": true,
+      "screen_mean_contact_seconds": 1208186.124875,
+      "full_mean_contact_seconds": 1137567.142428775
+    }
+  },
+  "paired": {
+    "random_siu_screen": {
+      "positions": 12,
+      "full_minus_arm_mean_contact_seconds": 538.3769715833333,
+      "full_higher": 6,
+      "equal": 0,
+      "full_lower": 6
+    },
+    "single_op_screen": {
+      "positions": 12,
+      "full_minus_arm_mean_contact_seconds": 93.65485875,
+      "full_higher": 8,
+      "equal": 0,
+      "full_lower": 4
+    },
+    "no_struct_screen": {
+      "positions": 12,
+      "full_minus_arm_mean_contact_seconds": 131.67833383333334,
+      "full_higher": 8,
+      "equal": 0,
+      "full_lower": 4
+    },
+    "siu_off_screen": {
+      "positions": 12,
+      "full_minus_arm_mean_contact_seconds": 4241.212079666667,
+      "full_higher": 12,
+      "equal": 0,
+      "full_lower": 0
+    },
+    "fixed_spread_screen": {
+      "positions": 12,
+      "full_minus_arm_mean_contact_seconds": 1393.6536043333333,
+      "full_higher": 9,
+      "equal": 0,
+      "full_lower": 3
+    }
+  }
+}

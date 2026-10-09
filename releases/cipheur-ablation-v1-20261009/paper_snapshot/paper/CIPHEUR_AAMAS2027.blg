@@ -1,0 +1,78 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: CIPHEUR_AAMAS2027.aux
+The style file: ACM-Reference-Format.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: CIPHEUR_references.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty publisher in chmiela2021schedule
+Warning--empty address in chmiela2021schedule
+Warning--empty publisher in dong2022metamis
+Warning--empty address in dong2022metamis
+Warning--empty publisher in grossmann2025chils
+Warning--empty address in grossmann2025chils
+Warning--empty publisher in li2018guided
+Warning--empty address in li2018guided
+Warning--page numbers missing in both pages and numpages fields in li2018guided
+Warning--can't use both volume and number fields in liu2026eohs
+Warning--empty publisher in liu2026eohs
+Warning--empty address in liu2026eohs
+Warning--empty publisher in liu2024eoh
+Warning--empty address in liu2024eoh
+Warning--empty publisher in wu2021lns
+Warning--empty address in wu2021lns
+Warning--empty publisher in ye2024reevo
+Warning--empty address in ye2024reevo
+Warning--empty publisher in zhang2025laos
+Warning--empty address in zhang2025laos
+Warning--empty publisher in zheng2025mctsahd
+Warning--empty address in zheng2025mctsahd
+You've used 18 entries,
+            6273 wiz_defined-function locations,
+            1642 strings with 22266 characters,
+and the built_in function-call counts, 23373 in all, are:
+= -- 3036
+> -- 702
+< -- 0
++ -- 243
+- -- 241
+* -- 1640
+:= -- 2134
+add.period$ -- 88
+call.type$ -- 18
+change.case$ -- 137
+chr.to.int$ -- 18
+cite$ -- 40
+duplicate$ -- 2102
+empty$ -- 1461
+format.name$ -- 301
+if$ -- 5769
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 78
+newline$ -- 196
+num.names$ -- 126
+pop$ -- 790
+preamble$ -- 1
+purify$ -- 280
+quote$ -- 0
+skip$ -- 809
+stack$ -- 0
+substring$ -- 1932
+swap$ -- 245
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 442
+warning$ -- 22
+while$ -- 120
+width$ -- 0
+write$ -- 399
+(There were 22 warnings)

@@ -1,0 +1,12 @@
+{
+  "schema": "cipheur_author_source_nonuse_attestation_v1",
+  "recorded_date": "2026-10-09",
+  "speaker": "study author (user in this task)",
+  "original_statement_zh": "L003/4就是没有参与的。从未用于提示。因为这个数据就是新构建的。",
+  "question_scope_reported_by_parent_agent": "whether L003/L004 participated in prompt design, code tuning, or controller selection",
+  "author_attested_source_groups": ["CP-SCALE-L003", "CP-SCALE-L004"],
+  "author_attested_nonuse": ["prompt design", "code tuning", "controller selection"],
+  "independent_file_evidence_scope": "source and graph creation receipts, frozen file hashes, and selected current experiment provenance",
+  "independent_global_nonuse_audit_available": false,
+  "interpretation": "Author-provided development non-use attestation; it does not replace a complete independent history audit."
+}

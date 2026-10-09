@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\caption{Initial matched 900\,s L002 four-view screen: mean and per-view objectives in $10^3$ contact-seconds. Each completed row has 12 audited positions (three seeds per view). CIPHEUR-off-RAND retains SIU execution with stratified random selection; CIPHEUR-off-GEN follows a separate frozen offline protocol.}
+\label{tab:siu-ablation-screen}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Configuration & Mean & $H_{340}$ & $H_{1800}$ & $M_{340/1200}$ & $M_{1200/340}$ \\
+\midrule
+Single-Op & 1,209.49 & 1,626.72 & 684.88 & 1,262.85 & 1,263.50 \\
+No-Struct & 1,209.45 & 1,627.12 & 684.40 & 1,263.02 & 1,263.25 \\
+CIPHEUR-off-RAND & 1,209.04 & 1,626.24 & 684.37 & 1,262.39 & 1,263.17 \\
+CIPHEUR-off-GEN & 1,207.12 & 1,624.50 & 683.14 & 1,260.34 & 1,260.50 \\
+CIPHEUR-online & 1,209.58 & 1,626.09 & 683.84 & 1,264.46 & 1,263.93 \\
+\bottomrule
+\end{tabular}
+\end{table}
